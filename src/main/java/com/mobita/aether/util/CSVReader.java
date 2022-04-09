@@ -1,4 +1,4 @@
-package com.aetherwars.util;
+package com.mobita.aether.util;
 
 import java.io.BufferedReader;
 import java.io.File;

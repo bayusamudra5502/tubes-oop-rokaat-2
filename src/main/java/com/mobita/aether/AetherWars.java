@@ -1,8 +1,10 @@
-package com.aetherwars;
+package com.mobita.aether;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.URISyntaxException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import java.util.List;
 
 import javafx.application.Application;
@@ -11,15 +13,18 @@ import javafx.scene.Scene;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-import com.aetherwars.model.Type;
-import com.aetherwars.model.Character;
-import com.aetherwars.util.CSVReader;
+import com.mobita.aether.model.Type;
+import com.mobita.aether.model.Character;
+import com.mobita.aether.util.CSVReader;
 
 public class AetherWars extends Application {
   private static final String CHARACTER_CSV_FILE_PATH = "card/data/character.csv";
 
-  public void loadCards() throws IOException, URISyntaxException {
-    File characterCSVFile = new File(getClass().getResource(CHARACTER_CSV_FILE_PATH).toURI());
+  public void loadCards() throws IOException {
+    InputStream s = getClass().getResourceAsStream(CHARACTER_CSV_FILE_PATH);
+    File characterCSVFile = File.createTempFile("character", ".csv");
+    Files.copy(s, characterCSVFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+
     CSVReader characterReader = new CSVReader(characterCSVFile, "\t");
     characterReader.setSkipHeader(true);
     List<String[]> characterRows = characterReader.read();

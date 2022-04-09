@@ -1,4 +1,4 @@
-package com.aetherwars.model;
+package com.mobita.aether.model;
 
 public class Character {
   private String name;

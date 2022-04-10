@@ -17,6 +17,13 @@ import com.mobita.aether.model.Type;
 import com.mobita.aether.model.Character;
 import com.mobita.aether.util.CSVReader;
 
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+
 public class AetherWars extends Application {
   private static final String CHARACTER_CSV_FILE_PATH = "card/data/character.csv";
 
@@ -34,29 +41,14 @@ public class AetherWars extends Application {
     }
   }
 
-  @Override
-  public void start(Stage stage) {
-    Text text = new Text();
-    text.setText("Loading...");
-    text.setX(50);
-    text.setY(50);
-
-    Group root = new Group();
-    root.getChildren().add(text);
-
-    Scene scene = new Scene(root, 1280, 720);
-
-    stage.setTitle("Minecraft: Aether Wars");
+  public void start(Stage stage) throws IOException {
+    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("form/AetherWars.fxml"));
+    Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+    stage.setTitle("Hello!");
     stage.setScene(scene);
     stage.show();
-
-    try {
-      this.loadCards();
-      text.setText("Minecraft: Aether Wars!");
-    } catch (Exception e) {
-      text.setText("Failed to load cards: " + e);
-    }
   }
+
 
   public static void main(String[] args) {
     launch();

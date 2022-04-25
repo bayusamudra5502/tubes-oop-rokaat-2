@@ -152,7 +152,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Text>
-      <Text layoutX="446.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Babak 1" textAlignment="CENTER">
+      <Text id="babak_name" layoutX="446.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Babak 1" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>

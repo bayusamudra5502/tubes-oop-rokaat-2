@@ -4,9 +4,10 @@ public class Player {
     private String name; // name of the player
     private String pathProfile; // profil picture of the player
 
-    public Player(String name) {
+    public Player(String name, String pathProfile) {
 
         this.name = name;
+        this.pathProfile = pathProfile;
     }
 
     public String getName(){

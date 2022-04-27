@@ -15,17 +15,17 @@
    <children>
       <HBox layoutX="45.0" layoutY="34.0" prefHeight="148.0" prefWidth="125.0" style="-fx-border-radius: 10px; -fx-background-color: #f5cac3;">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="122.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView id="pictplayer1" fitHeight="150.0" fitWidth="122.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </HBox>
       <HBox layoutX="771.0" layoutY="34.0" prefHeight="148.0" prefWidth="125.0" style="-fx-border-radius: 10px; -fx-background-color: #f5cac3;">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="122.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView id="pictplayer2" fitHeight="150.0" fitWidth="122.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </HBox>
       <HBox id="player_1_slot_1" layoutX="45.0" layoutY="212.0" prefHeight="148.0" prefWidth="125.0" style="-fx-border-radius: 20; -fx-background-color: #3D405B;">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="player1_board1" fitHeight="150.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -34,7 +34,7 @@
       </HBox>
       <HBox id="player_1_slot_2" layoutX="186.0" layoutY="130.0" prefHeight="148.0" prefWidth="125.0" style="-fx-border-radius: 20; -fx-background-color: #3D405B;">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="player1_board2" fitHeight="150.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -43,7 +43,7 @@
       </HBox>
       <HBox layoutX="186.0" layoutY="295.0" prefHeight="148.0" prefWidth="125.0" style="-fx-border-radius: 20; -fx-background-color: #3D405B;">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="player1_board4" fitHeight="150.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -52,7 +52,7 @@
       </HBox>
       <HBox layoutX="322.0" layoutY="130.0" prefHeight="148.0" prefWidth="125.0" style="-fx-border-radius: 20; -fx-background-color: #3D405B;">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="player1_board3" fitHeight="150.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -61,7 +61,7 @@
       </HBox>
       <HBox layoutX="322.0" layoutY="295.0" prefHeight="148.0" prefWidth="125.0" style="-fx-border-radius: 20; -fx-background-color: #3D405B;">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="player1_board5" fitHeight="150.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -70,77 +70,77 @@
       </HBox>
       <HBox layoutX="494.0" layoutY="130.0" prefHeight="148.0" prefWidth="125.0" style="-fx-border-radius: 20; -fx-background-color: #3D405B;">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView id="player2_board3" fitHeight="150.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </HBox>
       <HBox layoutX="494.0" layoutY="295.0" prefHeight="148.0" prefWidth="125.0" style="-fx-border-radius: 20; -fx-background-color: #3D405B;">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView id="player2_board5" fitHeight="150.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </HBox>
       <HBox layoutX="630.0" layoutY="130.0" prefHeight="148.0" prefWidth="125.0" style="-fx-border-radius: 20; -fx-background-color: #3D405B;">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView id="player2_board2" fitHeight="150.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </HBox>
       <HBox layoutX="630.0" layoutY="295.0" prefHeight="148.0" prefWidth="125.0" style="-fx-border-radius: 20; -fx-background-color: #3D405B;">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView id="player2_board4" fitHeight="150.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </HBox>
       <HBox layoutX="771.0" layoutY="212.0" prefHeight="148.0" prefWidth="125.0" style="-fx-border-radius: 20; -fx-background-color: #3D405B;">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView id="player2_board1" fitHeight="150.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </HBox>
-      <Circle fill="#81b29a" layoutX="62.0" layoutY="494.0" radius="17.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" />
-      <Circle fill="#f2cc8f" layoutX="102.0" layoutY="494.0" radius="17.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" />
-      <Circle fill="#c4c4c4" layoutX="141.0" layoutY="495.0" radius="17.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" />
-      <Circle fill="#c4c4c4" layoutX="179.0" layoutY="494.0" radius="17.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle id="ronde1_sign" fill="#81b29a" layoutX="62.0" layoutY="494.0" radius="17.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle id="ronde2_sign" fill="#f2cc8f" layoutX="102.0" layoutY="494.0" radius="17.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle id="ronde3_sign" fill="#c4c4c4" layoutX="141.0" layoutY="495.0" radius="17.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle id="ronde4_sign" fill="#c4c4c4" layoutX="179.0" layoutY="494.0" radius="17.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" />
       <AnchorPane layoutX="191.0" layoutY="50.0" prefHeight="34.0" prefWidth="233.0" style="-fx-background-color: #F2CC8F;">
          <children>
-            <Rectangle arcHeight="10.0" arcWidth="10.0" fill="#81b29a" height="34.0" layoutX="45.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="188.0" />
+            <Rectangle id="healthplayer1" arcHeight="10.0" arcWidth="10.0" fill="#81b29a" height="34.0" layoutX="45.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="188.0" />
          </children>
       </AnchorPane>
       <Rectangle arcHeight="10.0" arcWidth="10.0" fill="#e07a5f" height="65.0" layoutX="423.0" layoutY="34.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="98.0" />
       <AnchorPane layoutX="521.0" layoutY="50.0" prefHeight="34.0" prefWidth="233.0" style="-fx-background-color: #F2CC8F;">
          <children>
-            <Rectangle arcHeight="10.0" arcWidth="10.0" fill="#81b29a" height="34.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="188.0" />
+            <Rectangle id="healthplayer2" arcHeight="10.0" arcWidth="10.0" fill="#81b29a" height="34.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="188.0" />
          </children>
       </AnchorPane>
       <HBox layoutX="45.0" layoutY="534.0" prefHeight="112.0" prefWidth="116.0" style="-fx-border-radius: 20; -fx-background-color: #3D405B;">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView id="hand1" fitHeight="150.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </HBox>
       <HBox layoutX="168.0" layoutY="534.0" prefHeight="112.0" prefWidth="116.0" style="-fx-border-radius: 20; -fx-background-color: #3D405B;">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView id="hand2" fitHeight="150.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </HBox>
       <HBox layoutX="291.0" layoutY="534.0" prefHeight="112.0" prefWidth="116.0" style="-fx-border-radius: 20; -fx-background-color: #3D405B;">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView id="hand3" fitHeight="150.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </HBox>
       <HBox layoutX="414.0" layoutY="534.0" prefHeight="112.0" prefWidth="116.0" style="-fx-border-radius: 20; -fx-background-color: #3D405B;">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView id="hand4" fitHeight="150.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </HBox>
       <HBox layoutX="561.0" layoutY="534.0" prefHeight="112.0" prefWidth="116.0" style="-fx-border-radius: 20; -fx-background-color: #C5DCD6;">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView id="hovered_card" fitHeight="150.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </HBox>
       <VBox layoutX="691.0" layoutY="534.0" prefHeight="150.0" prefWidth="220.0" style="-fx-padding: 10;">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Judul">
+            <Text id="mob_name" strokeType="OUTSIDE" strokeWidth="0.0" text="Judul">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Text>
-            <Text layoutX="20.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ini adalah sebuah deskripsi yang rada panjang" wrappingWidth="198.3479995727539">
+            <Text id="mob_desc" layoutX="20.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ini adalah sebuah deskripsi yang rada panjang" wrappingWidth="198.3479995727539">
                <font>
                   <Font size="14.0" />
                </font>
@@ -152,7 +152,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Text>
-      <Text layoutX="446.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Babak 1" textAlignment="CENTER">
+      <Text id="babak_name" layoutX="446.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Babak 1" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
@@ -169,7 +169,7 @@
                   <Font name="System Italic" size="14.0" />
                </font>
             </Text>
-            <Text layoutX="20.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1/10" wrappingWidth="116.3479995727539">
+            <Text id="mana_stat" layoutX="20.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1/10" wrappingWidth="116.3479995727539">
                <font>
                   <Font size="14.0" />
                </font>
@@ -179,19 +179,19 @@
                   <Font name="System Italic" size="14.0" />
                </font>
             </Text>
-            <Text layoutX="20.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1/10" wrappingWidth="116.3479995727539">
+            <Text id="deck_stat" layoutX="20.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1/10" wrappingWidth="116.3479995727539">
                <font>
                   <Font size="14.0" />
                </font>
             </Text>
          </children>
       </VBox>
-      <Text layoutX="49.0" layoutY="443.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Draw">
+      <Text id="ronde_name" layoutX="49.0" layoutY="443.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Draw">
          <font>
             <Font size="20.0" />
          </font>
       </Text>
-      <Button layoutX="214.0" layoutY="474.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="89.0" style="-fx-background-color: #678D84; -fx-border-radius: 20;" text="Lanjutkan" textFill="WHITE">
+      <Button id="next_button" layoutX="214.0" layoutY="474.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="89.0" style="-fx-background-color: #678D84; -fx-border-radius: 20;" text="Lanjutkan" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>

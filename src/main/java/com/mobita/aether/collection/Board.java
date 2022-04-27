@@ -5,7 +5,7 @@ import com.mobita.aether.model.Card;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Board {
+public class Board implements ICardCollection{
     private Map<String, Card> cardList;
 
     public Board() {

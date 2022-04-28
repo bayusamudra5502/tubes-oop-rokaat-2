@@ -9,25 +9,23 @@ import java.util.Map;
 
 public class Hand implements ICardCollection{
     private Map<String, Card> inHand;
+
     public Hand() {
         this.inHand = new HashMap<>();
     }
 
-    public Hand insert(String slot, Card item) {
+    public void insert(String slot, Card item) {
         inHand.put(slot,item);
-        return this;
     }
 
     public Card get(String slot) {
         return inHand.get(slot);
     }
 
-    public Hand delete(String slot) {
-        inHand.remove(slot);
-        return this;
-    }
+//    public Card delete(String slot) {
+//        Card res = get(slot);
+//        res.setEmpty();
+//        return res;
+//    }
 
-    public Hand addEffect() {
-        return this;
-    }
 }

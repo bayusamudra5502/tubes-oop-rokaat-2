@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.image.Image?>
@@ -12,12 +13,12 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.TextFlow?>
 
-<Pane maxHeight="760.0" maxWidth="1280.0" minHeight="760.0" minWidth="1280.0" prefHeight="760.0" prefWidth="1280.0" scaleShape="false" style="-fx-background-color: #F6EBDA;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="760.0" maxWidth="1280.0" minHeight="760.0" minWidth="1280.0" prefHeight="760.0" prefWidth="1280.0" scaleShape="false" style="-fx-background-color: #F6EBDA;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mobita.aether.form.AetherWars">
    <children>
       <ProgressBar fx:id="player_1_healthbar" layoutX="38.0" layoutY="36.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="500.0" progress="0.59" style="-fx-accent: #E07A5F; -fx-background-radius: 0; -fx-background-insets: 0;" />
       <ProgressBar fx:id="player_2_healthbar" layoutX="742.0" layoutY="36.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" prefWidth="500.0" progress="0.59" style="-fx-accent: #E07A5F;" />
       <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#3d405b" height="78.0" layoutX="548.0" layoutY="17.0" stroke="BLACK" strokeType="INSIDE" width="184.0" />
-      <AnchorPane layoutX="1140.0" layoutY="205.0" prefHeight="115.0" prefWidth="115.0">
+      <AnchorPane layoutX="1140.0" layoutY="205.0" onMouseClicked="#onClickedPlayer2" onMouseEntered="#inHoveredPlayer2" onMouseExited="#outHoveredPlayer2" prefHeight="115.0" prefWidth="115.0">
          <children>
             <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#f2cc8f" height="115.0" stroke="TRANSPARENT" strokeType="INSIDE" width="115.0" />
             <ImageView fitHeight="115.0" fitWidth="115.0">
@@ -26,8 +27,11 @@
                </image>
             </ImageView>
          </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </AnchorPane>
-      <AnchorPane layoutX="25.0" layoutY="199.0" prefHeight="115.0" prefWidth="115.0">
+      <AnchorPane layoutX="25.0" layoutY="199.0" onMouseClicked="#onClickedPlayer1" onMouseEntered="#inHoveredPlayer1" onMouseExited="#outHoveredPlayer1" prefHeight="115.0" prefWidth="115.0">
          <children>
             <ImageView fx:id="player_1_head_img" fitHeight="115.0" fitWidth="115.0">
                <image>
@@ -35,8 +39,11 @@
                </image>
             </ImageView>
          </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </AnchorPane>
-      <AnchorPane layoutX="162.0" layoutY="144.0" prefHeight="169.0" prefWidth="137.0">
+      <AnchorPane layoutX="162.0" layoutY="144.0" onMouseClicked="#onClickedCard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="169.0" prefWidth="137.0">
          <children>
             <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#7eaa9f" height="169.0" stroke="TRANSPARENT" strokeType="INSIDE" width="137.0" />
             <AnchorPane prefHeight="169.0" prefWidth="137.0">
@@ -77,8 +84,11 @@
                </children>
             </AnchorPane>
          </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </AnchorPane>
-      <AnchorPane layoutX="811.0" layoutY="144.0" prefHeight="169.0" prefWidth="137.0">
+      <AnchorPane layoutX="811.0" layoutY="144.0" onMouseClicked="#onClickedCard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="169.0" prefWidth="137.0">
          <children>
             <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#7eaa9f" height="169.0" stroke="TRANSPARENT" strokeType="INSIDE" width="137.0" />
             <AnchorPane prefHeight="169.0" prefWidth="137.0">
@@ -119,8 +129,11 @@
                </children>
             </AnchorPane>
          </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </AnchorPane>
-      <AnchorPane layoutX="971.0" layoutY="144.0" prefHeight="169.0" prefWidth="137.0">
+      <AnchorPane layoutX="971.0" layoutY="144.0" onMouseClicked="#onClickedCard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="169.0" prefWidth="137.0">
          <children>
             <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#7eaa9f" height="169.0" stroke="TRANSPARENT" strokeType="INSIDE" width="137.0" />
             <AnchorPane prefHeight="169.0" prefWidth="137.0">
@@ -161,8 +174,11 @@
                </children>
             </AnchorPane>
          </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </AnchorPane>
-      <AnchorPane layoutX="322.0" layoutY="144.0" prefHeight="169.0" prefWidth="137.0">
+      <AnchorPane layoutX="322.0" layoutY="144.0" onMouseClicked="#onClickedCard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="169.0" prefWidth="137.0">
          <children>
             <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#7eaa9f" height="169.0" stroke="TRANSPARENT" strokeType="INSIDE" width="137.0" />
             <AnchorPane prefHeight="169.0" prefWidth="137.0">
@@ -203,8 +219,11 @@
                </children>
             </AnchorPane>
          </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </AnchorPane>
-      <AnchorPane layoutX="322.0" layoutY="323.0" prefHeight="169.0" prefWidth="137.0">
+      <AnchorPane layoutX="322.0" layoutY="323.0" onMouseClicked="#onClickedCard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="169.0" prefWidth="137.0">
          <children>
             <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#7eaa9f" height="169.0" stroke="TRANSPARENT" strokeType="INSIDE" width="137.0" />
             <AnchorPane prefHeight="169.0" prefWidth="137.0">
@@ -245,8 +264,11 @@
                </children>
             </AnchorPane>
          </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </AnchorPane>
-      <AnchorPane layoutX="162.0" layoutY="323.0" prefHeight="169.0" prefWidth="137.0">
+      <AnchorPane layoutX="162.0" layoutY="323.0" onMouseClicked="#onClickedCard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="169.0" prefWidth="137.0">
          <children>
             <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#7eaa9f" height="169.0" stroke="TRANSPARENT" strokeType="INSIDE" width="137.0" />
             <AnchorPane prefHeight="169.0" prefWidth="137.0">
@@ -287,11 +309,14 @@
                </children>
             </AnchorPane>
          </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </AnchorPane>
-      <AnchorPane layoutX="811.0" layoutY="323.0" prefHeight="169.0" prefWidth="137.0">
+      <AnchorPane layoutX="811.0" layoutY="323.0" onMouseClicked="#onClickedCard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="169.0" prefWidth="137.0">
          <children>
             <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#7eaa9f" height="169.0" stroke="TRANSPARENT" strokeType="INSIDE" width="137.0" />
-            <AnchorPane prefHeight="169.0" prefWidth="137.0">
+            <AnchorPane onMouseClicked="#onClickedCard" prefHeight="169.0" prefWidth="137.0">
                <children>
                   <HBox alignment="CENTER" layoutX="16.0" layoutY="43.0" prefHeight="106.0" prefWidth="106.0">
                      <children>
@@ -329,8 +354,11 @@
                </children>
             </AnchorPane>
          </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </AnchorPane>
-      <AnchorPane layoutX="971.0" layoutY="323.0" prefHeight="169.0" prefWidth="137.0">
+      <AnchorPane layoutX="971.0" layoutY="323.0" onMouseClicked="#onClickedCard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="169.0" prefWidth="137.0">
          <children>
             <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#7eaa9f" height="169.0" stroke="TRANSPARENT" strokeType="INSIDE" width="137.0" />
             <AnchorPane prefHeight="169.0" prefWidth="137.0">
@@ -371,8 +399,11 @@
                </children>
             </AnchorPane>
          </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </AnchorPane>
-      <AnchorPane layoutX="652.0" layoutY="238.0" prefHeight="169.0" prefWidth="137.0">
+      <AnchorPane layoutX="652.0" layoutY="238.0" onMouseClicked="#onClickedCard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="169.0" prefWidth="137.0">
          <children>
             <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#7eaa9f" height="169.0" stroke="TRANSPARENT" strokeType="INSIDE" width="137.0" />
             <AnchorPane prefHeight="169.0" prefWidth="137.0">
@@ -413,8 +444,11 @@
                </children>
             </AnchorPane>
          </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </AnchorPane>
-      <AnchorPane layoutX="481.0" layoutY="238.0" prefHeight="169.0" prefWidth="137.0">
+      <AnchorPane layoutX="481.0" layoutY="238.0" onMouseClicked="#onClickedCard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="169.0" prefWidth="137.0">
          <children>
             <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#7eaa9f" height="169.0" stroke="TRANSPARENT" strokeType="INSIDE" width="137.0" />
             <AnchorPane prefHeight="169.0" prefWidth="137.0">
@@ -455,13 +489,16 @@
                </children>
             </AnchorPane>
          </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </AnchorPane>
       <Label fx:id="turn_number" alignment="CENTER" layoutX="559.0" layoutY="38.0" prefHeight="40.0" prefWidth="166.0" text="Turn 1" textFill="WHITE">
          <font>
             <Font name="Segoe UI Bold" size="24.0" />
          </font>
       </Label>
-      <AnchorPane layoutX="23.0" layoutY="589.0" prefHeight="158.0" prefWidth="109.0">
+      <AnchorPane layoutX="23.0" layoutY="589.0" onMouseClicked="#onClickedCard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="158.0" prefWidth="109.0">
          <children>
             <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#c4c4c4" height="158.0" stroke="TRANSPARENT" strokeMiterLimit="0.0" strokeType="INSIDE" width="109.0" />
             <AnchorPane prefHeight="158.0" prefWidth="109.0">
@@ -470,7 +507,7 @@
                      <children>
                         <ImageView fx:id="image_hand_1" fitHeight="85.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../card/image/spell/swap/Morning's%20Blessing.png" />
+                              <Image url="@../card/image/spell/potion/Halal%20Porkchop.png" />
                            </image>
                         </ImageView>
                      </children></HBox>
@@ -484,8 +521,7 @@
                         <Font name="Segoe UI" size="12.0" />
                      </font>
                   </Label>
-                  <AnchorPane layoutX="72.0" layoutY="5.0" prefHeight="16.0" prefWidth="15.0" />
-                  <Label fx:id="delete_button_hand_1" layoutX="93.0" layoutY="4.0" prefHeight="12.0" prefWidth="11.0" text="X" textFill="WHITE">
+                  <Label fx:id="delete_button_hand_1" layoutX="93.0" layoutY="4.0" onMouseClicked="#onClickedDeleteHand1" prefHeight="12.0" prefWidth="11.0" text="X" textFill="WHITE" visible="false">
                      <font>
                         <Font name="Gill Sans MT Bold" size="13.0" />
                      </font>
@@ -493,6 +529,9 @@
                </children>
             </AnchorPane>
          </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </AnchorPane>
       <AnchorPane layoutX="600.0" layoutY="495.0" prefHeight="221.0" prefWidth="202.0">
          <children>
@@ -601,7 +640,7 @@
             <Font name="Segoe UI Bold" size="20.0" />
          </font>
       </Label>
-      <AnchorPane fx:id="delete_button" layoutX="500.0" layoutY="555.0" prefHeight="26.0" prefWidth="93.0">
+      <AnchorPane fx:id="delete_button" layoutX="500.0" layoutY="555.0" onMouseClicked="#onClickDeleteButton" prefHeight="26.0" prefWidth="93.0">
          <children>
             <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#4f2b2a" height="26.0" stroke="TRANSPARENT" strokeType="INSIDE" width="93.0" />
             <ImageView fitHeight="17.0" fitWidth="17.0" layoutX="6.0" layoutY="5.0">
@@ -615,8 +654,11 @@
                </font>
             </Label>
          </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </AnchorPane>
-      <AnchorPane fx:id="next_button" layoutX="201.0" layoutY="555.0" prefHeight="26.0" prefWidth="93.0">
+      <AnchorPane fx:id="next_button" layoutX="201.0" layoutY="555.0" onMouseClicked="#onClickNextButton" prefHeight="26.0" prefWidth="93.0">
          <children>
             <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#81b29a" height="26.0" stroke="TRANSPARENT" strokeType="INSIDE" width="93.0" />
             <Label layoutX="11.0" layoutY="4.0" text="&gt;&gt;" textFill="#678d84">
@@ -630,6 +672,9 @@
                </font>
             </Label>
          </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </AnchorPane>
       <AnchorPane fx:id="trade_button" layoutX="1003.0" layoutY="512.0" prefHeight="51.0" prefWidth="120.0">
          <children>
@@ -639,10 +684,13 @@
                   <Font name="Segoe UI Bold" size="13.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="7.0" layoutY="25.0" prefHeight="18.0" prefWidth="106.0" text="Trade With 1 Exp" textFill="WHITE" />
+            <Label alignment="CENTER" layoutX="7.0" layoutY="25.0" onMouseClicked="#onClickTradeButton" prefHeight="18.0" prefWidth="106.0" text="Trade With 1 Exp" textFill="WHITE" />
          </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </AnchorPane>
-      <AnchorPane layoutX="1135.0" layoutY="512.0" prefHeight="51.0" prefWidth="120.0">
+      <AnchorPane layoutX="1135.0" layoutY="512.0" onMouseClicked="#onClickedCard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="51.0" prefWidth="120.0">
          <children>
             <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#49575d" height="51.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" width="120.0" />
             <Label fx:id="deck_counter" alignment="CENTER" layoutX="2.0" layoutY="4.0" prefHeight="39.0" prefWidth="114.0" text="Deck: 33/40" textFill="WHITE">
@@ -652,16 +700,16 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="483.0" layoutY="589.0" prefHeight="158.0" prefWidth="109.0">
+      <AnchorPane layoutX="483.0" layoutY="589.0" onMouseClicked="#onClickedCard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="158.0" prefWidth="109.0">
          <children>
             <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#c4c4c4" height="158.0" stroke="TRANSPARENT" strokeMiterLimit="0.0" strokeType="INSIDE" width="109.0" />
             <AnchorPane prefHeight="158.0" prefWidth="109.0">
                <children>
-                  <HBox alignment="CENTER" layoutX="12.0" layoutY="25.0" prefHeight="85.0" prefWidth="85.0">
+                  <HBox alignment="CENTER" layoutX="12.0" layoutY="25.0" onMouseClicked="#onClickedDeleteHand5" prefHeight="85.0" prefWidth="85.0">
                      <children>
                         <ImageView fx:id="image_hand_5" fitHeight="85.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../card/image/spell/swap/Morning's%20Blessing.png" />
+                              <Image url="@../card/image/spell/potion/Yoasobi.png" />
                            </image>
                         </ImageView>
                      </children>
@@ -676,18 +724,22 @@
                         <Font name="Segoe UI" size="12.0" />
                      </font>
                   </Label>
-                  <AnchorPane layoutX="72.0" layoutY="5.0" prefHeight="16.0" prefWidth="15.0" />
-                  <AnchorPane layoutX="82.0" layoutY="15.0" prefHeight="16.0" prefWidth="15.0" />
-                  <Label fx:id="delete_button_hand_5" layoutX="93.0" layoutY="4.0" prefHeight="12.0" prefWidth="11.0" text="X" textFill="WHITE">
+                  <Label fx:id="delete_button_hand_5" layoutX="93.0" layoutY="4.0" prefHeight="12.0" prefWidth="11.0" text="X" textFill="WHITE" visible="false">
                      <font>
                         <Font name="Gill Sans MT Bold" size="13.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Label>
                </children>
             </AnchorPane>
          </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </AnchorPane>
-      <AnchorPane layoutX="368.0" layoutY="589.0" prefHeight="158.0" prefWidth="109.0">
+      <AnchorPane layoutX="368.0" layoutY="589.0" onMouseClicked="#onClickedCard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="158.0" prefWidth="109.0">
          <children>
             <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#c4c4c4" height="158.0" stroke="TRANSPARENT" strokeMiterLimit="0.0" strokeType="INSIDE" width="109.0" />
             <AnchorPane prefHeight="158.0" prefWidth="109.0">
@@ -696,7 +748,7 @@
                      <children>
                         <ImageView fx:id="image_hand_4" fitHeight="85.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../card/image/spell/swap/Morning's%20Blessing.png" />
+                              <Image url="@../card/image/spell/potion/Witch's%20Eye.png" />
                            </image>
                         </ImageView>
                      </children>
@@ -711,8 +763,7 @@
                         <Font name="Segoe UI" size="12.0" />
                      </font>
                   </Label>
-                  <AnchorPane layoutX="72.0" layoutY="5.0" prefHeight="16.0" prefWidth="15.0" />
-                  <Label fx:id="delete_button_hand_4" layoutX="93.0" layoutY="4.0" prefHeight="12.0" prefWidth="11.0" text="X" textFill="WHITE">
+                  <Label fx:id="delete_button_hand_4" layoutX="93.0" layoutY="4.0" onMouseClicked="#onClickedDeleteHand4" prefHeight="12.0" prefWidth="11.0" text="X" textFill="WHITE" visible="false">
                      <font>
                         <Font name="Gill Sans MT Bold" size="13.0" />
                      </font>
@@ -720,8 +771,11 @@
                </children>
             </AnchorPane>
          </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </AnchorPane>
-      <AnchorPane layoutX="253.0" layoutY="589.0" prefHeight="158.0" prefWidth="109.0">
+      <AnchorPane layoutX="253.0" layoutY="589.0" onMouseClicked="#onClickedCard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="158.0" prefWidth="109.0">
          <children>
             <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#c4c4c4" height="158.0" stroke="TRANSPARENT" strokeMiterLimit="0.0" strokeType="INSIDE" width="109.0" />
             <AnchorPane prefHeight="158.0" prefWidth="109.0">
@@ -730,7 +784,7 @@
                      <children>
                         <ImageView fx:id="image_hand_3" fitHeight="85.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../card/image/spell/swap/Morning's%20Blessing.png" />
+                              <Image url="@../card/image/spell/potion/SNMPTN Rejection Letter.png" />
                            </image>
                         </ImageView>
                      </children>
@@ -746,7 +800,7 @@
                      </font>
                   </Label>
                   <AnchorPane layoutX="72.0" layoutY="5.0" prefHeight="16.0" prefWidth="15.0" />
-                  <Label fx:id="delete_button_hand_3" layoutX="93.0" layoutY="4.0" prefHeight="12.0" prefWidth="11.0" text="X" textFill="WHITE">
+                  <Label fx:id="delete_button_hand_3" layoutX="93.0" layoutY="4.0" onMouseClicked="#onClickedDeleteHand3" prefHeight="12.0" prefWidth="11.0" text="X" textFill="WHITE" visible="false">
                      <font>
                         <Font name="Gill Sans MT Bold" size="13.0" />
                      </font>
@@ -754,8 +808,11 @@
                </children>
             </AnchorPane>
          </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </AnchorPane>
-      <AnchorPane layoutX="138.0" layoutY="589.0" prefHeight="158.0" prefWidth="109.0">
+      <AnchorPane layoutX="138.0" layoutY="589.0" onMouseClicked="#onClickedCard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="158.0" prefWidth="109.0">
          <children>
             <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#c4c4c4" height="158.0" stroke="TRANSPARENT" strokeMiterLimit="0.0" strokeType="INSIDE" width="109.0" />
             <AnchorPane prefHeight="158.0" prefWidth="109.0">
@@ -764,7 +821,7 @@
                      <children>
                         <ImageView fx:id="image_hand2" fitHeight="85.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../card/image/spell/swap/Morning's%20Blessing.png" />
+                              <Image url="@../card/image/spell/potion/SNMPTN%20Acceptance%20Letter.png" />
                            </image>
                         </ImageView>
                      </children>
@@ -780,7 +837,7 @@
                      </font>
                   </Label>
                   <AnchorPane layoutX="72.0" layoutY="5.0" prefHeight="16.0" prefWidth="15.0" />
-                  <Label fx:id="delete_button_hand_2" layoutX="93.0" layoutY="4.0" prefHeight="12.0" prefWidth="11.0" text="X" textFill="WHITE">
+                  <Label fx:id="delete_button_hand_2" layoutX="93.0" layoutY="4.0" onMouseClicked="#onClickedDeleteHand2" prefHeight="12.0" prefWidth="11.0" text="X" textFill="WHITE" visible="false">
                      <font>
                         <Font name="Gill Sans MT Bold" size="13.0" />
                      </font>
@@ -788,6 +845,9 @@
                </children>
             </AnchorPane>
          </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </AnchorPane>
    </children>
 </Pane>

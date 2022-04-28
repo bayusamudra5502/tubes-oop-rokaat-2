@@ -54,7 +54,7 @@
          </image>
       </ImageView>
       <Text id="deckselectordesc" layoutX="135.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please select your next card" />
-      <AnchorPane layoutX="51.0" layoutY="157.0" prefHeight="218.0" prefWidth="141.0">
+      <AnchorPane fx:id="card1" layoutX="51.0" layoutY="157.0" onMouseClicked="onCard1Clicked" prefHeight="218.0" prefWidth="141.0">
          <children>
             <Rectangle arcHeight="10.0" arcWidth="10.0" fill="#3d405b" height="227.0" layoutY="-5.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="154.0" />
             <Text id="card1_title" fill="WHITE" layoutX="18.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zombi Air" wrappingWidth="104.72999954223633">
@@ -96,7 +96,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </AnchorPane>
-      <AnchorPane layoutX="258.0" layoutY="156.0" prefHeight="218.0" prefWidth="141.0">
+      <AnchorPane fx:id="card2" layoutX="258.0" layoutY="156.0" onMouseClicked="#onCard2Clicked" prefHeight="218.0" prefWidth="141.0">
          <children>
             <Rectangle id="card2" arcHeight="10.0" arcWidth="10.0" fill="#3d405b" height="227.0" layoutY="-5.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="154.0" />
             <Text id="card2_title" fill="WHITE" layoutX="18.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zombi Air" wrappingWidth="104.72999954223633">
@@ -138,7 +138,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </AnchorPane>
-      <AnchorPane layoutX="467.0" layoutY="156.0" prefHeight="218.0" prefWidth="141.0">
+      <AnchorPane fx:id="card3" layoutX="467.0" layoutY="156.0" onMouseClicked="#onCard3Clicked" prefHeight="218.0" prefWidth="141.0">
          <children>
             <Rectangle id="card3" arcHeight="10.0" arcWidth="10.0" fill="#3d405b" height="227.0" layoutY="-5.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="154.0" />
             <Text id="card3title" fill="WHITE" layoutX="18.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zombi Air" wrappingWidth="104.72999954223633">

@@ -42,7 +42,7 @@ public class AetherWars extends Application {
   }
 
   public void start(Stage stage) throws IOException {
-    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("form/AetherWars.fxml"));
+    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("form/Selector.fxml"));
     Scene scene = new Scene(fxmlLoader.load(), 933, 710);
     stage.setTitle("Hello!");
     stage.setScene(scene);

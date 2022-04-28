@@ -56,13 +56,13 @@
       <Text id="deckselectordesc" layoutX="135.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please select your next card" />
       <AnchorPane fx:id="card1" layoutX="51.0" layoutY="157.0" onMouseClicked="onCard1Clicked" prefHeight="218.0" prefWidth="141.0">
          <children>
-            <Rectangle arcHeight="10.0" arcWidth="10.0" fill="#3d405b" height="227.0" layoutY="-5.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="154.0" />
-            <Text id="card1_title" fill="WHITE" layoutX="18.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zombi Air" wrappingWidth="104.72999954223633">
+            <Rectangle fx:id="card1_rectangle" arcHeight="10.0" arcWidth="10.0" fill="#3d405b" height="227.0" layoutY="-5.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="154.0" />
+            <Text id="card1_title" fx:id="card1_title" fill="WHITE" layoutX="18.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zombi Air" wrappingWidth="104.72999954223633">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Text>
-            <Text id="card1_heart" fill="WHITE" layoutX="41.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100" wrappingWidth="32.72999954223633">
+            <Text id="card1_heart" fx:id="card1_heart" fill="WHITE" layoutX="41.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100" wrappingWidth="32.72999954223633">
                <font>
                   <Font size="15.0" />
                </font>
@@ -72,7 +72,7 @@
                   <Image url="@../image/NicePng_minecraft-heart-png_1905759.png" />
                </image>
             </ImageView>
-            <Text id="card1_attack" fill="WHITE" layoutX="43.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="35" wrappingWidth="32.72999954223633">
+            <Text id="card1_attack" fx:id="card1_attack" fill="WHITE" layoutX="43.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="35" wrappingWidth="32.72999954223633">
                <font>
                   <Font size="15.0" />
                </font>
@@ -84,7 +84,7 @@
             </ImageView>
             <HBox id="card1" alignment="CENTER" layoutX="4.0" layoutY="10.0" prefHeight="128.0" prefWidth="147.0">
                <children>
-                  <ImageView id="card1_img" fitHeight="123.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="card1_img" fx:id="card1_img" fitHeight="123.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../card/image/character/Ghast.png" />
                      </image>
@@ -98,13 +98,13 @@
       </AnchorPane>
       <AnchorPane fx:id="card2" layoutX="258.0" layoutY="156.0" onMouseClicked="#onCard2Clicked" prefHeight="218.0" prefWidth="141.0">
          <children>
-            <Rectangle id="card2" arcHeight="10.0" arcWidth="10.0" fill="#3d405b" height="227.0" layoutY="-5.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="154.0" />
-            <Text id="card2_title" fill="WHITE" layoutX="18.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zombi Air" wrappingWidth="104.72999954223633">
+            <Rectangle id="card2" fx:id="card2_rectangle" arcHeight="10.0" arcWidth="10.0" fill="#3d405b" height="227.0" layoutY="-5.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="154.0" />
+            <Text id="card2_title" fx:id="card2_title" fill="WHITE" layoutX="18.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zombi Air" wrappingWidth="104.72999954223633">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Text>
-            <Text id="card2_heart" fill="WHITE" layoutX="41.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100" wrappingWidth="32.72999954223633">
+            <Text id="card2_heart" fx:id="card2_heart" fill="WHITE" layoutX="41.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100" wrappingWidth="32.72999954223633">
                <font>
                   <Font size="15.0" />
                </font>
@@ -114,7 +114,7 @@
                   <Image url="@../image/NicePng_minecraft-heart-png_1905759.png" />
                </image>
             </ImageView>
-            <Text id="card2_attack" fill="WHITE" layoutX="43.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="35" wrappingWidth="32.72999954223633">
+            <Text id="card2_attack" fx:id="card2_attack" fill="WHITE" layoutX="43.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="35" wrappingWidth="32.72999954223633">
                <font>
                   <Font size="15.0" />
                </font>
@@ -126,7 +126,7 @@
             </ImageView>
             <HBox alignment="CENTER" layoutX="4.0" layoutY="10.0" prefHeight="128.0" prefWidth="147.0">
                <children>
-                  <ImageView id="card2_img" fitHeight="123.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="card2_img" fx:id="card2_img" fitHeight="123.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../card/image/character/Ghast.png" />
                      </image>
@@ -140,13 +140,13 @@
       </AnchorPane>
       <AnchorPane fx:id="card3" layoutX="467.0" layoutY="156.0" onMouseClicked="#onCard3Clicked" prefHeight="218.0" prefWidth="141.0">
          <children>
-            <Rectangle id="card3" arcHeight="10.0" arcWidth="10.0" fill="#3d405b" height="227.0" layoutY="-5.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="154.0" />
-            <Text id="card3title" fill="WHITE" layoutX="18.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zombi Air" wrappingWidth="104.72999954223633">
+            <Rectangle id="card3" fx:id="card3_rectangle" arcHeight="10.0" arcWidth="10.0" fill="#3d405b" height="227.0" layoutY="-5.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="154.0" />
+            <Text id="card3title" fx:id="card3_title" fill="WHITE" layoutX="18.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zombi Air" wrappingWidth="104.72999954223633">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Text>
-            <Text id="card3_heart" fill="WHITE" layoutX="41.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100" wrappingWidth="32.72999954223633">
+            <Text id="card3_heart" fx:id="card3_heart" fill="WHITE" layoutX="41.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100" wrappingWidth="32.72999954223633">
                <font>
                   <Font size="15.0" />
                </font>
@@ -156,7 +156,7 @@
                   <Image url="@../image/NicePng_minecraft-heart-png_1905759.png" />
                </image>
             </ImageView>
-            <Text id="card3_attack" fill="WHITE" layoutX="43.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="35" wrappingWidth="32.72999954223633">
+            <Text id="card3_attack" fx:id="card3_attack" fill="WHITE" layoutX="43.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="35" wrappingWidth="32.72999954223633">
                <font>
                   <Font size="15.0" />
                </font>
@@ -168,7 +168,7 @@
             </ImageView>
             <HBox alignment="CENTER" layoutX="4.0" layoutY="10.0" prefHeight="128.0" prefWidth="147.0">
                <children>
-                  <ImageView id="card3_img" fitHeight="123.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="card3_img" fx:id="card3_img" fitHeight="123.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../card/image/character/Ghast.png" />
                      </image>

@@ -3,14 +3,13 @@ package com.mobita.aether.model;
 public class End extends Mobs{
     private int baseAttack;
     private int baseHealth;
-    private int level;
     private int exp;
     private int attackUp;
     private int healthUp;
     private int mana;
     
     public End(String name, String description, Type type, int baseAttack, int baseHealth, int level, int exp, int attackUp, int healthUp, int mana) {
-        super(name, description, Type.END);
+        super(name, description, Type.END, level);
         this.baseAttack = baseAttack;
         this.baseHealth = baseHealth;
         this.level = level;

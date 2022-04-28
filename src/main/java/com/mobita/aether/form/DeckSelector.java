@@ -1,17 +1,13 @@
 package com.mobita.aether.form;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
-
-import java.net.URISyntaxException;
 
 public class DeckSelector {
     public AnchorPane card1;

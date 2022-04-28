@@ -2,9 +2,9 @@ package com.mobita.aether.collection;
 
 import com.mobita.aether.model.Card;
 
-public interface ICardCollection {
-    Board insert(String slot, Card item);
+public interface ICardCollection<T> {
+    T insert(String slot, Card item);
     Card get(String slot);
-    Board delete(String slot);
-    Board addEffect();
+    T delete(String slot);
+    T addEffect();
 }

@@ -7,7 +7,7 @@ import com.mobita.aether.model.Card;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Hand {
+public class Hand implements ICardCollection{
     private Map<String, Card> inHand;
     public Hand() {
         this.inHand = new HashMap<>();
@@ -27,4 +27,7 @@ public class Hand {
         return this;
     }
 
+    public Hand addEffect() {
+        return this;
+    }
 }

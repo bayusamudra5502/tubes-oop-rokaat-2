@@ -1,8 +1,7 @@
 package com.mobita.aether.model;
 
 import com.mobita.aether.collection.Deck;
-
-import java.util.ArrayList;
+import com.mobita.aether.collection.Hand;
 
 public class Player {
     private String name; // name of the player

@@ -2,10 +2,11 @@ package com.mobita.aether.model;
 
 import com.mobita.aether.enums.CardType;
 
-public abstract class Card {
+public abstract class Card{
     private String cardName;
     private String description;
     private CardType cardType;
+
 
     public String getCardName() {
         return cardName;
@@ -35,5 +36,11 @@ public abstract class Card {
         this.cardName = cardName;
         this.description = description;
         this.cardType = cardType;
+    }
+
+    public void setEmpty(){
+        this.cardName = "";
+        this.description = "";
+        this.cardType = null;
     }
 }

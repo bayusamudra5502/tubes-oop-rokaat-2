@@ -15,7 +15,15 @@ public class Player {
         this.name = name;
         this.pathProfile = pathProfile;
         this.healthPoints = 80;
-        this.mana = 0;
+        this.mana = 1;
+        this.deck = new Deck();
+        this.hand = new Hand();
+    }
+
+    public Player(String name){
+        this.name = name;
+        this.healthPoints = 80;
+        this.mana = 1;
         this.deck = new Deck();
         this.hand = new Hand();
     }

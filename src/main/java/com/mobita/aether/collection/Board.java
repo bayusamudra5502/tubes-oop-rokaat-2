@@ -12,22 +12,21 @@ public class Board implements ICardCollection{
         cardList = new HashMap<>();
     }
 
-    public Board insert(String slot, Card item) {
+    public void insert(String slot, Card item) {
         cardList.put(slot, item);
-        return this;
     }
 
     public Card get(String slot){
         return cardList.get(slot);
     }
 
-    public Board delete(String slot){
-        cardList.remove(slot);
-        return this;
-    }
-
-    public Board addEffect(){
-        // TODO: add effect to all mobs
-        return this;
-    }
+//    public Board delete(String slot){
+//        cardList.remove(slot);
+//        return this;
+//    }
+//
+//    public Board addEffect(){
+//        // TODO: add effect to all mobs
+//        return this;
+//    }
 }

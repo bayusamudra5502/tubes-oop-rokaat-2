@@ -6,24 +6,22 @@ public class Deck implements ICardCollection{
     int remainingCard;
     int maxCard;
 
-    @Override
-    public Board insert(String slot, Card item) {
-        return null;
+
+    public void insert(String slot, Card item) {
     }
 
-    @Override
+
     public Card get(String slot) {
         return null;
     }
 
-    @Override
-    public Board delete(String slot) {
-        return null;
-    }
 
-    @Override
-    public Board addEffect() {
-        return null;
-    }
+//    public Board delete(String slot) {
+//        return null;
+//    }
+//
+//    public Board addEffect() {
+//        return null;
+//    }
 
 }

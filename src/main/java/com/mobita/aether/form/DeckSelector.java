@@ -1,5 +1,8 @@
 package com.mobita.aether.form;
 
+import com.mobita.aether.model.Card;
+import com.mobita.aether.model.Character;
+import com.mobita.aether.model.Type;
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -8,6 +11,12 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
+
+import java.io.Console;
+import java.lang.annotation.ElementType;
+import java.lang.reflect.Field;
+import java.util.HashMap;
+import java.util.Map;
 
 public class DeckSelector {
     public AnchorPane card1;
@@ -29,42 +38,45 @@ public class DeckSelector {
     public Text card3_attack;
     public ImageView card3_img;
 
-    @FXML
-    public void onCard1Clicked(MouseEvent mouseEvent){
-        card1_img.setImage(new Image("/com/mobita/aether/card/image/character/Villager.png"));
+    private Map<String, Character> dataKartu;
+
+    public DeckSelector(){
+        super();
+        dataKartu = new HashMap<>();
+        dataKartu.put("card1", new Character("Zombi", "Ini adalah zombie", Type.OVERWORLD));
+        dataKartu.put("card2", new Character("Ghast", "Ini adalah Ghast", Type.OVERWORLD));
+        dataKartu.put("card3", new Character("Kuda", "Ini adalah Kuda", Type.OVERWORLD));
     }
 
     @FXML
-    public void onCard2Clicked(MouseEvent mouseEvent) {
-        card2_img.setImage(new Image("/com/mobita/aether/card/image/character/Villager.png"));
+    public void onCardClicked(MouseEvent mouseEvent) throws NoSuchFieldException, IllegalAccessException {
+        Image img = new Image("/com/mobita/aether/card/image/character/Villager.png");
+        AnchorPane src = (AnchorPane) mouseEvent.getSource();
+
+        Field f = getClass().getDeclaredField(src.getId()+"_img");
+        ImageView iv = (ImageView) f.get(this);
+        iv.setImage(img);
+
+        Character ch = dataKartu.get(src.getId());
+        System.out.println(ch.toString());
     }
 
-    @FXML
-    public void onCard3Clicked(MouseEvent mouseEvent) {
-        card3_img.setImage(new Image("/com/mobita/aether/card/image/character/Villager.png"));
+    public void onCardHoverIn(MouseEvent mouseEvent) throws NoSuchFieldException, IllegalAccessException {
+        AnchorPane ap = (AnchorPane) mouseEvent.getSource();
+
+        Field f = getClass().getDeclaredField(ap.getId()+"_rectangle");
+        Rectangle r = (Rectangle) f.get(this);
+
+        r.setFill(Color.web("#60648F"));
     }
 
-    public void onCard1HoverIn(MouseEvent mouseEvent) {
-        card1_rectangle.setFill(Color.web("#60648F"));
+    public void onCardHoverOut(MouseEvent mouseEvent) throws NoSuchFieldException, IllegalAccessException {
+        AnchorPane ap = (AnchorPane) mouseEvent.getSource();
+
+        Field f = getClass().getDeclaredField(ap.getId()+"_rectangle");
+        Rectangle r = (Rectangle) f.get(this);
+
+        r.setFill(Color.web("#3D405B"));
     }
 
-    public void onCard1HoverOut(MouseEvent mouseEvent) {
-        card1_rectangle.setFill(Color.web("#3D405B"));
-    }
-
-    public void onCard2HoverIn(MouseEvent mouseEvent) {
-        card2_rectangle.setFill(Color.web("#60648F"));
-    }
-
-    public void onCard2HoverOut(MouseEvent mouseEvent) {
-        card2_rectangle.setFill(Color.web("#3D405B"));
-    }
-
-    public void onCard3HoverIn(MouseEvent mouseEvent) {
-        card3_rectangle.setFill(Color.web("#60648F"));
-    }
-
-    public void onCard3HoverOut(MouseEvent mouseEvent) {
-        card3_rectangle.setFill(Color.web("#3D405B"));
-    }
 }

@@ -33,7 +33,7 @@
       </AnchorPane>
       <AnchorPane layoutX="25.0" layoutY="199.0" onMouseClicked="#onClickedPlayer1" onMouseEntered="#inHoveredPlayer1" onMouseExited="#outHoveredPlayer1" prefHeight="115.0" prefWidth="115.0">
          <children>
-            <ImageView fx:id="player_1_head_img" fitHeight="115.0" fitWidth="115.0">
+            <ImageView id="player1" fx:id="player_1_head_img" fitHeight="115.0" fitWidth="115.0">
                <image>
                   <Image url="@../card/image/player/alex.png" />
                </image>
@@ -448,7 +448,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </AnchorPane>
-      <AnchorPane layoutX="481.0" layoutY="238.0" onMouseClicked="#onClickedCard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="169.0" prefWidth="137.0">
+      <AnchorPane id="player1_deck1" fx:id="player1_deck1" layoutX="481.0" layoutY="238.0" onMouseClicked="#onClickedCard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="169.0" prefWidth="137.0">
          <children>
             <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#7eaa9f" height="169.0" stroke="TRANSPARENT" strokeType="INSIDE" width="137.0" />
             <AnchorPane prefHeight="169.0" prefWidth="137.0">

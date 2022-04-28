@@ -35,18 +35,17 @@ public class DeckSelector {
 
     @FXML
     public void onCard1Clicked(MouseEvent mouseEvent){
-        Image img = new Image("@../card/image/character/Villager.png");
-        card1_img.setImage(img);
+        card1_img.setImage(new Image("/com/mobita/aether/card/image/character/Villager.png"));
     }
 
     @FXML
     public void onCard2Clicked(MouseEvent mouseEvent) {
-        card2_img.setImage(new Image("@../card/image/character/Villager.png"));
+        card2_img.setImage(new Image("/com/mobita/aether/card/image/character/Villager.png"));
     }
 
     @FXML
     public void onCard3Clicked(MouseEvent mouseEvent) {
-        card3_img.setImage(new Image("@../card/image/character/Villager.png"));
+        card3_img.setImage(new Image("/com/mobita/aether/card/image/character/Villager.png"));
     }
 
     public void onCard1HoverIn(MouseEvent mouseEvent) {

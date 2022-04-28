@@ -14,8 +14,8 @@
 
 <Pane maxHeight="760.0" maxWidth="1280.0" minHeight="760.0" minWidth="1280.0" prefHeight="760.0" prefWidth="1280.0" scaleShape="false" style="-fx-background-color: #F6EBDA;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ProgressBar layoutX="38.0" layoutY="36.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="500.0" progress="0.59" style="-fx-accent: #E07A5F; -fx-background-radius: 0; -fx-background-insets: 0;" />
-      <ProgressBar layoutX="742.0" layoutY="36.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" prefWidth="500.0" progress="0.59" style="-fx-accent: #E07A5F;" />
+      <ProgressBar fx:id="player_1_healthbar" layoutX="38.0" layoutY="36.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="500.0" progress="0.59" style="-fx-accent: #E07A5F; -fx-background-radius: 0; -fx-background-insets: 0;" />
+      <ProgressBar fx:id="player_2_healthbar" layoutX="742.0" layoutY="36.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" prefWidth="500.0" progress="0.59" style="-fx-accent: #E07A5F;" />
       <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#3d405b" height="78.0" layoutX="548.0" layoutY="17.0" stroke="BLACK" strokeType="INSIDE" width="184.0" />
       <AnchorPane layoutX="1140.0" layoutY="205.0" prefHeight="115.0" prefWidth="115.0">
          <children>
@@ -468,25 +468,24 @@
                <children>
                   <HBox alignment="CENTER" layoutX="12.0" layoutY="25.0" prefHeight="85.0" prefWidth="85.0">
                      <children>
-                        <ImageView fitHeight="85.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="image_hand_1" fitHeight="85.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../card/image/spell/swap/Morning's%20Blessing.png" />
                            </image>
                         </ImageView>
                      </children></HBox>
-                  <Label alignment="TOP_CENTER" layoutY="118.0" prefHeight="18.0" prefWidth="104.0" text="MANA: 10" textFill="WHITE">
+                  <Label fx:id="mana_hand_1" alignment="TOP_CENTER" layoutY="118.0" prefHeight="18.0" prefWidth="104.0" text="MANA: 10" textFill="WHITE">
                      <font>
                         <Font name="Segoe UI Bold" size="14.0" />
                      </font>
                   </Label>
-                  <Label alignment="TOP_CENTER" layoutX="-1.0" layoutY="135.0" prefHeight="18.0" prefWidth="110.0" text="ATK +10/HP -10" textFill="WHITE">
+                  <Label fx:id="description_hand_1" alignment="TOP_CENTER" layoutX="-1.0" layoutY="135.0" prefHeight="18.0" prefWidth="110.0" text="ATK +10/HP -10" textFill="WHITE">
                      <font>
                         <Font name="Segoe UI" size="12.0" />
                      </font>
                   </Label>
                   <AnchorPane layoutX="72.0" layoutY="5.0" prefHeight="16.0" prefWidth="15.0" />
-                  <AnchorPane layoutX="82.0" layoutY="15.0" prefHeight="16.0" prefWidth="15.0" />
-                  <Label layoutX="93.0" layoutY="4.0" prefHeight="12.0" prefWidth="11.0" text="X" textFill="WHITE">
+                  <Label fx:id="delete_button_hand_1" layoutX="93.0" layoutY="4.0" prefHeight="12.0" prefWidth="11.0" text="X" textFill="WHITE">
                      <font>
                         <Font name="Gill Sans MT Bold" size="13.0" />
                      </font>
@@ -502,7 +501,7 @@
                <children>
                   <HBox alignment="CENTER" prefHeight="175.0" prefWidth="175.0">
                      <children>
-                        <ImageView fitHeight="175.0" fitWidth="175.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="image_hovered_card" fitHeight="175.0" fitWidth="175.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../card/image/spell/swap/Swab%20Test.png" />
                            </image>
@@ -517,7 +516,7 @@
             <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#c5dcd6" height="176.0" stroke="TRANSPARENT" strokeMiterLimit="0.0" strokeType="INSIDE" width="194.0" />
             <AnchorPane layoutX="19.0" layoutY="12.0" prefHeight="150.0" prefWidth="160.0">
                <children>
-                  <TextFlow prefHeight="150.0" prefWidth="157.0">
+                  <TextFlow fx:id="hovered_card_info" prefHeight="150.0" prefWidth="157.0">
                      <children>
                         <Label prefHeight="39.0" prefWidth="160.0" text="Zombie Village">
                            <font>
@@ -560,7 +559,7 @@
             <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#c5dcd6" height="177.0" stroke="TRANSPARENT" strokeMiterLimit="0.0" strokeType="INSIDE" width="228.0" />
             <AnchorPane layoutX="6.0" prefHeight="170.0" prefWidth="201.0">
                <children>
-                  <Label layoutX="6.0" prefHeight="170.0" prefWidth="202.0" style="-fx-wrap-text: true;" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat consequat, pretium viverra nec. Dui sed interdum urna, nascetur non pulvinar est. Non nisl imperdiet amet, velit consequat a platea.">
+                  <Label fx:id="hovered_card_description" layoutX="6.0" prefHeight="170.0" prefWidth="202.0" style="-fx-wrap-text: true;" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat consequat, pretium viverra nec. Dui sed interdum urna, nascetur non pulvinar est. Non nisl imperdiet amet, velit consequat a platea.">
                      <font>
                         <Font name="System Italic" size="12.0" />
                      </font>
@@ -660,26 +659,26 @@
                <children>
                   <HBox alignment="CENTER" layoutX="12.0" layoutY="25.0" prefHeight="85.0" prefWidth="85.0">
                      <children>
-                        <ImageView fitHeight="85.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="image_hand_5" fitHeight="85.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../card/image/spell/swap/Morning's%20Blessing.png" />
                            </image>
                         </ImageView>
                      </children>
                   </HBox>
-                  <Label alignment="TOP_CENTER" layoutY="118.0" prefHeight="18.0" prefWidth="104.0" text="MANA: 10" textFill="WHITE">
+                  <Label fx:id="mana_hand_5" alignment="TOP_CENTER" layoutY="118.0" prefHeight="18.0" prefWidth="104.0" text="MANA: 10" textFill="WHITE">
                      <font>
                         <Font name="Segoe UI Bold" size="14.0" />
                      </font>
                   </Label>
-                  <Label alignment="TOP_CENTER" layoutX="-1.0" layoutY="135.0" prefHeight="18.0" prefWidth="110.0" text="ATK +10/HP -10" textFill="WHITE">
+                  <Label fx:id="description_hand_5" alignment="TOP_CENTER" layoutX="-1.0" layoutY="135.0" prefHeight="18.0" prefWidth="110.0" text="ATK +10/HP -10" textFill="WHITE">
                      <font>
                         <Font name="Segoe UI" size="12.0" />
                      </font>
                   </Label>
                   <AnchorPane layoutX="72.0" layoutY="5.0" prefHeight="16.0" prefWidth="15.0" />
                   <AnchorPane layoutX="82.0" layoutY="15.0" prefHeight="16.0" prefWidth="15.0" />
-                  <Label layoutX="93.0" layoutY="4.0" prefHeight="12.0" prefWidth="11.0" text="X" textFill="WHITE">
+                  <Label fx:id="delete_button_hand_5" layoutX="93.0" layoutY="4.0" prefHeight="12.0" prefWidth="11.0" text="X" textFill="WHITE">
                      <font>
                         <Font name="Gill Sans MT Bold" size="13.0" />
                      </font>
@@ -695,26 +694,25 @@
                <children>
                   <HBox alignment="CENTER" layoutX="12.0" layoutY="25.0" prefHeight="85.0" prefWidth="85.0">
                      <children>
-                        <ImageView fitHeight="85.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="image_hand_4" fitHeight="85.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../card/image/spell/swap/Morning's%20Blessing.png" />
                            </image>
                         </ImageView>
                      </children>
                   </HBox>
-                  <Label alignment="TOP_CENTER" layoutY="118.0" prefHeight="18.0" prefWidth="104.0" text="MANA: 10" textFill="WHITE">
+                  <Label fx:id="mana_hand_4" alignment="TOP_CENTER" layoutY="118.0" prefHeight="18.0" prefWidth="104.0" text="MANA: 10" textFill="WHITE">
                      <font>
                         <Font name="Segoe UI Bold" size="14.0" />
                      </font>
                   </Label>
-                  <Label alignment="TOP_CENTER" layoutX="-1.0" layoutY="135.0" prefHeight="18.0" prefWidth="110.0" text="ATK +10/HP -10" textFill="WHITE">
+                  <Label fx:id="description_hand_4" alignment="TOP_CENTER" layoutX="-1.0" layoutY="135.0" prefHeight="18.0" prefWidth="110.0" text="ATK +10/HP -10" textFill="WHITE">
                      <font>
                         <Font name="Segoe UI" size="12.0" />
                      </font>
                   </Label>
                   <AnchorPane layoutX="72.0" layoutY="5.0" prefHeight="16.0" prefWidth="15.0" />
-                  <AnchorPane layoutX="82.0" layoutY="15.0" prefHeight="16.0" prefWidth="15.0" />
-                  <Label layoutX="93.0" layoutY="4.0" prefHeight="12.0" prefWidth="11.0" text="X" textFill="WHITE">
+                  <Label fx:id="delete_button_hand_4" layoutX="93.0" layoutY="4.0" prefHeight="12.0" prefWidth="11.0" text="X" textFill="WHITE">
                      <font>
                         <Font name="Gill Sans MT Bold" size="13.0" />
                      </font>
@@ -730,26 +728,25 @@
                <children>
                   <HBox alignment="CENTER" layoutX="12.0" layoutY="25.0" prefHeight="85.0" prefWidth="85.0">
                      <children>
-                        <ImageView fitHeight="85.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="image_hand_3" fitHeight="85.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../card/image/spell/swap/Morning's%20Blessing.png" />
                            </image>
                         </ImageView>
                      </children>
                   </HBox>
-                  <Label alignment="TOP_CENTER" layoutY="118.0" prefHeight="18.0" prefWidth="104.0" text="MANA: 10" textFill="WHITE">
+                  <Label fx:id="mana_hand_3" alignment="TOP_CENTER" layoutY="118.0" prefHeight="18.0" prefWidth="104.0" text="MANA: 10" textFill="WHITE">
                      <font>
                         <Font name="Segoe UI Bold" size="14.0" />
                      </font>
                   </Label>
-                  <Label alignment="TOP_CENTER" layoutX="-1.0" layoutY="135.0" prefHeight="18.0" prefWidth="110.0" text="ATK +10/HP -10" textFill="WHITE">
+                  <Label fx:id="description_hand_3" alignment="TOP_CENTER" layoutX="-1.0" layoutY="135.0" prefHeight="18.0" prefWidth="110.0" text="ATK +10/HP -10" textFill="WHITE">
                      <font>
                         <Font name="Segoe UI" size="12.0" />
                      </font>
                   </Label>
                   <AnchorPane layoutX="72.0" layoutY="5.0" prefHeight="16.0" prefWidth="15.0" />
-                  <AnchorPane layoutX="82.0" layoutY="15.0" prefHeight="16.0" prefWidth="15.0" />
-                  <Label layoutX="93.0" layoutY="4.0" prefHeight="12.0" prefWidth="11.0" text="X" textFill="WHITE">
+                  <Label fx:id="delete_button_hand_3" layoutX="93.0" layoutY="4.0" prefHeight="12.0" prefWidth="11.0" text="X" textFill="WHITE">
                      <font>
                         <Font name="Gill Sans MT Bold" size="13.0" />
                      </font>
@@ -765,26 +762,25 @@
                <children>
                   <HBox alignment="CENTER" layoutX="12.0" layoutY="25.0" prefHeight="85.0" prefWidth="85.0">
                      <children>
-                        <ImageView fitHeight="85.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="image_hand2" fitHeight="85.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../card/image/spell/swap/Morning's%20Blessing.png" />
                            </image>
                         </ImageView>
                      </children>
                   </HBox>
-                  <Label alignment="TOP_CENTER" layoutY="118.0" prefHeight="18.0" prefWidth="104.0" text="MANA: 10" textFill="WHITE">
+                  <Label fx:id="mana_hand_2" alignment="TOP_CENTER" layoutY="118.0" prefHeight="18.0" prefWidth="104.0" text="MANA: 10" textFill="WHITE">
                      <font>
                         <Font name="Segoe UI Bold" size="14.0" />
                      </font>
                   </Label>
-                  <Label alignment="TOP_CENTER" layoutX="-1.0" layoutY="135.0" prefHeight="18.0" prefWidth="110.0" text="ATK +10/HP -10" textFill="WHITE">
+                  <Label fx:id="description_hand_2" alignment="TOP_CENTER" layoutX="-1.0" layoutY="135.0" prefHeight="18.0" prefWidth="110.0" text="ATK +10/HP -10" textFill="WHITE">
                      <font>
                         <Font name="Segoe UI" size="12.0" />
                      </font>
                   </Label>
                   <AnchorPane layoutX="72.0" layoutY="5.0" prefHeight="16.0" prefWidth="15.0" />
-                  <AnchorPane layoutX="82.0" layoutY="15.0" prefHeight="16.0" prefWidth="15.0" />
-                  <Label layoutX="93.0" layoutY="4.0" prefHeight="12.0" prefWidth="11.0" text="X" textFill="WHITE">
+                  <Label fx:id="delete_button_hand_2" layoutX="93.0" layoutY="4.0" prefHeight="12.0" prefWidth="11.0" text="X" textFill="WHITE">
                      <font>
                         <Font name="Gill Sans MT Bold" size="13.0" />
                      </font>

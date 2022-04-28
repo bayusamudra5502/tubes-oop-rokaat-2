@@ -1,22 +1,20 @@
 package com.mobita.aether.model;
 
+import com.mobita.aether.enums.CardType;
 import com.mobita.aether.enums.SpellType;
 
-public abstract class Spell {
-    private String name;
-    private String description;
+public abstract class Spell extends Card {
     private SpellType type;
     private int mana;
 
-    public Spell(String name, String description, SpellType type, int mana) {
-        this.name = name;
-        this.description = description;
+    public Spell(String name, String description, SpellType type, int mana, String image) {
+        super(name, description, CardType.POTION, image);
         this.type = type;
         this.mana = mana;
     }
 
     public String getName() {
-        return name;
+        return cardName;
     }
 
     public String getDescription() {
@@ -32,7 +30,7 @@ public abstract class Spell {
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.cardName = name;
     }
 
     public void setDescription(String description) {

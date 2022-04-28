@@ -43,7 +43,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </AnchorPane>
-      <AnchorPane layoutX="162.0" layoutY="144.0" onMouseClicked="#onClickedCard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="169.0" prefWidth="137.0">
+      <AnchorPane id="player1_board1" fx:id="player1_board1" layoutX="162.0" layoutY="144.0" onMouseClicked="#onClickedCard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="169.0" prefWidth="137.0">
          <children>
             <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#7eaa9f" height="169.0" stroke="TRANSPARENT" strokeType="INSIDE" width="137.0" />
             <AnchorPane prefHeight="169.0" prefWidth="137.0">
@@ -448,7 +448,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </AnchorPane>
-      <AnchorPane id="player1_deck1" fx:id="player1_deck1" layoutX="481.0" layoutY="238.0" onMouseClicked="#onClickedCard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="169.0" prefWidth="137.0">
+      <AnchorPane layoutX="481.0" layoutY="238.0" onMouseClicked="#onClickedCard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="169.0" prefWidth="137.0">
          <children>
             <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#7eaa9f" height="169.0" stroke="TRANSPARENT" strokeType="INSIDE" width="137.0" />
             <AnchorPane prefHeight="169.0" prefWidth="137.0">

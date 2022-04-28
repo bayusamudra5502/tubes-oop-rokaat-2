@@ -8,8 +8,8 @@ public class End extends Mobs{
     private int healthUp;
     private int mana;
     
-    public End(String name, String description, Type type, int baseAttack, int baseHealth, int level, int exp, int attackUp, int healthUp, int mana) {
-        super(name, description, Type.END, level);
+    public End(String name, String description, int baseAttack, int baseHealth, int level, int exp, int attackUp, int healthUp, int mana, String image) {
+        super(name, description, Type.END, level, image);
         this.baseAttack = baseAttack;
         this.baseHealth = baseHealth;
         this.level = level;
@@ -19,14 +19,14 @@ public class End extends Mobs{
         this.mana = mana;
     }
     public void printInfo() {
-        System.out.println("Nama : "+ this.name);
+        System.out.println("Nama : "+ this.cardName);
         System.out.println("Deskripsi : " + this.description);
         System.out.println("Tipe : " + Type.END);
         System.out.println("Attack : " + this.baseHealth);
         System.out.println("Health : " + this.baseHealth);
     }
     public void levelUp() {
-        this.level = Math.round(this.exp/2);
+        this.level = (int) Math.round(this.exp/2.0);
         this.baseAttack += this.getAtkUp();
         this.baseHealth += this.getHealthUp();
     }

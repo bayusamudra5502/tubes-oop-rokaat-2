@@ -1,7 +1,5 @@
 package com.mobita.aether.collection;
 
-import com.mobita.aether.collection.Board;
-import com.mobita.aether.collection.ICardCollection;
 import com.mobita.aether.model.Card;
 
 import java.util.HashMap;
@@ -14,8 +12,9 @@ public class Hand implements ICardCollection{
         this.inHand = new HashMap<>();
     }
 
-    public void insert(String slot, Card item) {
+    public Board insert(String slot, Card item) {
         inHand.put(slot,item);
+        return null;
     }
 
     public Card get(String slot) {

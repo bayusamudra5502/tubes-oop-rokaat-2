@@ -6,8 +6,8 @@ public class Deck implements ICardCollection{
     int remainingCard;
     int maxCard;
 
-
-    public void insert(String slot, Card item) {
+    public Board insert(String slot, Card item) {
+        return null;
     }
 
 

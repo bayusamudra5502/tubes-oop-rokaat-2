@@ -33,7 +33,7 @@ public class Player {
     }
 
     public String getPathProfile(){
-        return this.getPathProfile();
+        return this.pathProfile;
     }
 
     public Card getNewCard(String slot) {

@@ -8,4 +8,6 @@ module com.mobita.aether {
     exports com.mobita.aether.form;
     exports com.mobita.aether.enums;
     opens com.mobita.aether.enums to javafx.fxml;
+    exports com.mobita.aether.form.component;
+    opens com.mobita.aether.form.component to javafx.fxml;
 }

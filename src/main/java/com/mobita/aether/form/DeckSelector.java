@@ -78,5 +78,4 @@ public class DeckSelector {
 
         r.setFill(Color.web("#3D405B"));
     }
-
 }

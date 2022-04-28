@@ -1,14 +1,13 @@
 package com.mobita.aether.model;
 
-public abstract class Mobs {
-    protected String name;
-    protected String description;
+import com.mobita.aether.enums.CardType;
+
+public abstract class Mobs extends Card {
     protected Type type;
     protected int level;
 
-    public Mobs(String name, String description, Type type, int level) {
-        this.name = name;
-        this.description = description;
+    public Mobs(String name, String description, Type type, int level, String image) {
+        super(name, description, CardType.MOBS, image);
         this.type = type;
         this.level = level;
     }
@@ -20,7 +19,7 @@ public abstract class Mobs {
     abstract int getAtkUp();
     abstract int getHealthUp();
     public String getName() {
-        return this.name;
+        return this.cardName;
     }
     public Type getType() {
         return this.type;

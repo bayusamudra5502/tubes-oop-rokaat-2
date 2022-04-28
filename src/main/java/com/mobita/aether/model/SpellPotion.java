@@ -7,8 +7,8 @@ public class SpellPotion extends Spell {
     private int health;
     private int duration;
 
-    public SpellPotion(String name, String description, int mana, int attack, int health, int duration) {
-        super(name, description, SpellType.POTION, mana);
+    public SpellPotion(String name, String description, int mana, int attack, int health, int duration, String image) {
+        super(name, description, SpellType.POTION, mana, image);
         this.attack = attack;
         this.health = health;
         this.duration = duration;

@@ -12,8 +12,9 @@ public class Board implements ICardCollection{
         cardList = new HashMap<>();
     }
 
-    public void insert(String slot, Card item) {
+    public Board insert(String slot, Card item) {
         cardList.put(slot, item);
+        return null;
     }
 
     public Card get(String slot){

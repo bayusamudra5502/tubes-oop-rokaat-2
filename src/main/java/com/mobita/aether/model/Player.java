@@ -1,5 +1,6 @@
 package com.mobita.aether.model;
 
+import com.mobita.aether.collection.Board;
 import com.mobita.aether.collection.Deck;
 import com.mobita.aether.collection.Hand;
 
@@ -31,13 +32,17 @@ public class Player {
         return this.deck.get(slot);
     }
 
-    public String seeDescriptionHand() {
-        return "Lorem Ipsum";
-        // belum selesai
+    public String getDescriptionInHand(String slot) {
+        return this.hand.get(slot).getDescription();
     }
 
-    public void handToBoard(String slotHand, String slotBoard, Card card) {
-        // belum selesai
+    public String getDescriptionInDeck(String slot) {
+        return this.deck.get(slot).getDescription();
+    }
+
+    public Board handToBoard(String slotHand, String slotBoard, Card card, Board board) {
+        Card movingCard = this.hand.get(slotHand);
+        return board.insert(slotBoard,movingCard);
     }
 
     public void attackEnemy() {
@@ -45,6 +50,7 @@ public class Player {
     }
 
     public void nextPhase() {
+        //
 
     }
 }

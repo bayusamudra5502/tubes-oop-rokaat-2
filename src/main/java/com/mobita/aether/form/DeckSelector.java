@@ -6,8 +6,12 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
+
+import java.net.URISyntaxException;
 
 public class DeckSelector {
     public AnchorPane card1;
@@ -46,24 +50,26 @@ public class DeckSelector {
     }
 
     public void onCard1HoverIn(MouseEvent mouseEvent) {
-
+        card1_rectangle.setFill(Color.web("#60648F"));
     }
 
     public void onCard1HoverOut(MouseEvent mouseEvent) {
-
+        card1_rectangle.setFill(Color.web("#3D405B"));
     }
 
     public void onCard2HoverIn(MouseEvent mouseEvent) {
+        card2_rectangle.setFill(Color.web("#60648F"));
     }
 
     public void onCard2HoverOut(MouseEvent mouseEvent) {
-
+        card2_rectangle.setFill(Color.web("#3D405B"));
     }
 
     public void onCard3HoverIn(MouseEvent mouseEvent) {
+        card3_rectangle.setFill(Color.web("#60648F"));
     }
 
     public void onCard3HoverOut(MouseEvent mouseEvent) {
-
+        card3_rectangle.setFill(Color.web("#3D405B"));
     }
 }

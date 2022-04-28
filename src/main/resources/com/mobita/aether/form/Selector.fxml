@@ -59,7 +59,7 @@
          text="Please select your next card"/>
    <AnchorPane fx:id="card1" layoutX="51.0" layoutY="157.0" onMouseClicked="#onCard1Clicked"
                onMouseEntered="#onCard1HoverIn"
-               onMouseExited="#onCard2HoverOut"
+               onMouseExited="#onCard1HoverOut"
                prefHeight="218.0" prefWidth="141.0">
       <cursor>
          <Cursor fx:constant="HAND"/>
@@ -143,7 +143,7 @@
    </AnchorPane>
    <AnchorPane fx:id="card3" layoutX="467.0" layoutY="156.0" onMouseClicked="#onCard3Clicked"
                onMouseEntered="#onCard3HoverIn"
-               onMouseExited="#onCard2HoverOut"
+               onMouseExited="#onCard3HoverOut"
                prefHeight="218.0" prefWidth="141.0">
       <cursor>
          <Cursor fx:constant="HAND"/>

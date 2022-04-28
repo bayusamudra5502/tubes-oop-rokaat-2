@@ -3,14 +3,13 @@ package com.mobita.aether.model;
 public class Nether extends Mobs{
     private int baseAttack;
     private int baseHealth;
-    private int level;
     private int exp;
     private int attackUp;
     private int healthUp;
     private int mana;
 
     public Nether(String name, String description, Type type, int baseAttack, int baseHealth, int level, int exp, int attackUp, int healthUp, int mana) {
-        super(name, description, Type.NETHER);
+        super(name, description, Type.NETHER, level);
         this.baseAttack = baseAttack;
         this.baseHealth = baseHealth;
         this.level = level;

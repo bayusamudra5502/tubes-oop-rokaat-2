@@ -4,11 +4,13 @@ public abstract class Mobs {
     protected String name;
     protected String description;
     protected Type type;
+    protected int level;
 
-    public Mobs(String name, String description, Type type) {
+    public Mobs(String name, String description, Type type, int level) {
         this.name = name;
         this.description = description;
         this.type = type;
+        this.level = level;
     }
 
     abstract void printInfo();
@@ -30,4 +32,9 @@ public abstract class Mobs {
     abstract int getExp();
     abstract int getAtk();
     abstract int getHealth();
+
+    @Override
+    public String toString() {
+        return "Level: " + this.level;
+    }
 }

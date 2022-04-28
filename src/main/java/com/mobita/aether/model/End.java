@@ -1,6 +1,6 @@
 package com.mobita.aether.model;
 
-public class Overworld extends Mobs{
+public class End extends Mobs{
     private int baseAttack;
     private int baseHealth;
     private int level;
@@ -9,8 +9,8 @@ public class Overworld extends Mobs{
     private int healthUp;
     private int mana;
     
-    public Overworld(String name, String description, Type type, int baseAttack, int baseHealth, int level, int exp, int attackUp, int healthUp, int mana) {
-        super(name, description, Type.OVERWORLD);
+    public End(String name, String description, Type type, int baseAttack, int baseHealth, int level, int exp, int attackUp, int healthUp, int mana) {
+        super(name, description, Type.END);
         this.baseAttack = baseAttack;
         this.baseHealth = baseHealth;
         this.level = level;
@@ -22,7 +22,7 @@ public class Overworld extends Mobs{
     public void printInfo() {
         System.out.println("Nama : "+ this.name);
         System.out.println("Deskripsi : " + this.description);
-        System.out.println("Tipe : " + Type.OVERWORLD);
+        System.out.println("Tipe : " + Type.END);
         System.out.println("Attack : " + this.baseHealth);
         System.out.println("Health : " + this.baseHealth);
     }
@@ -38,10 +38,10 @@ public class Overworld extends Mobs{
         this.exp += this.mana;
     }
     public void Attack(Type type2, int health2) {
-        if (type2 == Type.END) {
+        if (type2 == Type.NETHER) {
             health2 -= 2*this.getAtk();
         }
-        else if (type2 == Type.NETHER) {
+        else if (type2 == Type.OVERWORLD) {
             health2 -= 0.5*this.getAtk();
         }
     }

@@ -4,32 +4,30 @@ public abstract class Mobs {
     protected String name;
     protected String description;
     protected Type type;
-    protected int baseAttack;
-    protected int baseHealth;
-    protected int level;
-    protected int exp;
+
+    public Mobs(String name, String description, Type type) {
+        this.name = name;
+        this.description = description;
+        this.type = type;
+    }
 
     abstract void printInfo();
     abstract void levelUp();
-    abstract void addExp();
-    abstract void addAtk();
-    abstract void addHealth();
+    abstract void addExp(int level2, int health2);
+    abstract void Attack(Type type2, int health2);
+    abstract int getAtkUp();
+    abstract int getHealthUp();
     public String getName() {
         return this.name;
     }
     public Type getType() {
         return this.type;
     }
-    public int getLevel() {
-        return this.level;
+    public String getDesc() {
+        return this.description;
     }
-    public int getExp() {
-        return this.exp;
-    }
-    public int getAtk() {
-        return this.baseAttack;
-    }
-    public int getHealth() {
-        return this.baseHealth;
-    }
+    abstract int getLevel();
+    abstract int getExp();
+    abstract int getAtk();
+    abstract int getHealth();
 }

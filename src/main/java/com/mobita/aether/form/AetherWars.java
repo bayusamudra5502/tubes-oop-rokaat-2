@@ -7,6 +7,7 @@ import com.mobita.aether.message.IMessage;
 import com.mobita.aether.message.IWatcher;
 import com.mobita.aether.message.type.IdMessage;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.image.ImageView;
@@ -16,8 +17,10 @@ import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
 import java.lang.reflect.Field;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class AetherWars {
+public class AetherWars implements Initializable {
     public AnchorPane player1_card1;
     public AnchorPane player1_card2;
     public AnchorPane player1_card3;
@@ -33,9 +36,21 @@ public class AetherWars {
     public ImageView player_1_head_img;
     public Label hovered_card_description;
     public Circle phase_1_circle;
+    public Label turn_number;
+    public Label phase_state;
+
 
     public AetherWars() {
         registerWatcher();
+    }
+
+    public void render() {
+        turn_number.setText("Turn " + StateController.getGamestate().getTurn().toString());
+        switch (StateController.getGamestate().getGamePhase()) {
+            case Draw -> {
+
+            }
+        }
     }
 
     public void registerWatcher() {
@@ -163,5 +178,10 @@ public class AetherWars {
 
     public void inHoveredNextButton(MouseEvent mouseEvent) {
 
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        render();
     }
 }

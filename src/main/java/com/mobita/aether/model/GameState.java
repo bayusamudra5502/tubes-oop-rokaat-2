@@ -3,9 +3,9 @@ package com.mobita.aether.model;
 import com.mobita.aether.enums.Phase;
 
 public class GameState {
-    private Phase gamePhase;
-    private Integer mana;
-    private Integer turn;
+    private Phase gamePhase = Phase.Draw;
+    private Integer mana = 0;
+    private Integer turn = 1;
 
     public Integer getTurn() {
         return turn;

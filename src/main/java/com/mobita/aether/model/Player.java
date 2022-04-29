@@ -5,22 +5,22 @@ import com.mobita.aether.collection.Deck;
 import com.mobita.aether.collection.Hand;
 
 public class Player {
+    private final Hand hand;
     private Deck deck;
-    private Hand hand;
     private Integer healthPoints = 80;
     private Integer mana;
 
 
-
-    public Player(){
+    public Player() {
         this.deck = null;
         this.hand = new Hand();
     }
 
-    public void insertDeck(Deck deck){
+    public void insertDeck(Deck deck) {
         this.deck = deck;
         this.hand.initHand(deck);
     }
+
     public Integer getHealthPoints() {
         return healthPoints;
     }
@@ -57,7 +57,7 @@ public class Player {
 //        return this.deck.get(slot).getDescription();
 //    }
 
-    public Board handToBoard(String slotHand, String slotBoard, Card card, Board board) {
+    public Board handToBoard(String slotHand, String slotBoard, Board board) {
         Card movingCard = this.hand.get(slotHand);
         return board.insert(slotBoard, movingCard);
     }

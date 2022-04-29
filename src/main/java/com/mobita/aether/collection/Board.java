@@ -5,16 +5,16 @@ import com.mobita.aether.model.Card;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Board implements ICardCollection{
-    private Map<String, Card> cardList;
+public class Board implements ICardCollection {
+    private final Map<String, Card> cardList;
 
     public Board() {
         cardList = new HashMap<>();
-        for(int i=1; i<=5; i++){
+        for (int i = 1; i <= 5; i++) {
             cardList.put("player1_card" + i, null);
         }
 
-        for(int i=1; i<=5; i++){
+        for (int i = 1; i <= 5; i++) {
             cardList.put("player2_card" + i, null);
         }
     }
@@ -24,19 +24,15 @@ public class Board implements ICardCollection{
         return null;
     }
 
-    public Card get(String slot){
+    public Card get(String slot) {
         return cardList.get(slot);
     }
 
-    public void insertAll(ICardCollection other){
-
+    public Board delete(String slot) {
+        cardList.remove(slot);
+        return this;
     }
 
-//    public Board delete(String slot){
-//        cardList.remove(slot);
-//        return this;
-//    }
-//
 //    public Board addEffect(){
 //        // TODO: add effect to all mobs
 //        return this;

@@ -1,15 +1,21 @@
 package com.mobita.aether.form;
 
+import com.mobita.aether.collection.Board;
 import com.mobita.aether.controller.DeckController;
 import com.mobita.aether.controller.ObserverController;
 import com.mobita.aether.controller.StateController;
+import com.mobita.aether.enums.ActionType;
+import com.mobita.aether.enums.CardType;
 import com.mobita.aether.message.IMessage;
 import com.mobita.aether.message.IWatcher;
 import com.mobita.aether.message.type.IdMessage;
 import com.mobita.aether.model.Card;
 import com.mobita.aether.model.Mobs;
+import com.mobita.aether.model.Player;
+import com.mobita.aether.state.GameState;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
@@ -30,300 +36,203 @@ import java.util.ResourceBundle;
 import static com.mobita.aether.enums.Phase.*;
 
 public class AetherWars implements Initializable {
+    boolean lockNext = false;
     @FXML
     private Label attack_card_A1;
-
     @FXML
     private Label attack_card_A2;
-
     @FXML
     private Label attack_card_B1;
-
     @FXML
     private Label attack_card_B2;
-
     @FXML
     private Label attack_card_C1;
-
     @FXML
     private Label attack_card_C2;
-
     @FXML
     private Label attack_card_D1;
-
     @FXML
     private Label attack_card_D2;
-
     @FXML
     private Label attack_card_E1;
-
     @FXML
     private Label attack_card_E2;
-
     @FXML
     private AnchorPane deck_button;
-
     @FXML
     private Label deck_counter;
-
     @FXML
     private AnchorPane delete_button;
-
     @FXML
     private Label delete_button_hand_1;
-
     @FXML
     private Label delete_button_hand_2;
-
     @FXML
     private Label delete_button_hand_3;
-
     @FXML
     private Label delete_button_hand_4;
-
     @FXML
     private Label delete_button_hand_5;
-
     @FXML
     private Label description_hand_1;
-
     @FXML
     private Label description_hand_2;
-
     @FXML
     private Label description_hand_3;
-
     @FXML
     private Label description_hand_4;
-
     @FXML
     private Label description_hand_5;
-
     @FXML
     private AnchorPane hand_card1;
-
     @FXML
     private AnchorPane hand_card2;
-
     @FXML
     private AnchorPane hand_card3;
-
     @FXML
     private AnchorPane hand_card4;
-
     @FXML
     private AnchorPane hand_card5;
-
     @FXML
     private Label health_card_A1;
-
     @FXML
     private Label health_card_A2;
-
     @FXML
     private Label health_card_B1;
-
     @FXML
     private Label health_card_B2;
-
     @FXML
     private Label health_card_C1;
-
     @FXML
     private Label health_card_C2;
-
     @FXML
     private Label health_card_D1;
-
     @FXML
     private Label health_card_D2;
-
     @FXML
     private Label health_card_E1;
-
     @FXML
     private Label health_card_E2;
-
     @FXML
     private Label hovered_card_description;
-
     @FXML
     private TextFlow hovered_card_info;
-
     @FXML
     private ImageView image_card_A1;
-
     @FXML
     private ImageView image_card_A2;
-
     @FXML
     private ImageView image_card_B1;
-
     @FXML
     private ImageView image_card_B2;
-
     @FXML
     private ImageView image_card_C1;
-
     @FXML
     private ImageView image_card_C2;
-
     @FXML
     private ImageView image_card_D1;
-
     @FXML
     private ImageView image_card_D2;
-
     @FXML
     private ImageView image_card_E1;
-
     @FXML
     private ImageView image_card_E2;
-
     @FXML
     private ImageView image_hand_2;
-
     @FXML
     private ImageView image_hand_1;
-
     @FXML
     private ImageView image_hand_3;
-
     @FXML
     private ImageView image_hand_4;
-
     @FXML
     private ImageView image_hand_5;
-
     @FXML
     private ImageView image_hovered_card;
-
     @FXML
     private Label level_card_A1;
-
     @FXML
     private Label level_card_A2;
-
     @FXML
     private Label level_card_B1;
-
     @FXML
     private Label level_card_B2;
-
     @FXML
     private Label level_card_C1;
-
     @FXML
     private Label level_card_C2;
-
     @FXML
     private Label level_card_D1;
-
     @FXML
     private Label level_card_D2;
-
     @FXML
     private Label level_card_E1;
-
     @FXML
     private Label level_card_E2;
-
     @FXML
     private Label mana_hand_1;
-
     @FXML
     private Label mana_hand_2;
-
     @FXML
     private Label mana_hand_3;
-
     @FXML
     private Label mana_hand_4;
-
     @FXML
     private Label mana_hand_5;
-
     @FXML
     private AnchorPane next_button;
-
     @FXML
     private Circle phase_1_circle;
-
     @FXML
     private Circle phase_2_circle;
-
     @FXML
     private Circle phase_3_circle;
-
     @FXML
     private Circle phase_4_circle;
-
     @FXML
     private Label phase_description;
-
     @FXML
     private Label phase_state;
-
     @FXML
     private AnchorPane player1_card1;
-
     @FXML
     private AnchorPane player1_card2;
-
     @FXML
     private AnchorPane player1_card3;
-
     @FXML
     private AnchorPane player1_card4;
-
     @FXML
     private AnchorPane player1_card5;
-
     @FXML
     private AnchorPane player2_card1;
-
     @FXML
     private AnchorPane player2_card2;
-
     @FXML
     private AnchorPane player2_card3;
-
     @FXML
     private AnchorPane player2_card4;
-
     @FXML
     private AnchorPane player2_card5;
-
     @FXML
     private ImageView player_1_head_img;
-
     @FXML
     private Label player_1_health;
-
     @FXML
     private ProgressBar player_1_healthbar;
-
     @FXML
     private Label player_1_name;
-
     @FXML
     private Label player_2_health;
-
     @FXML
     private ProgressBar player_2_healthbar;
-
     @FXML
     private Label player_2_name;
-
     @FXML
     private Label player_mana;
-
     @FXML
     private AnchorPane trade_button;
-
     @FXML
     private Label turn_number;
-
 
     public AetherWars() {
         registerWatcher();
@@ -380,20 +289,50 @@ public class AetherWars implements Initializable {
                 phase_description.setText("Giliranmu berakhir");
             }
         }
+
+        redrawGame();
     }
 
     public void registerWatcher() {
         ObserverController.registerWatcher("board-click", new IWatcher<String>() {
             @Override
             public void notify(IMessage<String> message) {
-                hovered_card_description.setText("[BOARD] Id Kartu " + message.getMessage() + " terkena tekanan");
+                GameState gs = StateController.getGamestate();
+                Board b = StateController.getBoard();
+                Player p = StateController.getCurrentPlayer();
+
+                if (gs.getGamePhase() == Plan && gs.getAction() == ActionType.MoveToDeck) {
+                    Card tmp = p.getHand().get(gs.getFromID());
+
+                    if (b.get(message.getMessage()) == null && tmp.getCardType() == CardType.MOBS) {
+                        b.insert(message.getMessage(), tmp);
+                        p.getHand().delete(gs.getFromID());
+                    } else if (b.get(message.getMessage()) != null && tmp.getCardType() == CardType.POTION) {
+                        // TODO: Masukin spell
+                    } else {
+                        Alert a = new Alert(Alert.AlertType.WARNING);
+                        a.setTitle("Peringatan");
+                        a.setContentText("Board tidak kosong. Aksi dibatalkan.");
+                        a.show();
+                    }
+
+                    lockNext = false;
+                    gs.setAction(ActionType.None);
+                    render();
+                }
             }
         });
 
         ObserverController.registerWatcher("hand-click", new IWatcher<String>() {
             @Override
             public void notify(IMessage<String> message) {
-                hovered_card_description.setText("[HAND] Id Kartu " + message.getMessage() + " terkena tekanan");
+                GameState gs = StateController.getGamestate();
+
+                if (gs.getGamePhase() == Plan && gs.getAction() == ActionType.None) {
+                    gs.setAction(ActionType.MoveToDeck);
+                    gs.setFromID(message.getMessage());
+                    lockNext = true;
+                }
             }
         });
 
@@ -432,6 +371,7 @@ public class AetherWars implements Initializable {
             @Override
             public void notify(IMessage<Object> message) {
                 ObserverController.notifyEvent("reload-selector", null);
+                lockNext = true;
                 DeckController.showDeck();
             }
         });
@@ -441,7 +381,7 @@ public class AetherWars implements Initializable {
             public void notify(IMessage<Card> message) {
                 DeckController.closeDeck();
                 System.out.println(message.getMessage().getCardName());
-
+                lockNext = false;
             }
         });
     }
@@ -501,9 +441,17 @@ public class AetherWars implements Initializable {
 
     @FXML
     void onClickNextButton(MouseEvent event) {
+        if (lockNext) {
+            Alert a = new Alert(Alert.AlertType.INFORMATION);
+            a.setTitle("Pemberitahuan");
+            a.setContentText("Anda tidak bisa melanjutkan ke tahap selanjutnya sebelum proses pada tahap ini selesai");
+            a.show();
+            return;
+        }
         switch (StateController.getGamestate().getGamePhase()) {
             case Rest -> {
                 StateController.getGamestate().setGamePhase(Draw);
+                render();
                 ObserverController.notifyEvent("open-draw", null);
             }
             case Draw -> {
@@ -552,11 +500,6 @@ public class AetherWars implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         render();
-        ObserverController.notifyEvent("open-draw", null);
-
-
-        redrawGame();
-
     }
 
 
@@ -565,9 +508,9 @@ public class AetherWars implements Initializable {
             if (id.startsWith("player1_")) {
                 char convertedChar = (char) (suffix + 'A');
                 String img = "image_card_" + convertedChar + "1";
-                String atk = "attack_card_" + suffix + "1";
-                String hlth = "health_card_" + suffix + "1";
-                String lvl = "level_card_" + +suffix + "1";
+                String atk = "attack_card_" + convertedChar + "1";
+                String hlth = "health_card_" + convertedChar + "1";
+                String lvl = "level_card_" + convertedChar + "1";
                 Field fimg = getClass().getDeclaredField(img);
                 ImageView Image = (ImageView) fimg.get(this);
 
@@ -587,12 +530,12 @@ public class AetherWars implements Initializable {
                 Attack.setText(String.valueOf(attack));
                 Health.setText(String.valueOf(health));
                 Level.setText(level);
-            } else if (id.startsWith("player_2")) {
+            } else if (id.startsWith("player2_")) {
                 char convertedChar = (char) (suffix + 'A');
                 String img = "image_card_" + convertedChar + "2";
-                String atk = "attack_card_" + suffix + "2";
-                String hlth = "health_card_" + suffix + "2";
-                String lvl = "level_card_" + +suffix + "2";
+                String atk = "attack_card_" + convertedChar + "2";
+                String hlth = "health_card_" + convertedChar + "2";
+                String lvl = "level_card_" + convertedChar + "2";
                 Field fimg = getClass().getDeclaredField(img);
                 ImageView Image = (ImageView) fimg.get(this);
 

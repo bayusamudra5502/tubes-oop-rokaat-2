@@ -319,7 +319,7 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </AnchorPane>
-        <AnchorPane id="player2_card5" fx:id="player2_card4" layoutX="811.0" layoutY="323.0" onMouseClicked="#onClickedBoard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="169.0" prefWidth="137.0">
+        <AnchorPane id="player2_card4" fx:id="player2_card4" layoutX="811.0" layoutY="323.0" onMouseClicked="#onClickedBoard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="169.0" prefWidth="137.0">
             <children>
                 <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#95624c" height="169.0" stroke="TRANSPARENT" strokeType="INSIDE" width="137.0" />
                 <AnchorPane prefHeight="169.0" prefWidth="137.0">
@@ -365,7 +365,7 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </AnchorPane>
-        <AnchorPane id="player2_card4" fx:id="player2_card3" layoutX="971.0" layoutY="323.0" onMouseClicked="#onClickedBoard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="169.0" prefWidth="137.0">
+        <AnchorPane id="player2_card3" fx:id="player2_card3" layoutX="971.0" layoutY="323.0" onMouseClicked="#onClickedBoard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="169.0" prefWidth="137.0">
             <children>
                 <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#95624c" height="169.0" stroke="TRANSPARENT" strokeType="INSIDE" width="137.0" />
                 <AnchorPane prefHeight="169.0" prefWidth="137.0">
@@ -411,7 +411,7 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </AnchorPane>
-        <AnchorPane id="player2_card3" fx:id="player2_card5" layoutX="652.0" layoutY="238.0" onMouseClicked="#onClickedBoard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="169.0" prefWidth="137.0">
+        <AnchorPane id="player2_card5" fx:id="player2_card5" layoutX="652.0" layoutY="238.0" onMouseClicked="#onClickedBoard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="169.0" prefWidth="137.0">
             <children>
                 <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#95624c" height="169.0" stroke="TRANSPARENT" strokeType="INSIDE" width="137.0" />
                 <AnchorPane id="player2_card3" prefHeight="169.0" prefWidth="137.0">

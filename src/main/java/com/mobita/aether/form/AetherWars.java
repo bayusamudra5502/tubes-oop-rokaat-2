@@ -72,7 +72,7 @@ public class AetherWars {
     @FXML
     void exitedCard(MouseEvent event) {
         AnchorPane p = (AnchorPane) event.getSource();
-        ((Rectangle) p.getChildren().get(0)).setFill(javafx.scene.paint.Color.BLUE);
+        ((Rectangle) p.getChildren().get(0)).setFill(javafx.scene.paint.Color.web("7EAA9F"));
     }
 
     @FXML
@@ -161,4 +161,7 @@ public class AetherWars {
     }
 
 
+    public void inHoveredNextButton(MouseEvent mouseEvent) {
+
+    }
 }

@@ -61,6 +61,14 @@ public class AetherWars implements Initializable {
         player_2_health.setText(StateController.getPlayer2().getHealthPoints().toString() + "/80");
 
         switch (StateController.getGamestate().getGamePhase()) {
+            case Rest -> {
+                phase_1_circle.setFill(javafx.scene.paint.Color.web("C4C4C4"));
+                phase_2_circle.setFill(javafx.scene.paint.Color.web("C4C4C4"));
+                phase_3_circle.setFill(javafx.scene.paint.Color.web("C4C4C4"));
+                phase_4_circle.setFill(javafx.scene.paint.Color.web("C4C4C4"));
+                phase_state.setText("Rest Phase");
+                phase_description.setText("Klik next untuk memulai permainamu!");
+            }
             case Draw -> {
                 phase_1_circle.setFill(javafx.scene.paint.Color.web("F2CC8F"));
                 phase_2_circle.setFill(javafx.scene.paint.Color.web("C4C4C4"));
@@ -165,6 +173,9 @@ public class AetherWars implements Initializable {
     @FXML
     void onClickNextButton(MouseEvent event) {
         switch (StateController.getGamestate().getGamePhase()) {
+            case Rest -> {
+                StateController.getGamestate().setGamePhase(Draw);
+            }
             case Draw -> {
                 StateController.getGamestate().setGamePhase(Plan);
             }
@@ -175,7 +186,7 @@ public class AetherWars implements Initializable {
                 StateController.getGamestate().setGamePhase(End);
             }
             case End -> {
-                StateController.getGamestate().setGamePhase(Draw);
+                StateController.getGamestate().setGamePhase(Rest);
                 StateController.getGamestate().setTurn(StateController.getGamestate().getTurn() + 1);
                 ObserverController.notifyEvent("open-draw", null);
             }

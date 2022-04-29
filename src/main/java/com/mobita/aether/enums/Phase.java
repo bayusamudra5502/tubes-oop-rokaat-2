@@ -5,4 +5,5 @@ public enum Phase {
     Plan,
     Attack,
     End,
+    Rest
 }

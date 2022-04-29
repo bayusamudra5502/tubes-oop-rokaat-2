@@ -5,6 +5,15 @@ import com.mobita.aether.enums.Phase;
 public class GameState {
     private Phase gamePhase;
     private Integer mana;
+    private Integer turn;
+
+    public Integer getTurn() {
+        return turn;
+    }
+
+    public void setTurn(Integer turn) {
+        this.turn = turn;
+    }
 
     public Phase getGamePhase() {
         return gamePhase;

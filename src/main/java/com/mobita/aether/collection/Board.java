@@ -28,9 +28,8 @@ public class Board implements ICardCollection {
         return cardList.get(slot);
     }
 
-    public Board delete(String slot) {
-        cardList.remove(slot);
-        return this;
+    public Card delete(String slot) {
+        return cardList.remove(slot);
     }
 
 //    public Board addEffect(){

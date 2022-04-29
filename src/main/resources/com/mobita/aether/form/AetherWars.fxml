@@ -501,7 +501,7 @@
       <AnchorPane id="hand_card1" fx:id="hand_card1" layoutX="23.0" layoutY="589.0" onMouseClicked="#onClickedHand" onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="158.0" prefWidth="109.0">
          <children>
             <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#c4c4c4" height="158.0" stroke="TRANSPARENT" strokeMiterLimit="0.0" strokeType="INSIDE" width="109.0" />
-            <AnchorPane id="deck_card1" fx:id="deck_card1" prefHeight="158.0" prefWidth="109.0">
+            <AnchorPane id="hand_card1" fx:id="hand_card1" prefHeight="158.0" prefWidth="109.0">
                <children>
                   <HBox alignment="CENTER" layoutX="12.0" layoutY="25.0" prefHeight="85.0" prefWidth="85.0">
                      <children>
@@ -521,7 +521,7 @@
                         <Font name="Segoe UI" size="12.0" />
                      </font>
                   </Label>
-                  <Label fx:id="delete_button_hand_1" layoutX="93.0" layoutY="4.0" onMouseClicked="#onClickedDeleteHand1" prefHeight="12.0" prefWidth="11.0" text="X" textFill="WHITE" visible="false">
+                  <Label id="delete_button_hand_1" fx:id="delete_button_hand_1" layoutX="93.0" layoutY="4.0" onMouseClicked="#onClickedDeleteHand1" prefHeight="12.0" prefWidth="11.0" text="X" textFill="WHITE" visible="false">
                      <font>
                         <Font name="Gill Sans MT Bold" size="13.0" />
                      </font>
@@ -724,7 +724,7 @@
                         <Font name="Segoe UI" size="12.0" />
                      </font>
                   </Label>
-                  <Label fx:id="delete_button_hand_5" layoutX="93.0" layoutY="4.0" prefHeight="12.0" prefWidth="11.0" text="X" textFill="WHITE" visible="false">
+                  <Label id="delete_button_hand_5" fx:id="delete_button_hand_5" layoutX="93.0" layoutY="4.0" prefHeight="12.0" prefWidth="11.0" text="X" textFill="WHITE" visible="false">
                      <font>
                         <Font name="Gill Sans MT Bold" size="13.0" />
                      </font>
@@ -763,7 +763,7 @@
                         <Font name="Segoe UI" size="12.0" />
                      </font>
                   </Label>
-                  <Label fx:id="delete_button_hand_4" layoutX="93.0" layoutY="4.0" onMouseClicked="#onClickedDeleteHand4" prefHeight="12.0" prefWidth="11.0" text="X" textFill="WHITE" visible="false">
+                  <Label id="delete_button_hand_4" fx:id="delete_button_hand_4" layoutX="93.0" layoutY="4.0" onMouseClicked="#onClickedDeleteHand4" prefHeight="12.0" prefWidth="11.0" text="X" textFill="WHITE" visible="false">
                      <font>
                         <Font name="Gill Sans MT Bold" size="13.0" />
                      </font>
@@ -800,7 +800,7 @@
                      </font>
                   </Label>
                   <AnchorPane layoutX="72.0" layoutY="5.0" prefHeight="16.0" prefWidth="15.0" />
-                  <Label fx:id="delete_button_hand_3" layoutX="93.0" layoutY="4.0" onMouseClicked="#onClickedDeleteHand3" prefHeight="12.0" prefWidth="11.0" text="X" textFill="WHITE" visible="false">
+                  <Label id="delete_button_hand_3" fx:id="delete_button_hand_3" layoutX="93.0" layoutY="4.0" onMouseClicked="#onClickedDeleteHand3" prefHeight="12.0" prefWidth="11.0" text="X" textFill="WHITE" visible="false">
                      <font>
                         <Font name="Gill Sans MT Bold" size="13.0" />
                      </font>
@@ -837,7 +837,7 @@
                      </font>
                   </Label>
                   <AnchorPane layoutX="72.0" layoutY="5.0" prefHeight="16.0" prefWidth="15.0" />
-                  <Label fx:id="delete_button_hand_2" layoutX="93.0" layoutY="4.0" onMouseClicked="#onClickedDeleteHand2" prefHeight="12.0" prefWidth="11.0" text="X" textFill="WHITE" visible="false">
+                  <Label id="delete_button_hand_2" fx:id="delete_button_hand_2" layoutX="93.0" layoutY="4.0" onMouseClicked="#onClickedDeleteHand2" prefHeight="12.0" prefWidth="11.0" text="X" textFill="WHITE" visible="false">
                      <font>
                         <Font name="Gill Sans MT Bold" size="13.0" />
                      </font>

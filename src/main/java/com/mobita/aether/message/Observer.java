@@ -26,7 +26,11 @@ public class Observer {
     public Observer notifyEvent(String event, IMessage message) {
         if(watchers.get(event) != null){
             for(IWatcher watcher: watchers.get(event)){
-                watcher.notify(message);
+                try{
+                    watcher.notify(message);
+                } catch(Exception e){
+                    throw new RuntimeException(e);
+                }
             }
         }
 

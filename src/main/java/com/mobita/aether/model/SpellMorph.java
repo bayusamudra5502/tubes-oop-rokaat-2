@@ -20,4 +20,9 @@ public class SpellMorph extends Spell {
         res += target.toString();
         return res;
     }
+
+    @Override
+    public String getProductDesc() {
+        return null;
+    }
 }

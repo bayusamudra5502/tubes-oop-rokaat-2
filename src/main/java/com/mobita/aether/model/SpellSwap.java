@@ -18,4 +18,9 @@ public class SpellSwap extends Spell {
         res += "duration: " + this.duration + "\n";
         return res;
     }
+
+    @Override
+    public String getProductDesc() {
+        return null;
+    }
 }

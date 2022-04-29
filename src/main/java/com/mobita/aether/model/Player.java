@@ -10,10 +10,7 @@ public class Player {
     private Integer healthPoints = 80;
     private Integer mana;
 
-    public Player(Deck deck) {
-        this.deck = deck;
-        this.hand = new Hand();
-    }
+
 
     public Player(){
         this.deck = null;
@@ -22,6 +19,7 @@ public class Player {
 
     public void insertDeck(Deck deck){
         this.deck = deck;
+        this.hand.initHand(deck);
     }
     public Integer getHealthPoints() {
         return healthPoints;

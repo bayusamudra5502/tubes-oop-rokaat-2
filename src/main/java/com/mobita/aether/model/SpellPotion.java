@@ -25,6 +25,11 @@ public class SpellPotion extends Spell {
         res += "duration " + this.duration + "\n";
         return res;
     }
+
+    @Override
+    public String getProductDesc() {
+        return null;
+    }
 //    public int getAttack() {
 //        return this.attack;
 //    }

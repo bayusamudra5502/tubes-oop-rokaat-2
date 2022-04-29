@@ -2,10 +2,7 @@ package com.mobita.aether.collection;
 
 import com.mobita.aether.model.*;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 
 public class Deck implements ICardCollection{
@@ -24,10 +21,6 @@ public class Deck implements ICardCollection{
         int levelCount = 4*maxCard/40;
         int morphCount = 2*maxCard/40;
 
-        for(int i=0; i<mobsCount; i++){
-            int id = new Random().nextInt(listOfMobs.size());
-            content.add(listOfMobs.get(id));
-        }
 
         for(int i=0; i<potionCount; i++){
             int id = new Random().nextInt(listOfSpellPotion.size());
@@ -46,7 +39,13 @@ public class Deck implements ICardCollection{
             int id = new Random().nextInt(listOfSpellMorph.size());
             content.add(listOfSpellMorph.get(id));
         }
+        while(content.size()<this.maxCard){
+            int id = new Random().nextInt(listOfMobs.size());
+            content.add(listOfMobs.get(id));
+        }
+
         this.remainingCard = this.maxCard;
+        Collections.shuffle(this.content);
     }
 
     public List<Integer> getTopId() {
@@ -81,4 +80,6 @@ public class Deck implements ICardCollection{
     public int getMaxCard() {
         return this.maxCard;
     }
+
+
 }

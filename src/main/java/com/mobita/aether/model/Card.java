@@ -1,6 +1,7 @@
 package com.mobita.aether.model;
 
 import com.mobita.aether.enums.CardType;
+import javafx.scene.paint.Color;
 
 public abstract class Card {
     protected String cardName;
@@ -59,4 +60,11 @@ public abstract class Card {
         this.cardType = null;
         this.imageURL = null;
     }
+
+    abstract public String getProductDesc();
+
+
+
+    abstract public Color getColorRectangle();
+
 }

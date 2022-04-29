@@ -2,6 +2,7 @@ package com.mobita.aether.model;
 
 import com.mobita.aether.enums.CardType;
 import com.mobita.aether.enums.MobType;
+import javafx.scene.paint.Color;
 
 public abstract class Mobs extends Card {
     protected MobType type;
@@ -48,5 +49,17 @@ public abstract class Mobs extends Card {
 
     public MobType getMobType() {
         return this.type;
+    }
+
+    @Override
+    public String getProductDesc() {
+        String res = "ATK "+ this.baseAttack + "/HP " + this.baseHealth;
+        return res;
+    }
+
+    abstract public Color getColorRectangle();
+
+    public String getLevelString() {
+        return "LVL " + this.getLevel() + "(" + this.getExp() + "/" + this.getMaxExpInLevel() + ")";
     }
 }

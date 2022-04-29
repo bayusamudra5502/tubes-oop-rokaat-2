@@ -11,4 +11,9 @@ public class SpellLevel extends Spell{
     public String toString() {
         return null;
     }
+
+    @Override
+    public String getProductDesc() {
+        return null;
+    }
 }

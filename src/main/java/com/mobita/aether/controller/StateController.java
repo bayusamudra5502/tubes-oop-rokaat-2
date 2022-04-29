@@ -1,5 +1,6 @@
 package com.mobita.aether.controller;
 
+import com.mobita.aether.collection.Board;
 import com.mobita.aether.collection.Deck;
 import com.mobita.aether.model.Player;
 import com.mobita.aether.state.GameState;
@@ -9,12 +10,14 @@ public class StateController {
     private static final Player player2;
     private static final GameState gamestate;
     private static Player currentPlayer;
+    private static Board board;
 
 
     static {
         player1 = new Player();
         player2 = new Player();
         gamestate = new GameState();
+        board = new Board();
         currentPlayer = player1;
     }
 
@@ -42,4 +45,6 @@ public class StateController {
     public static GameState getGamestate() {
         return gamestate;
     }
+
+    public static Board getBoard() {return board;}
 }

@@ -10,6 +10,13 @@ public class Board implements ICardCollection{
 
     public Board() {
         cardList = new HashMap<>();
+        for(int i=1; i<=5; i++){
+            cardList.put("player1_card" + i, null);
+        }
+
+        for(int i=1; i<=5; i++){
+            cardList.put("player2_card" + i, null);
+        }
     }
 
     public Board insert(String slot, Card item) {

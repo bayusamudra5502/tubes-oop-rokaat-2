@@ -2,6 +2,7 @@ package com.mobita.aether.model;
 
 import com.mobita.aether.enums.CardType;
 import com.mobita.aether.enums.SpellType;
+import javafx.scene.paint.Color;
 
 public abstract class Spell extends Card {
     private SpellType type;
@@ -13,7 +14,13 @@ public abstract class Spell extends Card {
 
     public abstract String toString();
 
-//    public String getName() {
+    public Color getColorRectangle() {
+        return Color.web("#F2CC8F");
+    }
+
+    abstract public String getProductDesc();
+
+    //    public String getName() {
 //        return cardName;
 //    }
 //

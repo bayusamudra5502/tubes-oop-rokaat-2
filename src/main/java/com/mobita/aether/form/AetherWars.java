@@ -162,8 +162,7 @@ public class AetherWars implements Initializable {
     void onClickedPlayer(MouseEvent event) {
 
     }
-
-
+    
     public void onClickedBoard(MouseEvent mouseEvent) {
         AnchorPane p = (AnchorPane) mouseEvent.getSource();
         ObserverController.notifyEvent("board-click", new IdMessage(p.getId()));

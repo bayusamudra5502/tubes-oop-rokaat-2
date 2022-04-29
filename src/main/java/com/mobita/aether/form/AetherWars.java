@@ -12,6 +12,7 @@ import javafx.scene.control.ProgressBar;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
@@ -123,14 +124,37 @@ public class AetherWars implements Initializable {
     @FXML
     void enteredCard(MouseEvent event) {
         AnchorPane p = (AnchorPane) event.getSource();
-        ((Rectangle) p.getChildren().get(0)).setFill(javafx.scene.paint.Color.RED);
-        render();
+        Rectangle r = (Rectangle) p.getChildren().get(0);
+        Color color = (Color) r.getFill();
+        Color baru = color;
+
+        if (color.equals(Color.web("4C8066"))) {
+            baru = Color.web("7EAA9F");
+        } else if (color.equals(Color.web("A63230"))) {
+            baru = Color.web("D9423F");
+        } else if (color.equals(Color.web("3D405B"))) {
+            baru = Color.web("60648F");
+        }
+
+        r.setFill(baru);
     }
 
     @FXML
     void exitedCard(MouseEvent event) {
         AnchorPane p = (AnchorPane) event.getSource();
-        ((Rectangle) p.getChildren().get(0)).setFill(javafx.scene.paint.Color.web("7EAA9F"));
+        Rectangle r = (Rectangle) p.getChildren().get(0);
+        Color color = (Color) r.getFill();
+        Color baru = color;
+
+        if (color.equals(Color.web("7EAA9F"))) {
+            baru = Color.web("4C8066");
+        } else if (color.equals(Color.web("D9423F"))) {
+            baru = Color.web("A63230");
+        } else if (color.equals(Color.web("60648F"))) {
+            baru = Color.web("3D405B");
+        }
+
+        r.setFill(baru);
     }
 
     @FXML
@@ -161,13 +185,14 @@ public class AetherWars implements Initializable {
 
     @FXML
     void onClickTradeButton(MouseEvent event) {
+
     }
 
     @FXML
     void onClickedPlayer(MouseEvent event) {
 
     }
-    
+
     public void onClickedBoard(MouseEvent mouseEvent) {
         AnchorPane p = (AnchorPane) mouseEvent.getSource();
         ObserverController.notifyEvent("board-click", new IdMessage(p.getId()));

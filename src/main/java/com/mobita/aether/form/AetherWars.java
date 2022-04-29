@@ -41,6 +41,8 @@ public class AetherWars implements Initializable {
     public Circle phase_4_circle;
     public Label turn_number;
     public Label phase_state;
+    public Label player_1_health;
+    public Label player_2_health;
 
     public AetherWars() {
         registerWatcher();
@@ -48,7 +50,13 @@ public class AetherWars implements Initializable {
 
     public void render() {
         turn_number.setText("Turn " + StateController.getGamestate().getTurn().toString());
-        player_1_healthbar.setProgress(0);
+
+        player_1_healthbar.setProgress(StateController.getPlayer1().getHealthPoints() / 80.0);
+        player_2_healthbar.setProgress(StateController.getPlayer2().getHealthPoints() / 80.0);
+
+        player_1_health.setText(StateController.getPlayer1().getHealthPoints().toString() + "/80");
+        player_2_health.setText(StateController.getPlayer2().getHealthPoints().toString() + "/80");
+
         switch (StateController.getGamestate().getGamePhase()) {
             case Draw -> {
                 phase_1_circle.setFill(javafx.scene.paint.Color.web("F2CC8F"));
@@ -58,15 +66,21 @@ public class AetherWars implements Initializable {
             }
             case Plan -> {
                 phase_1_circle.setFill(javafx.scene.paint.Color.web("7EAA9F"));
-                phase_2_circle.setFill(javafx.scene.paint.Color.web("7EAA9F"));
-                phase_3_circle.setFill(javafx.scene.paint.Color.web("7EAA9F"));
+                phase_2_circle.setFill(javafx.scene.paint.Color.web("F2CC8F"));
+                phase_3_circle.setFill(javafx.scene.paint.Color.web("C4C4C4"));
                 phase_4_circle.setFill(javafx.scene.paint.Color.web("C4C4C4"));
             }
             case Attack -> {
                 phase_1_circle.setFill(javafx.scene.paint.Color.web("7EAA9F"));
                 phase_2_circle.setFill(javafx.scene.paint.Color.web("7EAA9F"));
+                phase_3_circle.setFill(javafx.scene.paint.Color.web("F2CC8F"));
+                phase_4_circle.setFill(javafx.scene.paint.Color.web("C4C4C4"));
+            }
+            case End -> {
+                phase_1_circle.setFill(javafx.scene.paint.Color.web("7EAA9F"));
+                phase_2_circle.setFill(javafx.scene.paint.Color.web("7EAA9F"));
                 phase_3_circle.setFill(javafx.scene.paint.Color.web("7EAA9F"));
-                phase_4_circle.setFill(javafx.scene.paint.Color.web("7EAA9F"));
+                phase_4_circle.setFill(javafx.scene.paint.Color.web("F2CC8F"));
             }
         }
     }

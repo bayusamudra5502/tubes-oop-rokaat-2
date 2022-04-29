@@ -8,8 +8,10 @@ import com.mobita.aether.message.IWatcher;
 import com.mobita.aether.message.type.IdMessage;
 import com.mobita.aether.model.Card;
 import com.mobita.aether.model.Mobs;
+import com.mobita.aether.model.SpellLevel;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
@@ -408,6 +410,14 @@ public class AetherWars implements Initializable {
                     }
                     String name = "/com/mobita/aether/" + StateController.getBoard().get(message.getMessage()).getImageURL();
                     res = Objects.requireNonNull(getClass().getResource(name)).toURI().toString();
+                    String[] s = StateController.getBoard().get(message.getMessage()).cardInformation();
+                    int i = 0;
+                    for(Node n: hovered_card_info.getChildren()){
+                        Label l = (Label) n;
+                        l.setText(s[i]);
+                        i++;
+                    }
+                    hovered_card_description.setText(StateController.getBoard().get(message.getMessage()).getDescription());
                 } else {
                     if (StateController.getCurrentPlayer().getHand().get(message.getMessage()) == null) {
                         image_hovered_card.setImage(null);
@@ -415,6 +425,14 @@ public class AetherWars implements Initializable {
                     }
                     String name = "/com/mobita/aether/" + StateController.getCurrentPlayer().getHand().get(message.getMessage()).getImageURL();
                     res = Objects.requireNonNull(getClass().getResource(name)).toURI().toString();
+                    String[] s = StateController.getCurrentPlayer().getHand().get(message.getMessage()).cardInformation();
+                    int i = 0;
+                    for(Node n: hovered_card_info.getChildren()){
+                        Label l = (Label) n;
+                        l.setText(s[i]);
+                        i++;
+                    }
+                    hovered_card_description.setText(StateController.getCurrentPlayer().getHand().get(message.getMessage()).getDescription());
                 }
                 Image img = new Image(res);
                 image_hovered_card.setImage(img);
@@ -468,6 +486,8 @@ public class AetherWars implements Initializable {
             baru = Color.web("D9423F");
         } else if (color.equals(Color.web("3D405B"))) {
             baru = Color.web("60648F");
+        } else if(color.equals(Color.web("E7A131"))){
+            baru = Color.web("F2CB8D");
         }
 
         r.setFill(baru);
@@ -488,6 +508,8 @@ public class AetherWars implements Initializable {
             baru = Color.web("A63230");
         } else if (color.equals(Color.web("60648F"))) {
             baru = Color.web("3D405B");
+        } else if(color.equals(Color.web("F2CB8D"))){
+            baru = Color.web("E7A131");
         }
 
         r.setFill(baru);
@@ -666,6 +688,8 @@ public class AetherWars implements Initializable {
 
                     redrawBordsCard(id, i - 1, c.getImageURL(), c.getBaseAttack(), c.getBaseHealth(), lvl);
                     getAnchorPaneById(id).getChildren().get(1).setVisible(true);
+                    Rectangle r = (Rectangle) getAnchorPaneById(id).getChildren().get(0);
+                    r.setFill(c.getColorRectangle());
                 } catch (IllegalAccessException e) {
                     e.printStackTrace();
                 }
@@ -687,6 +711,8 @@ public class AetherWars implements Initializable {
                     String lvl = "Level " + c.getLevel() + "(" + c.getExp() + "/" + ")";
                     redrawBordsCard(id, i - 1, c.getImageURL(), c.getBaseAttack(), c.getBaseHealth(), lvl);
                     getAnchorPaneById(id).getChildren().get(1).setVisible(true);
+                    Rectangle r = (Rectangle) getAnchorPaneById(id).getChildren().get(0);
+                    r.setFill(c.getColorRectangle());
                 } catch (IllegalAccessException e) {
                     e.printStackTrace();
                 }
@@ -705,8 +731,14 @@ public class AetherWars implements Initializable {
                 try {
                     AnchorPane p = getAnchorPaneById(id);
                     Card c = StateController.getCurrentPlayer().getHand().get(id);
-                    redrawHandCard(id, i, c.getImageURL(), "Mana: " + c.getMana(), "Description");
+                    String mana = String.valueOf(c.getMana());
+                    if(c instanceof SpellLevel){
+                        mana = ((SpellLevel) c).getManaLevelUp();
+                    }
+                    redrawHandCard(id, i, c.getImageURL(), "Mana: " + mana, c.getProductDesc());
                     getAnchorPaneById(id).getChildren().get(1).setVisible(true);
+                    Rectangle r = (Rectangle) getAnchorPaneById(id).getChildren().get(0);
+                    r.setFill(c.getColorRectangle());
                 } catch (IllegalAccessException e) {
                     e.printStackTrace();
                 }

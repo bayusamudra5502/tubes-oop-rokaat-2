@@ -23,6 +23,16 @@ public class SpellMorph extends Spell {
 
     @Override
     public String getProductDesc() {
-        return null;
+        return "Morph";
+    }
+
+    public String[] cardInformation() {
+        String[] strings = new String[6];
+        strings[0] = this.cardName;
+        strings[1] = "change character";
+        for(int i=2; i<6; i++){
+            strings[i] = "";
+        }
+        return strings;
     }
 }

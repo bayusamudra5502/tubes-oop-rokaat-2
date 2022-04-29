@@ -18,4 +18,11 @@ public class End extends Mobs {
     public Color getColorRectangle() {
         return Color.web("3D405B");
     }
+
+    @Override
+    public String[] cardInformation() {
+        String[] newString = super.cardInformation();
+        newString[5] = "END";
+        return newString;
+    }
 }

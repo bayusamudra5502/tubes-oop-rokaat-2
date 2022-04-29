@@ -6,6 +6,7 @@ import com.mobita.aether.controller.StateController;
 import com.mobita.aether.enums.CardType;
 import com.mobita.aether.message.IMessage;
 import com.mobita.aether.message.IWatcher;
+import com.mobita.aether.message.type.SelectedMessage;
 import com.mobita.aether.model.Card;
 import com.mobita.aether.model.Mobs;
 import javafx.fxml.FXML;
@@ -104,7 +105,9 @@ public class DeckSelector implements Initializable {
 
         Pair<Integer, Card> p = this.dataKartu.get(src.getId());
         Deck d = StateController.getCurrentPlayer().getDeck();
-        // TODO: Hapus dan kasih intterupt
+
+        d.delete(p.getKey());
+        ObserverController.notifyEvent("selected-card", new SelectedMessage(p.getValue()));
     }
 
     public void onCardHoverIn(MouseEvent mouseEvent) throws NoSuchFieldException, IllegalAccessException {

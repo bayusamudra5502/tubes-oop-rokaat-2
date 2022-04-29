@@ -6,6 +6,7 @@ import com.mobita.aether.controller.StateController;
 import com.mobita.aether.message.IMessage;
 import com.mobita.aether.message.IWatcher;
 import com.mobita.aether.message.type.IdMessage;
+import com.mobita.aether.model.Card;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -47,6 +48,7 @@ public class AetherWars implements Initializable {
     public Label phase_description;
     public Label player_1_health;
     public Label player_2_health;
+    
 
     public AetherWars() {
         registerWatcher();
@@ -125,6 +127,14 @@ public class AetherWars implements Initializable {
             public void notify(IMessage<Object> message) {
                 ObserverController.notifyEvent("reload-selector", null);
                 DeckController.showDeck();
+            }
+        });
+
+        ObserverController.registerWatcher("selected-card", new IWatcher<Card>() {
+            @Override
+            public void notify(IMessage<Card> message) {
+                DeckController.closeDeck();
+                System.out.println(message.getMessage().getCardName());
             }
         });
     }

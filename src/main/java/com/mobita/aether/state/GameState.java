@@ -1,10 +1,9 @@
-package com.mobita.aether.model;
+package com.mobita.aether.state;
 
 import com.mobita.aether.enums.Phase;
 
 public class GameState {
     private Phase gamePhase = Phase.Draw;
-    private Integer mana = 0;
     private Integer turn = 1;
 
     public Integer getTurn() {
@@ -21,13 +20,5 @@ public class GameState {
 
     public void setGamePhase(Phase gamePhase) {
         this.gamePhase = gamePhase;
-    }
-
-    public Integer getMana() {
-        return mana;
-    }
-
-    public void setMana(Integer mana) {
-        this.mana = mana;
     }
 }

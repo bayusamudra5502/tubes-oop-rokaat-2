@@ -5,35 +5,38 @@ import com.mobita.aether.collection.Deck;
 import com.mobita.aether.collection.Hand;
 
 public class Player {
-    private String name; // name of the player
-    private String pathProfile; // profil picture of the player
-    private Integer healthPoints;
+    private final Deck deck;
+    private final Hand hand;
+    private Integer healthPoints = 80;
     private Integer mana;
-    private Deck deck;
-    private Hand hand;
-    public Player(String name, String pathProfile) {
-        this.name = name;
-        this.pathProfile = pathProfile;
-        this.healthPoints = 80;
-        this.mana = 1;
-        this.deck = new Deck();
-        this.hand = new Hand();
+
+    public Player() {
+        deck = new Deck();
+        hand = new Hand();
     }
 
-    public Player(String name){
-        this.name = name;
-        this.healthPoints = 80;
-        this.mana = 1;
-        this.deck = new Deck();
-        this.hand = new Hand();
+    public Integer getHealthPoints() {
+        return healthPoints;
     }
 
-    public String getName(){
-        return this.name;
+    public void setHealthPoints(Integer healthPoints) {
+        this.healthPoints = healthPoints;
     }
 
-    public String getPathProfile(){
-        return this.pathProfile;
+    public Integer getMana() {
+        return mana;
+    }
+
+    public void setMana(Integer mana) {
+        this.mana = mana;
+    }
+
+    public Deck getDeck() {
+        return deck;
+    }
+
+    public Hand getHand() {
+        return hand;
     }
 
     public Card getNewCard(String slot) {
@@ -50,15 +53,10 @@ public class Player {
 
     public Board handToBoard(String slotHand, String slotBoard, Card card, Board board) {
         Card movingCard = this.hand.get(slotHand);
-        return board.insert(slotBoard,movingCard);
+        return board.insert(slotBoard, movingCard);
     }
 
     public void attackEnemy() {
         // belum
-    }
-
-    public void nextPhase() {
-        //
-
     }
 }

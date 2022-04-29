@@ -39,16 +39,26 @@ public class AetherWars implements Initializable {
     public Label turn_number;
     public Label phase_state;
 
-
     public AetherWars() {
         registerWatcher();
     }
 
     public void render() {
         turn_number.setText("Turn " + StateController.getGamestate().getTurn().toString());
+        player_1_healthbar.setProgress(StateController.getPlayer1());
         switch (StateController.getGamestate().getGamePhase()) {
             case Draw -> {
-
+                phase_state.setText("Draw Phase");
+                ObserverController.notifyEvent("open-deck", null);
+            }
+            case Plan -> {
+                phase_state.setText("Plan Phase");
+            }
+            case Attack -> {
+                phase_state.setText("Attack Phase");
+            }
+            case End -> {
+                phase_state.setText("End Phase");
             }
         }
     }

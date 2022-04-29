@@ -1,42 +1,34 @@
 package com.mobita.aether.controller;
 
-import com.mobita.aether.collection.Board;
-import com.mobita.aether.collection.Deck;
-import com.mobita.aether.collection.Hand;
-import com.mobita.aether.model.GameState;
+import com.mobita.aether.model.Player;
+import com.mobita.aether.state.GameState;
 
 public class StateController {
-    private static Board board;
-    private static Deck deck;
-    private static Hand hand;
-    private static GameState gamestate;
+    private static final Player player1;
+    private static final Player player2;
+    private static final GameState gamestate;
+    private static final Player currentPlayer;
 
-    public static Board getBoard() {
-        if (board == null) {
-            board = new Board();
-        }
-        return board;
+    static {
+        player1 = new Player();
+        player2 = new Player();
+        gamestate = new GameState();
+        currentPlayer = player1;
     }
 
-    public static Deck getDeck() {
-        if (deck == null) {
-            deck = new Deck();
-        }
-        return deck;
+    public static Player getCurrentPlayer() {
+        return currentPlayer;
     }
 
-    public static Hand getHand() {
-        if (hand == null) {
-            hand = new Hand();
-        }
-        return hand;
+    public static Player getPlayer1() {
+        return player1;
+    }
+
+    public static Player getPlayer2() {
+        return player2;
     }
 
     public static GameState getGamestate() {
-        if (gamestate == null) {
-            gamestate = new GameState();
-        }
-
         return gamestate;
     }
 }

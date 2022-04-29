@@ -16,6 +16,9 @@ public class Deck implements ICardCollection{
     }
 
 
+    public void insertAll(ICardCollection other){
+
+    }
 //    public Board delete(String slot) {
 //        return null;
 //    }

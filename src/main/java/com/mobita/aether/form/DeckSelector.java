@@ -1,7 +1,7 @@
 package com.mobita.aether.form;
 
+import com.mobita.aether.enums.MobType;
 import com.mobita.aether.model.Character;
-import com.mobita.aether.model.Type;
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -16,6 +16,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class DeckSelector {
+    private final Map<String, Character> dataKartu;
     public AnchorPane card1;
     public Rectangle card1_rectangle;
     public Text card1_title;
@@ -35,14 +36,12 @@ public class DeckSelector {
     public Text card3_attack;
     public ImageView card3_img;
 
-    private final Map<String, Character> dataKartu;
-
     public DeckSelector() {
         super();
         dataKartu = new HashMap<>();
-        dataKartu.put("card1", new Character("Zombi", "Ini adalah zombie", Type.OVERWORLD));
-        dataKartu.put("card2", new Character("Ghast", "Ini adalah Ghast", Type.OVERWORLD));
-        dataKartu.put("card3", new Character("Kuda", "Ini adalah Kuda", Type.OVERWORLD));
+        dataKartu.put("card1", new Character("Zombi", "Ini adalah zombie", MobType.OVERWORLD));
+        dataKartu.put("card2", new Character("Ghast", "Ini adalah Ghast", MobType.OVERWORLD));
+        dataKartu.put("card3", new Character("Kuda", "Ini adalah Kuda", MobType.OVERWORLD));
     }
 
     @FXML

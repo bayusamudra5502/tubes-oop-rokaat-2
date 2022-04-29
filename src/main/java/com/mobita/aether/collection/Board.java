@@ -21,6 +21,10 @@ public class Board implements ICardCollection{
         return cardList.get(slot);
     }
 
+    public void insertAll(ICardCollection other){
+
+    }
+
 //    public Board delete(String slot){
 //        cardList.remove(slot);
 //        return this;

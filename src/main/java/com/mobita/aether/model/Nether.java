@@ -1,5 +1,7 @@
 package com.mobita.aether.model;
 
+import com.mobita.aether.enums.MobType;
+
 public class Nether extends Mobs{
     private int baseAttack;
     private int baseHealth;
@@ -9,7 +11,7 @@ public class Nether extends Mobs{
     private int mana;
 
     public Nether(String name, String description, int baseAttack, int baseHealth, int level, int exp, int attackUp, int healthUp, int mana, String image) {
-        super(name, description, Type.NETHER, level, image);
+        super(name, description, MobType.NETHER, level, image);
         this.baseAttack = baseAttack;
         this.baseHealth = baseHealth;
         this.level = level;
@@ -18,48 +20,58 @@ public class Nether extends Mobs{
         this.healthUp = healthUp;
         this.mana = mana;
     }
-    public void printInfo() {
-        System.out.println("Nama : "+ this.cardName);
-        System.out.println("Deskripsi : " + this.description);
-        System.out.println("Tipe : " + Type.NETHER);
-        System.out.println("Attack : " + this.baseHealth);
-        System.out.println("Health : " + this.baseHealth);
+
+    @Override
+    int getAtkUp() {
+        return 0;
     }
-    public void levelUp() {
-        this.level = (int) Math.round(this.exp/2.0);
-        this.baseAttack += this.getAtkUp();
-        this.baseHealth += this.getHealthUp();
+
+    @Override
+    int getHealthUp() {
+        return 0;
     }
-    public void addExp(int level2, int health2) {
-        if (health2 == 0) {
-            this.exp += level2;
-        }
-        this.exp += this.mana;
-    }
-    public void Attack(Type type2, int health2) {
-        if (type2 == Type.OVERWORLD) {
-            health2 -= 2*this.getAtk();
-        }
-        else if (type2 == Type.END) {
-            health2 -= 0.5*this.getAtk();
-        }
-    }
-    public int getAtkUp() {
-        return this.attackUp;
-    }
-    public int getHealthUp() {
-        return this.healthUp;
-    }
-    public int getLevel() {
-        return this.level;
-    }
-    public int getExp() {
-        return this.exp;
-    }
-    public int getAtk() {
-        return this.baseAttack;
-    }
-    public int getHealth() {
-        return this.baseHealth;
-    }
+//    public void printInfo() {
+//        System.out.println("Nama : "+ this.cardName);
+//        System.out.println("Deskripsi : " + this.description);
+//        System.out.println("Tipe : " + Type.NETHER);
+//        System.out.println("Attack : " + this.baseHealth);
+//        System.out.println("Health : " + this.baseHealth);
+//    }
+//    public void levelUp() {
+//        this.level = (int) Math.round(this.exp/2.0);
+//        this.baseAttack += this.getAtkUp();
+//        this.baseHealth += this.getHealthUp();
+//    }
+//    public void addExp(int level2, int health2) {
+//        if (health2 == 0) {
+//            this.exp += level2;
+//        }
+//        this.exp += this.mana;
+//    }
+//    public void Attack(Type type2, int health2) {
+//        if (type2 == Type.OVERWORLD) {
+//            health2 -= 2*this.getAtk();
+//        }
+//        else if (type2 == Type.END) {
+//            health2 -= 0.5*this.getAtk();
+//        }
+//    }
+//    public int getAtkUp() {
+//        return this.attackUp;
+//    }
+//    public int getHealthUp() {
+//        return this.healthUp;
+//    }
+//    public int getLevel() {
+//        return this.level;
+//    }
+//    public int getExp() {
+//        return this.exp;
+//    }
+//    public int getAtk() {
+//        return this.baseAttack;
+//    }
+//    public int getHealth() {
+//        return this.baseHealth;
+//    }
 }

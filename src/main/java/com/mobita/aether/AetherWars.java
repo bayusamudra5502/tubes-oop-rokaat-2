@@ -8,21 +8,14 @@ import java.nio.file.StandardCopyOption;
 import java.util.List;
 
 import javafx.application.Application;
-import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-import com.mobita.aether.model.Type;
+import com.mobita.aether.enums.MobType;
 import com.mobita.aether.model.Character;
 import com.mobita.aether.util.CSVReader;
 
-import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
-
-import java.io.IOException;
 
 public class AetherWars extends Application {
   private static final String CHARACTER_CSV_FILE_PATH = "card/data/character.csv";
@@ -36,7 +29,7 @@ public class AetherWars extends Application {
     characterReader.setSkipHeader(true);
     List<String[]> characterRows = characterReader.read();
     for (String[] row : characterRows) {
-      Character c = new Character(row[1], row[3], Type.valueOf(row[2]));
+      Character c = new Character(row[1], row[3], MobType.valueOf(row[2]));
       System.out.println(c);
     }
   }

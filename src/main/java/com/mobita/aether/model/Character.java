@@ -1,17 +1,19 @@
 package com.mobita.aether.model;
 
+import com.mobita.aether.enums.MobType;
+
 public class Character {
   private String name;
   private String description;
-  private Type type;
+  private MobType type;
 
   public Character() {
     this.name = "";
     this.description = "";
-    this.type = Type.OVERWORLD;
+    this.type = MobType.OVERWORLD;
   }
 
-  public Character(String name, String description, Type element) {
+  public Character(String name, String description, MobType element) {
     this.name = name;
     this.description = description;
     this.type = element;

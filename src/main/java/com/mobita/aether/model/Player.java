@@ -43,13 +43,13 @@ public class Player {
         return this.deck.get(slot);
     }
 
-    public String getDescriptionInHand(String slot) {
-        return this.hand.get(slot).getDescription();
-    }
-
-    public String getDescriptionInDeck(String slot) {
-        return this.deck.get(slot).getDescription();
-    }
+//    public String getDescriptionInHand(String slot) {
+//        return this.hand.get(slot).getDescription();
+//    }
+//
+//    public String getDescriptionInDeck(String slot) {
+//        return this.deck.get(slot).getDescription();
+//    }
 
     public Board handToBoard(String slotHand, String slotBoard, Card card, Board board) {
         Card movingCard = this.hand.get(slotHand);

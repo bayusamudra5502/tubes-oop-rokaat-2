@@ -8,28 +8,37 @@ public class Nether extends Mobs{
     private int exp;
     private int attackUp;
     private int healthUp;
-    private int mana;
 
-    public Nether(String name, String description, int baseAttack, int baseHealth, int level, int exp, int attackUp, int healthUp, int mana, String image) {
-        super(name, description, MobType.NETHER, level, image);
+    public Nether(String name, String description, String image, int baseAttack, int baseHealth, int attackUp, int healthUp, int mana) {
+        super(name, description, image, MobType.END, mana);
         this.baseAttack = baseAttack;
         this.baseHealth = baseHealth;
-        this.level = level;
-        this.exp = exp;
         this.attackUp = attackUp;
         this.healthUp = healthUp;
-        this.mana = mana;
     }
 
-    @Override
-    int getAtkUp() {
-        return 0;
+    public String toString(){
+        String res = "Name: " + this.cardName + "\n";
+        res += "cardType: " + this.cardType + "\n";
+        res += "imagePath: " + this.imageURL + "\n";
+        res += "desctiprion: " + this.description + "\n";
+        res += "MobType: " + this.type + "\n";
+        res += "attack: " + this.baseAttack + "\n";
+        res += "HP: " + this.baseHealth + "\n";
+        res += "AttackUp: " + this.attackUp + "\n";
+        res += "healthUp: " + this.healthUp + "\n";
+        res += "mana: " + this.mana + "\n";
+        return res;
     }
-
-    @Override
-    int getHealthUp() {
-        return 0;
-    }
+//    @Override
+//    int getAtkUp() {
+//        return 0;
+//    }
+//
+//    @Override
+//    int getHealthUp() {
+//        return 0;
+//    }
 //    public void printInfo() {
 //        System.out.println("Nama : "+ this.cardName);
 //        System.out.println("Deskripsi : " + this.description);

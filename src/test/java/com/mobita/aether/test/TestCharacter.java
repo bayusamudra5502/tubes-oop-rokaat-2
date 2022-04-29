@@ -1,6 +1,5 @@
 package com.mobita.aether.test;
 
-import com.mobita.aether.model.Character;
 import com.mobita.aether.model.Type;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

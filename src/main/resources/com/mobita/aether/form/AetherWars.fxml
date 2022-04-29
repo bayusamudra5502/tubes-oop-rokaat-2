@@ -1,644 +1,559 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
-<Pane xmlns:fx="http://javafx.com/fxml/1" maxHeight="760.0" maxWidth="1280.0" minHeight="760.0" minWidth="1280.0"
-      prefHeight="760.0"
-      prefWidth="1280.0" scaleShape="false" style="-fx-background-color: #F6EBDA;"
-      xmlns="http://javafx.com/javafx/18" fx:controller="com.mobita.aether.form.AetherWars">
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
+
+<Pane maxHeight="760.0" maxWidth="1280.0" minHeight="760.0" minWidth="1280.0" prefHeight="760.0" prefWidth="1280.0" scaleShape="false" style="-fx-background-color: #F6EBDA;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mobita.aether.form.AetherWars">
     <children>
-        <ProgressBar fx:id="player_1_healthbar" layoutX="38.0" layoutY="36.0" nodeOrientation="RIGHT_TO_LEFT"
-                     prefHeight="40.0" prefWidth="500.0" progress="0.59"
-                     style="-fx-accent: #E07A5F; -fx-background-radius: 0; -fx-background-insets: 0;"/>
-        <ProgressBar fx:id="player_2_healthbar" layoutX="742.0" layoutY="36.0" nodeOrientation="LEFT_TO_RIGHT"
-                     prefHeight="40.0" prefWidth="500.0" progress="0.59" style="-fx-accent: #E07A5F;"/>
-        <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#3d405b" height="78.0" layoutX="548.0" layoutY="17.0"
-                   stroke="BLACK" strokeType="INSIDE" width="184.0"/>
-        <AnchorPane layoutX="1140.0" layoutY="205.0" onMouseClicked="#onClickedPlayer2"
-                    onMouseEntered="#inHoveredPlayer2" onMouseExited="#outHoveredPlayer2" prefHeight="115.0"
-                    prefWidth="115.0">
+        <ProgressBar fx:id="player_1_healthbar" layoutX="38.0" layoutY="36.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="500.0" progress="0.59" style="-fx-accent: #E07A5F; -fx-background-radius: 0; -fx-background-insets: 0;" />
+        <ProgressBar fx:id="player_2_healthbar" layoutX="742.0" layoutY="36.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" prefWidth="500.0" progress="0.59" style="-fx-accent: #E07A5F;" />
+        <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#3d405b" height="78.0" layoutX="548.0" layoutY="17.0" stroke="BLACK" strokeType="INSIDE" width="184.0" />
+        <AnchorPane layoutX="1140.0" layoutY="205.0" onMouseClicked="#onClickedPlayer2" onMouseEntered="#inHoveredPlayer2" onMouseExited="#outHoveredPlayer2" prefHeight="115.0" prefWidth="115.0">
             <children>
-                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#f2cc8f" height="115.0" stroke="TRANSPARENT"
-                           strokeType="INSIDE" width="115.0"/>
+                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#f2cc8f" height="115.0" stroke="TRANSPARENT" strokeType="INSIDE" width="115.0" />
                 <ImageView fitHeight="115.0" fitWidth="115.0">
                     <image>
-                        <Image url="@../card/image/player/shenziii.png"/>
+                        <Image url="@../card/image/player/shenziii.png" />
                     </image>
                 </ImageView>
             </children>
             <cursor>
-                <Cursor fx:constant="HAND"/>
+                <Cursor fx:constant="HAND" />
             </cursor>
         </AnchorPane>
-        <AnchorPane layoutX="25.0" layoutY="199.0" onMouseClicked="#onClickedPlayer1" onMouseEntered="#inHoveredPlayer1"
-                    onMouseExited="#outHoveredPlayer1" prefHeight="115.0" prefWidth="115.0">
+        <AnchorPane layoutX="25.0" layoutY="199.0" onMouseClicked="#onClickedPlayer1" onMouseEntered="#inHoveredPlayer1" onMouseExited="#outHoveredPlayer1" prefHeight="115.0" prefWidth="115.0">
             <children>
                 <ImageView id="player1" fx:id="player_1_head_img" fitHeight="115.0" fitWidth="115.0">
                     <image>
-                        <Image url="@../card/image/player/alex.png"/>
+                        <Image url="@../card/image/player/alex.png" />
                     </image>
                 </ImageView>
             </children>
             <cursor>
-                <Cursor fx:constant="HAND"/>
+                <Cursor fx:constant="HAND" />
             </cursor>
         </AnchorPane>
-        <AnchorPane id="player1_card1" fx:id="player1_card1" layoutX="162.0" layoutY="144.0"
-                    onMouseClicked="#onClickedBoard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard"
-                    prefHeight="169.0" prefWidth="137.0">
+        <AnchorPane id="player1_card1" fx:id="player1_card1" layoutX="162.0" layoutY="144.0" onMouseClicked="#onClickedBoard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="169.0" prefWidth="137.0">
             <children>
-                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#7eaa9f" height="169.0" stroke="TRANSPARENT"
-                           strokeType="INSIDE" width="137.0"/>
+                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#7eaa9f" height="169.0" stroke="TRANSPARENT" strokeType="INSIDE" width="137.0" />
                 <AnchorPane prefHeight="169.0" prefWidth="137.0">
                     <children>
-                        <HBox alignment="CENTER" layoutX="16.0" layoutY="43.0" maxHeight="106.0" maxWidth="106.0"
-                              prefHeight="106.0" prefWidth="106.0">
+                        <HBox alignment="CENTER" layoutX="16.0" layoutY="43.0" maxHeight="106.0" maxWidth="106.0" prefHeight="106.0" prefWidth="106.0">
                             <children>
-                                <ImageView fx:id="image_card_A1" fitHeight="106.0" fitWidth="106.0" pickOnBounds="true"
-                                           preserveRatio="true">
+                                <ImageView fx:id="image_card_A1" fitHeight="106.0" fitWidth="106.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../card/image/character/Creeper.png"/>
+                                        <Image url="@../card/image/character/Creeper.png" />
                                     </image>
                                 </ImageView>
                             </children>
                         </HBox>
                         <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="8.0" layoutY="6.0">
                             <image>
-                                <Image url="@../image/PngItem_46664.png"/>
+                                <Image url="@../image/PngItem_46664.png" />
                             </image>
                         </ImageView>
                         <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="109.0" layoutY="6.0">
                             <image>
-                                <Image url="@../image/NicePng_minecraft-heart-png_1905759.png"/>
+                                <Image url="@../image/NicePng_minecraft-heart-png_1905759.png" />
                             </image>
                         </ImageView>
-                        <Label fx:id="attack_card_A1" alignment="CENTER" layoutX="2.0" layoutY="28.0" prefHeight="15.0"
-                               prefWidth="31.0" text="18" textAlignment="CENTER" textFill="WHITE">
+                        <Label fx:id="attack_card_A1" alignment="CENTER" layoutX="2.0" layoutY="28.0" prefHeight="15.0" prefWidth="31.0" text="18" textAlignment="CENTER" textFill="WHITE">
                             <font>
-                                <Font name="Segoe UI Bold" size="12.0"/>
+                                <Font name="Segoe UI Bold" size="12.0" />
                             </font>
                         </Label>
-                        <Label fx:id="health_card_A1" alignment="CENTER" layoutX="103.0" layoutY="28.0"
-                               prefHeight="15.0" prefWidth="31.0" text="18" textAlignment="CENTER" textFill="WHITE">
+                        <Label fx:id="health_card_A1" alignment="CENTER" layoutX="103.0" layoutY="28.0" prefHeight="15.0" prefWidth="31.0" text="18" textAlignment="CENTER" textFill="WHITE">
                             <font>
-                                <Font name="Segoe UI Bold" size="12.0"/>
+                                <Font name="Segoe UI Bold" size="12.0" />
                             </font>
                         </Label>
-                        <Label fx:id="level_card_A1" alignment="CENTER" layoutX="8.0" layoutY="150.0" prefHeight="18.0"
-                               prefWidth="117.0" text="LVL (0/10)" textFill="WHITE">
+                        <Label fx:id="level_card_A1" alignment="CENTER" layoutX="8.0" layoutY="150.0" prefHeight="18.0" prefWidth="117.0" text="LVL (0/10)" textFill="WHITE">
                             <font>
-                                <Font name="Segoe UI Bold" size="12.0"/>
+                                <Font name="Segoe UI Bold" size="12.0" />
                             </font>
                         </Label>
                     </children>
                 </AnchorPane>
             </children>
             <cursor>
-                <Cursor fx:constant="HAND"/>
+                <Cursor fx:constant="HAND" />
             </cursor>
         </AnchorPane>
-        <AnchorPane id="player2_card2" fx:id="player2_card2" layoutX="811.0" layoutY="144.0"
-                    onMouseClicked="#onClickedBoard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard"
-                    prefHeight="169.0" prefWidth="137.0">
+        <AnchorPane id="player2_card2" fx:id="player2_card2" layoutX="811.0" layoutY="144.0" onMouseClicked="#onClickedBoard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="169.0" prefWidth="137.0">
             <children>
-                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#7eaa9f" height="169.0" stroke="TRANSPARENT"
-                           strokeType="INSIDE" width="137.0"/>
+                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#7eaa9f" height="169.0" stroke="TRANSPARENT" strokeType="INSIDE" width="137.0" />
                 <AnchorPane prefHeight="169.0" prefWidth="137.0">
                     <children>
                         <HBox alignment="CENTER" layoutX="16.0" layoutY="43.0" prefHeight="106.0" prefWidth="106.0">
                             <children>
-                                <ImageView fx:id="image_card_B2" fitHeight="106.0" fitWidth="106.0" pickOnBounds="true"
-                                           preserveRatio="true">
+                                <ImageView fx:id="image_card_B2" fitHeight="106.0" fitWidth="106.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../card/image/character/Creeper.png"/>
+                                        <Image url="@../card/image/character/Creeper.png" />
                                     </image>
                                 </ImageView>
                             </children>
                         </HBox>
                         <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="8.0" layoutY="6.0">
                             <image>
-                                <Image url="@../image/PngItem_46664.png"/>
+                                <Image url="@../image/PngItem_46664.png" />
                             </image>
                         </ImageView>
                         <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="109.0" layoutY="6.0">
                             <image>
-                                <Image url="@../image/NicePng_minecraft-heart-png_1905759.png"/>
+                                <Image url="@../image/NicePng_minecraft-heart-png_1905759.png" />
                             </image>
                         </ImageView>
-                        <Label fx:id="attack_card_B2" alignment="CENTER" layoutX="2.0" layoutY="28.0" prefHeight="15.0"
-                               prefWidth="31.0" text="18" textAlignment="CENTER" textFill="WHITE">
+                        <Label fx:id="attack_card_B2" alignment="CENTER" layoutX="2.0" layoutY="28.0" prefHeight="15.0" prefWidth="31.0" text="18" textAlignment="CENTER" textFill="WHITE">
                             <font>
-                                <Font name="Segoe UI Bold" size="12.0"/>
+                                <Font name="Segoe UI Bold" size="12.0" />
                             </font>
                         </Label>
-                        <Label fx:id="health_card_B2" alignment="CENTER" layoutX="103.0" layoutY="28.0"
-                               prefHeight="15.0" prefWidth="31.0" text="18" textAlignment="CENTER" textFill="WHITE">
+                        <Label fx:id="health_card_B2" alignment="CENTER" layoutX="103.0" layoutY="28.0" prefHeight="15.0" prefWidth="31.0" text="18" textAlignment="CENTER" textFill="WHITE">
                             <font>
-                                <Font name="Segoe UI Bold" size="12.0"/>
+                                <Font name="Segoe UI Bold" size="12.0" />
                             </font>
                         </Label>
-                        <Label fx:id="level_card_B2" alignment="CENTER" layoutX="8.0" layoutY="150.0" prefHeight="18.0"
-                               prefWidth="117.0" text="LVL (0/10)" textFill="WHITE">
+                        <Label fx:id="level_card_B2" alignment="CENTER" layoutX="8.0" layoutY="150.0" prefHeight="18.0" prefWidth="117.0" text="LVL (0/10)" textFill="WHITE">
                             <font>
-                                <Font name="Segoe UI Bold" size="12.0"/>
+                                <Font name="Segoe UI Bold" size="12.0" />
                             </font>
                         </Label>
                     </children>
                 </AnchorPane>
             </children>
             <cursor>
-                <Cursor fx:constant="HAND"/>
+                <Cursor fx:constant="HAND" />
             </cursor>
         </AnchorPane>
-        <AnchorPane id="player2_card1" fx:id="player2_card1" layoutX="971.0" layoutY="144.0"
-                    onMouseClicked="#onClickedBoard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard"
-                    prefHeight="169.0" prefWidth="137.0">
+        <AnchorPane id="player2_card1" fx:id="player2_card1" layoutX="971.0" layoutY="144.0" onMouseClicked="#onClickedBoard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="169.0" prefWidth="137.0">
             <children>
-                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#7eaa9f" height="169.0" stroke="TRANSPARENT"
-                           strokeType="INSIDE" width="137.0"/>
+                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#7eaa9f" height="169.0" stroke="TRANSPARENT" strokeType="INSIDE" width="137.0" />
                 <AnchorPane prefHeight="169.0" prefWidth="137.0">
                     <children>
                         <HBox alignment="CENTER" layoutX="16.0" layoutY="43.0" prefHeight="106.0" prefWidth="106.0">
                             <children>
-                                <ImageView fx:id="image_card_A2" fitHeight="106.0" fitWidth="106.0" pickOnBounds="true"
-                                           preserveRatio="true">
+                                <ImageView fx:id="image_card_A2" fitHeight="106.0" fitWidth="106.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../card/image/character/Creeper.png"/>
+                                        <Image url="@../card/image/character/Creeper.png" />
                                     </image>
                                 </ImageView>
                             </children>
                         </HBox>
                         <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="8.0" layoutY="6.0">
                             <image>
-                                <Image url="@../image/PngItem_46664.png"/>
+                                <Image url="@../image/PngItem_46664.png" />
                             </image>
                         </ImageView>
                         <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="109.0" layoutY="6.0">
                             <image>
-                                <Image url="@../image/NicePng_minecraft-heart-png_1905759.png"/>
+                                <Image url="@../image/NicePng_minecraft-heart-png_1905759.png" />
                             </image>
                         </ImageView>
-                        <Label fx:id="attack_card_A2" alignment="CENTER" layoutX="2.0" layoutY="28.0" prefHeight="15.0"
-                               prefWidth="31.0" text="18" textAlignment="CENTER" textFill="WHITE">
+                        <Label fx:id="attack_card_A2" alignment="CENTER" layoutX="2.0" layoutY="28.0" prefHeight="15.0" prefWidth="31.0" text="18" textAlignment="CENTER" textFill="WHITE">
                             <font>
-                                <Font name="Segoe UI Bold" size="12.0"/>
+                                <Font name="Segoe UI Bold" size="12.0" />
                             </font>
                         </Label>
-                        <Label fx:id="health_card_A2" alignment="CENTER" layoutX="103.0" layoutY="28.0"
-                               prefHeight="15.0" prefWidth="31.0" text="18" textAlignment="CENTER" textFill="WHITE">
+                        <Label fx:id="health_card_A2" alignment="CENTER" layoutX="103.0" layoutY="28.0" prefHeight="15.0" prefWidth="31.0" text="18" textAlignment="CENTER" textFill="WHITE">
                             <font>
-                                <Font name="Segoe UI Bold" size="12.0"/>
+                                <Font name="Segoe UI Bold" size="12.0" />
                             </font>
                         </Label>
-                        <Label fx:id="level_card_A2" alignment="CENTER" layoutX="8.0" layoutY="150.0" prefHeight="18.0"
-                               prefWidth="117.0" text="LVL (0/10)" textFill="WHITE">
+                        <Label fx:id="level_card_A2" alignment="CENTER" layoutX="8.0" layoutY="150.0" prefHeight="18.0" prefWidth="117.0" text="LVL (0/10)" textFill="WHITE">
                             <font>
-                                <Font name="Segoe UI Bold" size="12.0"/>
+                                <Font name="Segoe UI Bold" size="12.0" />
                             </font>
                         </Label>
                     </children>
                 </AnchorPane>
             </children>
             <cursor>
-                <Cursor fx:constant="HAND"/>
+                <Cursor fx:constant="HAND" />
             </cursor>
         </AnchorPane>
-        <AnchorPane id="player1_card2" fx:id="player1_card2" layoutX="322.0" layoutY="144.0"
-                    onMouseClicked="#onClickedBoard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard"
-                    prefHeight="169.0" prefWidth="137.0">
+        <AnchorPane id="player1_card2" fx:id="player1_card2" layoutX="322.0" layoutY="144.0" onMouseClicked="#onClickedBoard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="169.0" prefWidth="137.0">
             <children>
-                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#7eaa9f" height="169.0" stroke="TRANSPARENT"
-                           strokeType="INSIDE" width="137.0"/>
+                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#7eaa9f" height="169.0" stroke="TRANSPARENT" strokeType="INSIDE" width="137.0" />
                 <AnchorPane prefHeight="169.0" prefWidth="137.0">
                     <children>
                         <HBox alignment="CENTER" layoutX="16.0" layoutY="43.0" prefHeight="106.0" prefWidth="106.0">
                             <children>
-                                <ImageView fx:id="image_card_B1" fitHeight="106.0" fitWidth="106.0" pickOnBounds="true"
-                                           preserveRatio="true">
+                                <ImageView fx:id="image_card_B1" fitHeight="106.0" fitWidth="106.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../card/image/character/Creeper.png"/>
+                                        <Image url="@../card/image/character/Creeper.png" />
                                     </image>
                                 </ImageView>
                             </children>
                         </HBox>
                         <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="8.0" layoutY="6.0">
                             <image>
-                                <Image url="@../image/PngItem_46664.png"/>
+                                <Image url="@../image/PngItem_46664.png" />
                             </image>
                         </ImageView>
                         <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="109.0" layoutY="6.0">
                             <image>
-                                <Image url="@../image/NicePng_minecraft-heart-png_1905759.png"/>
+                                <Image url="@../image/NicePng_minecraft-heart-png_1905759.png" />
                             </image>
                         </ImageView>
-                        <Label fx:id="attack_card_B1" alignment="CENTER" layoutX="2.0" layoutY="28.0" prefHeight="15.0"
-                               prefWidth="31.0" text="18" textAlignment="CENTER" textFill="WHITE">
+                        <Label fx:id="attack_card_B1" alignment="CENTER" layoutX="2.0" layoutY="28.0" prefHeight="15.0" prefWidth="31.0" text="18" textAlignment="CENTER" textFill="WHITE">
                             <font>
-                                <Font name="Segoe UI Bold" size="12.0"/>
+                                <Font name="Segoe UI Bold" size="12.0" />
                             </font>
                         </Label>
-                        <Label fx:id="health_card_B1" alignment="CENTER" layoutX="103.0" layoutY="28.0"
-                               prefHeight="15.0" prefWidth="31.0" text="18" textAlignment="CENTER" textFill="WHITE">
+                        <Label fx:id="health_card_B1" alignment="CENTER" layoutX="103.0" layoutY="28.0" prefHeight="15.0" prefWidth="31.0" text="18" textAlignment="CENTER" textFill="WHITE">
                             <font>
-                                <Font name="Segoe UI Bold" size="12.0"/>
+                                <Font name="Segoe UI Bold" size="12.0" />
                             </font>
                         </Label>
-                        <Label fx:id="level_card_B1" alignment="CENTER" layoutX="8.0" layoutY="150.0" prefHeight="18.0"
-                               prefWidth="117.0" text="LVL (0/10)" textFill="WHITE">
+                        <Label fx:id="level_card_B1" alignment="CENTER" layoutX="8.0" layoutY="150.0" prefHeight="18.0" prefWidth="117.0" text="LVL (0/10)" textFill="WHITE">
                             <font>
-                                <Font name="Segoe UI Bold" size="12.0"/>
+                                <Font name="Segoe UI Bold" size="12.0" />
                             </font>
                         </Label>
                     </children>
                 </AnchorPane>
             </children>
             <cursor>
-                <Cursor fx:constant="HAND"/>
+                <Cursor fx:constant="HAND" />
             </cursor>
         </AnchorPane>
-        <AnchorPane id="player1_card4" fx:id="player1_card4" layoutX="322.0" layoutY="323.0"
-                    onMouseClicked="#onClickedBoard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard"
-                    prefHeight="169.0" prefWidth="137.0">
+        <AnchorPane id="player1_card4" fx:id="player1_card4" layoutX="322.0" layoutY="323.0" onMouseClicked="#onClickedBoard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="169.0" prefWidth="137.0">
             <children>
-                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#7eaa9f" height="169.0" stroke="TRANSPARENT"
-                           strokeType="INSIDE" width="137.0"/>
+                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#7eaa9f" height="169.0" stroke="TRANSPARENT" strokeType="INSIDE" width="137.0" />
                 <AnchorPane prefHeight="169.0" prefWidth="137.0">
                     <children>
                         <HBox alignment="CENTER" layoutX="16.0" layoutY="43.0" prefHeight="106.0" prefWidth="106.0">
                             <children>
-                                <ImageView fx:id="image_card_D1" fitHeight="106.0" fitWidth="106.0" pickOnBounds="true"
-                                           preserveRatio="true">
+                                <ImageView fx:id="image_card_D1" fitHeight="106.0" fitWidth="106.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../card/image/character/Creeper.png"/>
+                                        <Image url="@../card/image/character/Creeper.png" />
                                     </image>
                                 </ImageView>
                             </children>
                         </HBox>
                         <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="8.0" layoutY="6.0">
                             <image>
-                                <Image url="@../image/PngItem_46664.png"/>
+                                <Image url="@../image/PngItem_46664.png" />
                             </image>
                         </ImageView>
                         <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="109.0" layoutY="6.0">
                             <image>
-                                <Image url="@../image/NicePng_minecraft-heart-png_1905759.png"/>
+                                <Image url="@../image/NicePng_minecraft-heart-png_1905759.png" />
                             </image>
                         </ImageView>
-                        <Label fx:id="attack_card_D1" alignment="CENTER" layoutX="2.0" layoutY="28.0" prefHeight="15.0"
-                               prefWidth="31.0" text="18" textAlignment="CENTER" textFill="WHITE">
+                        <Label fx:id="attack_card_D1" alignment="CENTER" layoutX="2.0" layoutY="28.0" prefHeight="15.0" prefWidth="31.0" text="18" textAlignment="CENTER" textFill="WHITE">
                             <font>
-                                <Font name="Segoe UI Bold" size="12.0"/>
+                                <Font name="Segoe UI Bold" size="12.0" />
                             </font>
                         </Label>
-                        <Label fx:id="health_card_D1" alignment="CENTER" layoutX="103.0" layoutY="28.0"
-                               prefHeight="15.0" prefWidth="31.0" text="18" textAlignment="CENTER" textFill="WHITE">
+                        <Label fx:id="health_card_D1" alignment="CENTER" layoutX="103.0" layoutY="28.0" prefHeight="15.0" prefWidth="31.0" text="18" textAlignment="CENTER" textFill="WHITE">
                             <font>
-                                <Font name="Segoe UI Bold" size="12.0"/>
+                                <Font name="Segoe UI Bold" size="12.0" />
                             </font>
                         </Label>
-                        <Label fx:id="level_card_D1" alignment="CENTER" layoutX="8.0" layoutY="150.0" prefHeight="18.0"
-                               prefWidth="117.0" text="LVL (0/10)" textFill="WHITE">
+                        <Label fx:id="level_card_D1" alignment="CENTER" layoutX="8.0" layoutY="150.0" prefHeight="18.0" prefWidth="117.0" text="LVL (0/10)" textFill="WHITE">
                             <font>
-                                <Font name="Segoe UI Bold" size="12.0"/>
+                                <Font name="Segoe UI Bold" size="12.0" />
                             </font>
                         </Label>
                     </children>
                 </AnchorPane>
             </children>
             <cursor>
-                <Cursor fx:constant="HAND"/>
+                <Cursor fx:constant="HAND" />
             </cursor>
         </AnchorPane>
-        <AnchorPane id="player1_card3" fx:id="player1_card3" layoutX="162.0" layoutY="323.0"
-                    onMouseClicked="#onClickedBoard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard"
-                    prefHeight="169.0" prefWidth="137.0">
+        <AnchorPane id="player1_card3" fx:id="player1_card3" layoutX="162.0" layoutY="323.0" onMouseClicked="#onClickedBoard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="169.0" prefWidth="137.0">
             <children>
-                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#7eaa9f" height="169.0" stroke="TRANSPARENT"
-                           strokeType="INSIDE" width="137.0"/>
+                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#7eaa9f" height="169.0" stroke="TRANSPARENT" strokeType="INSIDE" width="137.0" />
                 <AnchorPane prefHeight="169.0" prefWidth="137.0">
                     <children>
                         <HBox alignment="CENTER" layoutX="16.0" layoutY="43.0" prefHeight="106.0" prefWidth="106.0">
                             <children>
-                                <ImageView fx:id="image_card_C1" fitHeight="106.0" fitWidth="106.0" pickOnBounds="true"
-                                           preserveRatio="true">
+                                <ImageView fx:id="image_card_C1" fitHeight="106.0" fitWidth="106.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../card/image/character/Creeper.png"/>
+                                        <Image url="@../card/image/character/Creeper.png" />
                                     </image>
                                 </ImageView>
                             </children>
                         </HBox>
                         <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="8.0" layoutY="6.0">
                             <image>
-                                <Image url="@../image/PngItem_46664.png"/>
+                                <Image url="@../image/PngItem_46664.png" />
                             </image>
                         </ImageView>
                         <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="109.0" layoutY="6.0">
                             <image>
-                                <Image url="@../image/NicePng_minecraft-heart-png_1905759.png"/>
+                                <Image url="@../image/NicePng_minecraft-heart-png_1905759.png" />
                             </image>
                         </ImageView>
-                        <Label fx:id="attack_card_C1" alignment="CENTER" layoutX="2.0" layoutY="28.0" prefHeight="15.0"
-                               prefWidth="31.0" text="18" textAlignment="CENTER" textFill="WHITE">
+                        <Label fx:id="attack_card_C1" alignment="CENTER" layoutX="2.0" layoutY="28.0" prefHeight="15.0" prefWidth="31.0" text="18" textAlignment="CENTER" textFill="WHITE">
                             <font>
-                                <Font name="Segoe UI Bold" size="12.0"/>
+                                <Font name="Segoe UI Bold" size="12.0" />
                             </font>
                         </Label>
-                        <Label fx:id="health_card_C1" alignment="CENTER" layoutX="103.0" layoutY="28.0"
-                               prefHeight="15.0" prefWidth="31.0" text="18" textAlignment="CENTER" textFill="WHITE">
+                        <Label fx:id="health_card_C1" alignment="CENTER" layoutX="103.0" layoutY="28.0" prefHeight="15.0" prefWidth="31.0" text="18" textAlignment="CENTER" textFill="WHITE">
                             <font>
-                                <Font name="Segoe UI Bold" size="12.0"/>
+                                <Font name="Segoe UI Bold" size="12.0" />
                             </font>
                         </Label>
-                        <Label fx:id="level_card_C1" alignment="CENTER" layoutX="8.0" layoutY="150.0" prefHeight="18.0"
-                               prefWidth="117.0" text="LVL (0/10)" textFill="WHITE">
+                        <Label fx:id="level_card_C1" alignment="CENTER" layoutX="8.0" layoutY="150.0" prefHeight="18.0" prefWidth="117.0" text="LVL (0/10)" textFill="WHITE">
                             <font>
-                                <Font name="Segoe UI Bold" size="12.0"/>
+                                <Font name="Segoe UI Bold" size="12.0" />
                             </font>
                         </Label>
                     </children>
                 </AnchorPane>
             </children>
             <cursor>
-                <Cursor fx:constant="HAND"/>
+                <Cursor fx:constant="HAND" />
             </cursor>
         </AnchorPane>
-        <AnchorPane id="player2_card5" fx:id="player2_card5" layoutX="811.0" layoutY="323.0"
-                    onMouseClicked="#onClickedBoard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard"
-                    prefHeight="169.0" prefWidth="137.0">
+        <AnchorPane id="player2_card5" fx:id="player2_card5" layoutX="811.0" layoutY="323.0" onMouseClicked="#onClickedBoard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="169.0" prefWidth="137.0">
             <children>
-                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#7eaa9f" height="169.0" stroke="TRANSPARENT"
-                           strokeType="INSIDE" width="137.0"/>
+                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#7eaa9f" height="169.0" stroke="TRANSPARENT" strokeType="INSIDE" width="137.0" />
+                <AnchorPane onMouseClicked="#onClickedCard" prefHeight="169.0" prefWidth="137.0">
+                    <children>
+                        <HBox alignment="CENTER" layoutX="16.0" layoutY="43.0" prefHeight="106.0" prefWidth="106.0">
+                            <children>
+                                <ImageView fx:id="image_card_D2" fitHeight="106.0" fitWidth="106.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../card/image/character/Creeper.png" />
+                                    </image>
+                                </ImageView>
+                            </children>
+                        </HBox>
+                        <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="8.0" layoutY="6.0">
+                            <image>
+                                <Image url="@../image/PngItem_46664.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="109.0" layoutY="6.0">
+                            <image>
+                                <Image url="@../image/NicePng_minecraft-heart-png_1905759.png" />
+                            </image>
+                        </ImageView>
+                        <Label fx:id="attack_card_D2" alignment="CENTER" layoutX="2.0" layoutY="28.0" prefHeight="15.0" prefWidth="31.0" text="18" textAlignment="CENTER" textFill="WHITE">
+                            <font>
+                                <Font name="Segoe UI Bold" size="12.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="health_card_D2" alignment="CENTER" layoutX="103.0" layoutY="28.0" prefHeight="15.0" prefWidth="31.0" text="18" textAlignment="CENTER" textFill="WHITE">
+                            <font>
+                                <Font name="Segoe UI Bold" size="12.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="level_card_D2" alignment="CENTER" layoutX="8.0" layoutY="150.0" prefHeight="18.0" prefWidth="117.0" text="LVL (0/10)" textFill="WHITE">
+                            <font>
+                                <Font name="Segoe UI Bold" size="12.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+            </children>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </AnchorPane>
+        <AnchorPane id="player2_card4" fx:id="player2_card4" layoutX="971.0" layoutY="323.0" onMouseClicked="#onClickedBoard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="169.0" prefWidth="137.0">
+            <children>
+                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#7eaa9f" height="169.0" stroke="TRANSPARENT" strokeType="INSIDE" width="137.0" />
                 <AnchorPane prefHeight="169.0" prefWidth="137.0">
                     <children>
                         <HBox alignment="CENTER" layoutX="16.0" layoutY="43.0" prefHeight="106.0" prefWidth="106.0">
                             <children>
-                                <ImageView fx:id="image_card_D2" fitHeight="106.0" fitWidth="106.0" pickOnBounds="true"
-                                           preserveRatio="true">
+                                <ImageView fx:id="image_card_C2" fitHeight="106.0" fitWidth="106.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../card/image/character/Creeper.png"/>
+                                        <Image url="@../card/image/character/Creeper.png" />
                                     </image>
                                 </ImageView>
                             </children>
                         </HBox>
                         <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="8.0" layoutY="6.0">
                             <image>
-                                <Image url="@../image/PngItem_46664.png"/>
+                                <Image url="@../image/PngItem_46664.png" />
                             </image>
                         </ImageView>
                         <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="109.0" layoutY="6.0">
                             <image>
-                                <Image url="@../image/NicePng_minecraft-heart-png_1905759.png"/>
+                                <Image url="@../image/NicePng_minecraft-heart-png_1905759.png" />
                             </image>
                         </ImageView>
-                        <Label fx:id="attack_card_D2" alignment="CENTER" layoutX="2.0" layoutY="28.0" prefHeight="15.0"
-                               prefWidth="31.0" text="18" textAlignment="CENTER" textFill="WHITE">
+                        <Label fx:id="attack_card_C2" alignment="CENTER" layoutX="2.0" layoutY="28.0" prefHeight="15.0" prefWidth="31.0" text="18" textAlignment="CENTER" textFill="WHITE">
                             <font>
-                                <Font name="Segoe UI Bold" size="12.0"/>
+                                <Font name="Segoe UI Bold" size="12.0" />
                             </font>
                         </Label>
-                        <Label fx:id="health_card_D2" alignment="CENTER" layoutX="103.0" layoutY="28.0"
-                               prefHeight="15.0" prefWidth="31.0" text="18" textAlignment="CENTER" textFill="WHITE">
+                        <Label fx:id="health_card_C2" alignment="CENTER" layoutX="103.0" layoutY="28.0" prefHeight="15.0" prefWidth="31.0" text="18" textAlignment="CENTER" textFill="WHITE">
                             <font>
-                                <Font name="Segoe UI Bold" size="12.0"/>
+                                <Font name="Segoe UI Bold" size="12.0" />
                             </font>
                         </Label>
-                        <Label fx:id="level_card_D2" alignment="CENTER" layoutX="8.0" layoutY="150.0" prefHeight="18.0"
-                               prefWidth="117.0" text="LVL (0/10)" textFill="WHITE">
+                        <Label fx:id="level_card_C2" alignment="CENTER" layoutX="8.0" layoutY="150.0" prefHeight="18.0" prefWidth="117.0" text="LVL (0/10)" textFill="WHITE">
                             <font>
-                                <Font name="Segoe UI Bold" size="12.0"/>
+                                <Font name="Segoe UI Bold" size="12.0" />
                             </font>
                         </Label>
                     </children>
                 </AnchorPane>
             </children>
             <cursor>
-                <Cursor fx:constant="HAND"/>
+                <Cursor fx:constant="HAND" />
             </cursor>
         </AnchorPane>
-        <AnchorPane id="player2_card4" fx:id="player2_card4" layoutX="971.0" layoutY="323.0"
-                    onMouseClicked="#onClickedBoard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard"
-                    prefHeight="169.0" prefWidth="137.0">
+        <AnchorPane id="player2_card3" fx:id="player2_card3" layoutX="652.0" layoutY="238.0" onMouseClicked="#onClickedBoard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="169.0" prefWidth="137.0">
             <children>
-                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#7eaa9f" height="169.0" stroke="TRANSPARENT"
-                           strokeType="INSIDE" width="137.0"/>
-                <AnchorPane prefHeight="169.0" prefWidth="137.0">
-                    <children>
-                        <HBox alignment="CENTER" layoutX="16.0" layoutY="43.0" prefHeight="106.0" prefWidth="106.0">
-                            <children>
-                                <ImageView fx:id="image_card_C2" fitHeight="106.0" fitWidth="106.0" pickOnBounds="true"
-                                           preserveRatio="true">
-                                    <image>
-                                        <Image url="@../card/image/character/Creeper.png"/>
-                                    </image>
-                                </ImageView>
-                            </children>
-                        </HBox>
-                        <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="8.0" layoutY="6.0">
-                            <image>
-                                <Image url="@../image/PngItem_46664.png"/>
-                            </image>
-                        </ImageView>
-                        <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="109.0" layoutY="6.0">
-                            <image>
-                                <Image url="@../image/NicePng_minecraft-heart-png_1905759.png"/>
-                            </image>
-                        </ImageView>
-                        <Label fx:id="attack_card_C2" alignment="CENTER" layoutX="2.0" layoutY="28.0" prefHeight="15.0"
-                               prefWidth="31.0" text="18" textAlignment="CENTER" textFill="WHITE">
-                            <font>
-                                <Font name="Segoe UI Bold" size="12.0"/>
-                            </font>
-                        </Label>
-                        <Label fx:id="health_card_C2" alignment="CENTER" layoutX="103.0" layoutY="28.0"
-                               prefHeight="15.0" prefWidth="31.0" text="18" textAlignment="CENTER" textFill="WHITE">
-                            <font>
-                                <Font name="Segoe UI Bold" size="12.0"/>
-                            </font>
-                        </Label>
-                        <Label fx:id="level_card_C2" alignment="CENTER" layoutX="8.0" layoutY="150.0" prefHeight="18.0"
-                               prefWidth="117.0" text="LVL (0/10)" textFill="WHITE">
-                            <font>
-                                <Font name="Segoe UI Bold" size="12.0"/>
-                            </font>
-                        </Label>
-                    </children>
-                </AnchorPane>
-            </children>
-            <cursor>
-                <Cursor fx:constant="HAND"/>
-            </cursor>
-        </AnchorPane>
-        <AnchorPane id="player2_card3" fx:id="player2_card3" layoutX="652.0" layoutY="238.0"
-                    onMouseClicked="#onClickedBoard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard"
-                    prefHeight="169.0" prefWidth="137.0">
-            <children>
-                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#7eaa9f" height="169.0" stroke="TRANSPARENT"
-                           strokeType="INSIDE" width="137.0"/>
+                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#7eaa9f" height="169.0" stroke="TRANSPARENT" strokeType="INSIDE" width="137.0" />
                 <AnchorPane id="player2_card3" fx:id="player2_card3" prefHeight="169.0" prefWidth="137.0">
                     <children>
                         <HBox alignment="CENTER" layoutX="16.0" layoutY="43.0" prefHeight="106.0" prefWidth="106.0">
                             <children>
-                                <ImageView fx:id="image_card_E2" fitHeight="106.0" fitWidth="106.0" pickOnBounds="true"
-                                           preserveRatio="true">
+                                <ImageView fx:id="image_card_E2" fitHeight="106.0" fitWidth="106.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../card/image/character/Creeper.png"/>
+                                        <Image url="@../card/image/character/Creeper.png" />
                                     </image>
                                 </ImageView>
                             </children>
                         </HBox>
                         <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="8.0" layoutY="6.0">
                             <image>
-                                <Image url="@../image/PngItem_46664.png"/>
+                                <Image url="@../image/PngItem_46664.png" />
                             </image>
                         </ImageView>
                         <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="109.0" layoutY="6.0">
                             <image>
-                                <Image url="@../image/NicePng_minecraft-heart-png_1905759.png"/>
+                                <Image url="@../image/NicePng_minecraft-heart-png_1905759.png" />
                             </image>
                         </ImageView>
-                        <Label fx:id="attack_card_E2" alignment="CENTER" layoutX="2.0" layoutY="28.0" prefHeight="15.0"
-                               prefWidth="31.0" text="18" textAlignment="CENTER" textFill="WHITE">
+                        <Label fx:id="attack_card_E2" alignment="CENTER" layoutX="2.0" layoutY="28.0" prefHeight="15.0" prefWidth="31.0" text="18" textAlignment="CENTER" textFill="WHITE">
                             <font>
-                                <Font name="Segoe UI Bold" size="12.0"/>
+                                <Font name="Segoe UI Bold" size="12.0" />
                             </font>
                         </Label>
-                        <Label fx:id="health_card_E2" alignment="CENTER" layoutX="103.0" layoutY="28.0"
-                               prefHeight="15.0" prefWidth="31.0" text="18" textAlignment="CENTER" textFill="WHITE">
+                        <Label fx:id="health_card_E2" alignment="CENTER" layoutX="103.0" layoutY="28.0" prefHeight="15.0" prefWidth="31.0" text="18" textAlignment="CENTER" textFill="WHITE">
                             <font>
-                                <Font name="Segoe UI Bold" size="12.0"/>
+                                <Font name="Segoe UI Bold" size="12.0" />
                             </font>
                         </Label>
-                        <Label fx:id="level_card_E2" alignment="CENTER" layoutX="8.0" layoutY="150.0" prefHeight="18.0"
-                               prefWidth="117.0" text="LVL (0/10)" textFill="WHITE">
+                        <Label fx:id="level_card_E2" alignment="CENTER" layoutX="8.0" layoutY="150.0" prefHeight="18.0" prefWidth="117.0" text="LVL (0/10)" textFill="WHITE">
                             <font>
-                                <Font name="Segoe UI Bold" size="12.0"/>
+                                <Font name="Segoe UI Bold" size="12.0" />
                             </font>
                         </Label>
                     </children>
                 </AnchorPane>
             </children>
             <cursor>
-                <Cursor fx:constant="HAND"/>
+                <Cursor fx:constant="HAND" />
             </cursor>
         </AnchorPane>
-        <AnchorPane id="player1_card5" fx:id="player1_card5" layoutX="481.0" layoutY="238.0"
-                    onMouseClicked="#onClickedBoard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard"
-                    prefHeight="169.0" prefWidth="137.0">
+        <AnchorPane id="player1_card5" fx:id="player1_card5" layoutX="481.0" layoutY="238.0" onMouseClicked="#onClickedBoard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="169.0" prefWidth="137.0">
             <children>
-                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#7eaa9f" height="169.0" stroke="TRANSPARENT"
-                           strokeType="INSIDE" width="137.0"/>
+                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#7eaa9f" height="169.0" stroke="TRANSPARENT" strokeType="INSIDE" width="137.0" />
                 <AnchorPane prefHeight="169.0" prefWidth="137.0">
                     <children>
                         <HBox alignment="CENTER" layoutX="16.0" layoutY="43.0" prefHeight="106.0" prefWidth="106.0">
                             <children>
-                                <ImageView fx:id="image_card_E1" fitHeight="106.0" fitWidth="106.0" pickOnBounds="true"
-                                           preserveRatio="true">
+                                <ImageView fx:id="image_card_E1" fitHeight="106.0" fitWidth="106.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../card/image/character/Creeper.png"/>
+                                        <Image url="@../card/image/character/Creeper.png" />
                                     </image>
                                 </ImageView>
                             </children>
                         </HBox>
                         <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="8.0" layoutY="6.0">
                             <image>
-                                <Image url="@../image/PngItem_46664.png"/>
+                                <Image url="@../image/PngItem_46664.png" />
                             </image>
                         </ImageView>
                         <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="109.0" layoutY="6.0">
                             <image>
-                                <Image url="@../image/NicePng_minecraft-heart-png_1905759.png"/>
+                                <Image url="@../image/NicePng_minecraft-heart-png_1905759.png" />
                             </image>
                         </ImageView>
-                        <Label fx:id="attack_card_E1" alignment="CENTER" layoutX="2.0" layoutY="28.0" prefHeight="15.0"
-                               prefWidth="31.0" text="18" textAlignment="CENTER" textFill="WHITE">
+                        <Label fx:id="attack_card_E1" alignment="CENTER" layoutX="2.0" layoutY="28.0" prefHeight="15.0" prefWidth="31.0" text="18" textAlignment="CENTER" textFill="WHITE">
                             <font>
-                                <Font name="Segoe UI Bold" size="12.0"/>
+                                <Font name="Segoe UI Bold" size="12.0" />
                             </font>
                         </Label>
-                        <Label fx:id="health_card_E1" alignment="CENTER" layoutX="103.0" layoutY="28.0"
-                               prefHeight="15.0" prefWidth="31.0" text="18" textAlignment="CENTER" textFill="WHITE">
+                        <Label fx:id="health_card_E1" alignment="CENTER" layoutX="103.0" layoutY="28.0" prefHeight="15.0" prefWidth="31.0" text="18" textAlignment="CENTER" textFill="WHITE">
                             <font>
-                                <Font name="Segoe UI Bold" size="12.0"/>
+                                <Font name="Segoe UI Bold" size="12.0" />
                             </font>
                         </Label>
-                        <Label fx:id="level_card_E1" alignment="CENTER" layoutX="8.0" layoutY="150.0" prefHeight="18.0"
-                               prefWidth="117.0" text="LVL (0/10)" textFill="WHITE">
+                        <Label fx:id="level_card_E1" alignment="CENTER" layoutX="8.0" layoutY="150.0" prefHeight="18.0" prefWidth="117.0" text="LVL (0/10)" textFill="WHITE">
                             <font>
-                                <Font name="Segoe UI Bold" size="12.0"/>
+                                <Font name="Segoe UI Bold" size="12.0" />
                             </font>
                         </Label>
                     </children>
                 </AnchorPane>
             </children>
             <cursor>
-                <Cursor fx:constant="HAND"/>
+                <Cursor fx:constant="HAND" />
             </cursor>
         </AnchorPane>
-        <Label fx:id="turn_number" alignment="CENTER" layoutX="559.0" layoutY="38.0" prefHeight="40.0" prefWidth="166.0"
-               text="Turn 1" textFill="WHITE">
+        <Label fx:id="turn_number" alignment="CENTER" layoutX="559.0" layoutY="38.0" prefHeight="40.0" prefWidth="166.0" text="Turn 1" textFill="WHITE">
             <font>
-                <Font name="Segoe UI Bold" size="24.0"/>
+                <Font name="Segoe UI Bold" size="24.0" />
             </font>
         </Label>
-        <AnchorPane id="hand_card1" fx:id="hand_card1" layoutX="23.0" layoutY="589.0" onMouseClicked="#onClickedHand"
-                    onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="158.0" prefWidth="109.0">
+        <AnchorPane id="hand_card1" fx:id="hand_card1" layoutX="23.0" layoutY="589.0" onMouseClicked="#onClickedHand" onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="158.0" prefWidth="109.0">
             <children>
-                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#c4c4c4" height="158.0" stroke="TRANSPARENT"
-                           strokeMiterLimit="0.0" strokeType="INSIDE" width="109.0"/>
-                <AnchorPane id="deck_card1" fx:id="deck_card1" prefHeight="158.0" prefWidth="109.0">
+                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#c4c4c4" height="158.0" stroke="TRANSPARENT" strokeMiterLimit="0.0" strokeType="INSIDE" width="109.0" />
+                <AnchorPane id="hand_card1" fx:id="hand_card1" prefHeight="158.0" prefWidth="109.0">
                     <children>
                         <HBox alignment="CENTER" layoutX="12.0" layoutY="25.0" prefHeight="85.0" prefWidth="85.0">
                             <children>
-                                <ImageView fx:id="image_hand_1" fitHeight="85.0" fitWidth="85.0" pickOnBounds="true"
-                                           preserveRatio="true">
+                                <ImageView fx:id="image_hand_1" fitHeight="85.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../card/image/spell/potion/Halal%20Porkchop.png"/>
+                                        <Image url="@../card/image/spell/potion/Halal%20Porkchop.png" />
                                     </image>
                                 </ImageView>
                             </children>
                         </HBox>
-                        <Label fx:id="mana_hand_1" alignment="TOP_CENTER" layoutY="118.0" prefHeight="18.0"
-                               prefWidth="104.0" text="MANA: 10" textFill="WHITE">
+                        <Label fx:id="mana_hand_1" alignment="TOP_CENTER" layoutY="118.0" prefHeight="18.0" prefWidth="104.0" text="MANA: 10" textFill="WHITE">
                             <font>
-                                <Font name="Segoe UI Bold" size="14.0"/>
+                                <Font name="Segoe UI Bold" size="14.0" />
                             </font>
                         </Label>
-                        <Label fx:id="description_hand_1" alignment="TOP_CENTER" layoutX="-1.0" layoutY="135.0"
-                               prefHeight="18.0" prefWidth="110.0" text="ATK +10/HP -10" textFill="WHITE">
+                        <Label fx:id="description_hand_1" alignment="TOP_CENTER" layoutX="-1.0" layoutY="135.0" prefHeight="18.0" prefWidth="110.0" text="ATK +10/HP -10" textFill="WHITE">
                             <font>
-                                <Font name="Segoe UI" size="12.0"/>
+                                <Font name="Segoe UI" size="12.0" />
                             </font>
                         </Label>
-                        <Label fx:id="delete_button_hand_1" layoutX="93.0" layoutY="4.0"
-                               prefHeight="12.0" prefWidth="11.0" text="X"
-                               textFill="WHITE" visible="false">
+                        <Label id="delete_button_hand_1" fx:id="delete_button_hand_1" layoutX="93.0" layoutY="4.0" onMouseClicked="#onClickedDeleteHand1" prefHeight="12.0" prefWidth="11.0" text="X" textFill="WHITE" visible="false">
                             <font>
-                                <Font name="Gill Sans MT Bold" size="13.0"/>
+                                <Font name="Gill Sans MT Bold" size="13.0" />
                             </font>
                         </Label>
                     </children>
                 </AnchorPane>
             </children>
             <cursor>
-                <Cursor fx:constant="HAND"/>
+                <Cursor fx:constant="HAND" />
             </cursor>
         </AnchorPane>
         <AnchorPane layoutX="600.0" layoutY="495.0" prefHeight="221.0" prefWidth="202.0">
             <children>
-                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#0e1d19" height="252.0" stroke="TRANSPARENT"
-                           strokeMiterLimit="0.0" strokeType="INSIDE" width="201.0"/>
+                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#0e1d19" height="252.0" stroke="TRANSPARENT" strokeMiterLimit="0.0" strokeType="INSIDE" width="201.0" />
                 <AnchorPane layoutX="12.0" layoutY="33.0" prefHeight="130.0" prefWidth="130.0">
                     <children>
                         <HBox alignment="CENTER" prefHeight="175.0" prefWidth="175.0">
                             <children>
-                                <ImageView fx:id="image_hovered_card" fitHeight="175.0" fitWidth="175.0"
-                                           pickOnBounds="true" preserveRatio="true">
+                                <ImageView fx:id="image_hovered_card" fitHeight="175.0" fitWidth="175.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../card/image/spell/swap/Swab%20Test.png"/>
+                                        <Image url="@../card/image/spell/swap/Swab%20Test.png" />
                                     </image>
                                 </ImageView>
                             </children>
@@ -649,40 +564,39 @@
         </AnchorPane>
         <AnchorPane layoutX="823.0" layoutY="570.0" prefHeight="175.0" prefWidth="194.0">
             <children>
-                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#c5dcd6" height="176.0" stroke="TRANSPARENT"
-                           strokeMiterLimit="0.0" strokeType="INSIDE" width="194.0"/>
+                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#c5dcd6" height="176.0" stroke="TRANSPARENT" strokeMiterLimit="0.0" strokeType="INSIDE" width="194.0" />
                 <AnchorPane layoutX="19.0" layoutY="12.0" prefHeight="150.0" prefWidth="160.0">
                     <children>
                         <TextFlow fx:id="hovered_card_info" prefHeight="150.0" prefWidth="157.0">
                             <children>
                                 <Label prefHeight="39.0" prefWidth="160.0" text="Zombie Village">
                                     <font>
-                                        <Font name="Segoe UI Bold" size="16.0"/>
+                                        <Font name="Segoe UI Bold" size="16.0" />
                                     </font>
                                 </Label>
                                 <Label prefHeight="15.0" prefWidth="160.0" text="ATK: 10">
                                     <font>
-                                        <Font name="Segoe UI" size="16.0"/>
+                                        <Font name="Segoe UI" size="16.0" />
                                     </font>
                                 </Label>
                                 <Label prefHeight="15.0" prefWidth="160.0" text="HP: 10">
                                     <font>
-                                        <Font name="Segoe UI" size="16.0"/>
+                                        <Font name="Segoe UI" size="16.0" />
                                     </font>
                                 </Label>
                                 <Label prefHeight="15.0" prefWidth="160.0" text="Level: 1">
                                     <font>
-                                        <Font name="Segoe UI" size="16.0"/>
+                                        <Font name="Segoe UI" size="16.0" />
                                     </font>
                                 </Label>
                                 <Label prefHeight="15.0" prefWidth="160.0" text="Exp: 0">
                                     <font>
-                                        <Font name="Segoe UI" size="16.0"/>
+                                        <Font name="Segoe UI" size="16.0" />
                                     </font>
                                 </Label>
                                 <Label prefHeight="15.0" prefWidth="160.0" text="Type: Overworld">
                                     <font>
-                                        <Font name="Segoe UI" size="16.0"/>
+                                        <Font name="Segoe UI" size="16.0" />
                                     </font>
                                 </Label>
                             </children>
@@ -693,323 +607,272 @@
         </AnchorPane>
         <AnchorPane layoutX="1028.0" layoutY="570.0" prefHeight="178.0" prefWidth="230.0">
             <children>
-                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#c5dcd6" height="177.0" stroke="TRANSPARENT"
-                           strokeMiterLimit="0.0" strokeType="INSIDE" width="228.0"/>
+                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#c5dcd6" height="177.0" stroke="TRANSPARENT" strokeMiterLimit="0.0" strokeType="INSIDE" width="228.0" />
                 <AnchorPane layoutX="6.0" prefHeight="170.0" prefWidth="201.0">
                     <children>
-                        <Label fx:id="hovered_card_description" layoutX="6.0" prefHeight="170.0" prefWidth="202.0"
-                               style="-fx-wrap-text: true;"
-                               text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat consequat, pretium viverra nec. Dui sed interdum urna, nascetur non pulvinar est. Non nisl imperdiet amet, velit consequat a platea.">
+                        <Label fx:id="hovered_card_description" layoutX="6.0" prefHeight="170.0" prefWidth="202.0" style="-fx-wrap-text: true;" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat consequat, pretium viverra nec. Dui sed interdum urna, nascetur non pulvinar est. Non nisl imperdiet amet, velit consequat a platea.">
                             <font>
-                                <Font name="System Italic" size="12.0"/>
+                                <Font name="System Italic" size="12.0" />
                             </font>
                         </Label>
                     </children>
                 </AnchorPane>
             </children>
         </AnchorPane>
-        <Circle fx:id="phase_1_circle" fill="#81b29a" layoutX="39.0" layoutY="567.0" radius="13.0" stroke="TRANSPARENT"
-                strokeMiterLimit="0.0" strokeType="INSIDE"/>
-        <Circle fx:id="phase_2_circle" fill="#f2cc8f" layoutX="81.0" layoutY="567.0" radius="13.0" stroke="TRANSPARENT"
-                strokeMiterLimit="0.0" strokeType="INSIDE"/>
-        <Circle fx:id="phase_3_circle" fill="#c4c4c4" layoutX="123.0" layoutY="567.0" radius="13.0" stroke="TRANSPARENT"
-                strokeMiterLimit="0.0" strokeType="INSIDE"/>
-        <Circle fx:id="phase_4_circle" fill="#c4c4c4" layoutX="165.0" layoutY="567.0" radius="13.0" stroke="TRANSPARENT"
-                strokeMiterLimit="0.0" strokeType="INSIDE"/>
-        <Label fx:id="phase_state" layoutX="24.0" layoutY="499.0" prefHeight="28.0" prefWidth="195.0"
-               text="ATTACK PHASE">
+        <Circle fx:id="phase_1_circle" fill="#81b29a" layoutX="39.0" layoutY="567.0" radius="13.0" stroke="TRANSPARENT" strokeMiterLimit="0.0" strokeType="INSIDE" />
+        <Circle fx:id="phase_2_circle" fill="#f2cc8f" layoutX="81.0" layoutY="567.0" radius="13.0" stroke="TRANSPARENT" strokeMiterLimit="0.0" strokeType="INSIDE" />
+        <Circle fx:id="phase_3_circle" fill="#c4c4c4" layoutX="123.0" layoutY="567.0" radius="13.0" stroke="TRANSPARENT" strokeMiterLimit="0.0" strokeType="INSIDE" />
+        <Circle fx:id="phase_4_circle" fill="#c4c4c4" layoutX="165.0" layoutY="567.0" radius="13.0" stroke="TRANSPARENT" strokeMiterLimit="0.0" strokeType="INSIDE" />
+        <Label fx:id="phase_state" layoutX="24.0" layoutY="499.0" prefHeight="28.0" prefWidth="195.0" text="ATTACK PHASE">
             <font>
-                <Font name="Segoe UI Bold" size="22.0"/>
+                <Font name="Segoe UI Bold" size="22.0" />
             </font>
         </Label>
-        <Label fx:id="phase_description" layoutX="24.0" layoutY="523.0" prefHeight="28.0" prefWidth="509.0"
-               text="ATTACK PHASE">
+        <Label fx:id="phase_description" layoutX="24.0" layoutY="523.0" prefHeight="28.0" prefWidth="509.0" text="ATTACK PHASE">
             <font>
-                <Font name="Segoe UI" size="16.0"/>
+                <Font name="Segoe UI" size="16.0" />
             </font>
         </Label>
         <Label fx:id="player_1_name" layoutX="38.0" layoutY="79.0" prefHeight="28.0" prefWidth="226.0" text="Alex 1">
             <font>
-                <Font name="Segoe UI Bold" size="20.0"/>
+                <Font name="Segoe UI Bold" size="20.0" />
             </font>
         </Label>
-        <Label fx:id="player_1_health" alignment="CENTER_RIGHT" layoutX="279.0" layoutY="79.0" prefHeight="28.0"
-               prefWidth="256.0" text="60/80">
+        <Label fx:id="player_1_health" alignment="CENTER_RIGHT" layoutX="279.0" layoutY="79.0" prefHeight="28.0" prefWidth="256.0" text="60/80">
             <font>
-                <Font name="Segoe UI Bold" size="20.0"/>
+                <Font name="Segoe UI Bold" size="20.0" />
             </font>
         </Label>
         <Label fx:id="player_2_health" layoutX="742.0" layoutY="79.0" prefHeight="28.0" prefWidth="226.0" text="50/80">
             <font>
-                <Font name="Segoe UI Bold" size="20.0"/>
+                <Font name="Segoe UI Bold" size="20.0" />
             </font>
         </Label>
-        <Label fx:id="player_2_name" alignment="CENTER_RIGHT" layoutX="984.0" layoutY="79.0" prefHeight="28.0"
-               prefWidth="256.0" text="Alex 2">
+        <Label fx:id="player_2_name" alignment="CENTER_RIGHT" layoutX="984.0" layoutY="79.0" prefHeight="28.0" prefWidth="256.0" text="Alex 2">
             <font>
-                <Font name="Segoe UI Bold" size="20.0"/>
+                <Font name="Segoe UI Bold" size="20.0" />
             </font>
         </Label>
-        <AnchorPane fx:id="delete_button" layoutX="500.0" layoutY="555.0" onMouseClicked="#onClickDeleteButton"
-                    prefHeight="26.0" prefWidth="93.0">
+        <AnchorPane fx:id="delete_button" layoutX="500.0" layoutY="555.0" onMouseClicked="#onClickDeleteButton" prefHeight="26.0" prefWidth="93.0">
             <children>
-                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#4f2b2a" height="26.0" stroke="TRANSPARENT"
-                           strokeType="INSIDE" width="93.0"/>
+                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#4f2b2a" height="26.0" stroke="TRANSPARENT" strokeType="INSIDE" width="93.0" />
                 <ImageView fitHeight="17.0" fitWidth="17.0" layoutX="6.0" layoutY="5.0">
                     <image>
-                        <Image url="@../image/icons8-delete-30.png"/>
+                        <Image url="@../image/icons8-delete-30.png" />
                     </image>
                 </ImageView>
                 <Label layoutX="33.0" layoutY="4.0" text="Delete" textFill="WHITE">
                     <font>
-                        <Font name="Segoe UI Bold" size="14.0"/>
+                        <Font name="Segoe UI Bold" size="14.0" />
                     </font>
                 </Label>
             </children>
             <cursor>
-                <Cursor fx:constant="HAND"/>
+                <Cursor fx:constant="HAND" />
             </cursor>
         </AnchorPane>
-        <AnchorPane fx:id="next_button" layoutX="201.0" layoutY="555.0" onMouseClicked="#onClickNextButton"
-                    onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="26.0" prefWidth="93.0">
+        <AnchorPane fx:id="next_button" layoutX="201.0" layoutY="555.0" onMouseClicked="#onClickNextButton" onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="26.0" prefWidth="93.0">
             <children>
-                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#81b29a" height="26.0" stroke="TRANSPARENT"
-                           strokeType="INSIDE" width="93.0"/>
+                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#81b29a" height="26.0" stroke="TRANSPARENT" strokeType="INSIDE" width="93.0" />
                 <Label layoutX="11.0" layoutY="4.0" text="&gt;&gt;" textFill="#678d84">
                     <font>
-                        <Font name="Segoe UI Bold" size="13.0"/>
+                        <Font name="Segoe UI Bold" size="13.0" />
                     </font>
                 </Label>
                 <Label layoutX="40.0" layoutY="4.0" text="Next" textFill="WHITE">
                     <font>
-                        <Font name="Segoe UI Bold" size="14.0"/>
+                        <Font name="Segoe UI Bold" size="14.0" />
                     </font>
                 </Label>
             </children>
             <cursor>
-                <Cursor fx:constant="HAND"/>
+                <Cursor fx:constant="HAND" />
             </cursor>
         </AnchorPane>
         <AnchorPane fx:id="trade_button" layoutX="1003.0" layoutY="512.0" prefHeight="51.0" prefWidth="120.0">
             <children>
-                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#49575d" height="51.0" stroke="BLACK"
-                           strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" width="120.0"/>
-                <Label fx:id="player_mana" alignment="CENTER" layoutX="4.0" layoutY="7.0" prefHeight="18.0"
-                       prefWidth="114.0" text="Mana: 20" textFill="WHITE">
+                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#49575d" height="51.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" width="120.0" />
+                <Label fx:id="player_mana" alignment="CENTER" layoutX="4.0" layoutY="7.0" prefHeight="18.0" prefWidth="114.0" text="Mana: 20" textFill="WHITE">
                     <font>
-                        <Font name="Segoe UI Bold" size="13.0"/>
+                        <Font name="Segoe UI Bold" size="13.0" />
                     </font>
                 </Label>
-                <Label alignment="CENTER" layoutX="7.0" layoutY="25.0" onMouseClicked="#onClickTradeButton"
-                       prefHeight="18.0" prefWidth="106.0" text="Trade With 1 Exp" textFill="WHITE"/>
+                <Label alignment="CENTER" layoutX="7.0" layoutY="25.0" onMouseClicked="#onClickTradeButton" prefHeight="18.0" prefWidth="106.0" text="Trade With 1 Exp" textFill="WHITE" />
             </children>
             <cursor>
-                <Cursor fx:constant="HAND"/>
+                <Cursor fx:constant="HAND" />
             </cursor>
         </AnchorPane>
-        <AnchorPane layoutX="1135.0" layoutY="512.0" onMouseEntered="#enteredCard"
-                    onMouseExited="#exitedCard" prefHeight="51.0" prefWidth="120.0">
+        <AnchorPane layoutX="1135.0" layoutY="512.0" onMouseClicked="#onClickedCard" onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="51.0" prefWidth="120.0">
             <children>
-                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#49575d" height="51.0" stroke="BLACK"
-                           strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" width="120.0"/>
-                <Label fx:id="deck_counter" alignment="CENTER" layoutX="2.0" layoutY="4.0" prefHeight="39.0"
-                       prefWidth="114.0" text="Deck: 33/40" textFill="WHITE">
+                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#49575d" height="51.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" width="120.0" />
+                <Label fx:id="deck_counter" alignment="CENTER" layoutX="2.0" layoutY="4.0" prefHeight="39.0" prefWidth="114.0" text="Deck: 33/40" textFill="WHITE">
                     <font>
-                        <Font name="Segoe UI Bold" size="13.0"/>
+                        <Font name="Segoe UI Bold" size="13.0" />
                     </font>
                 </Label>
             </children>
         </AnchorPane>
-        <AnchorPane id="hand_card5" fx:id="hand_card5" layoutX="483.0" layoutY="589.0" onMouseClicked="#onClickedHand"
-                    onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="158.0" prefWidth="109.0">
+        <AnchorPane id="hand_card5" fx:id="hand_card5" layoutX="483.0" layoutY="589.0" onMouseClicked="#onClickedHand" onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="158.0" prefWidth="109.0">
             <children>
-                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#c4c4c4" height="158.0" stroke="TRANSPARENT"
-                           strokeMiterLimit="0.0" strokeType="INSIDE" width="109.0"/>
+                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#c4c4c4" height="158.0" stroke="TRANSPARENT" strokeMiterLimit="0.0" strokeType="INSIDE" width="109.0" />
                 <AnchorPane prefHeight="158.0" prefWidth="109.0">
                     <children>
-                        <HBox alignment="CENTER" layoutX="12.0" layoutY="25.0" onMouseClicked="#onClickedDeleteHand5"
-                              prefHeight="85.0" prefWidth="85.0">
+                        <HBox alignment="CENTER" layoutX="12.0" layoutY="25.0" onMouseClicked="#onClickedDeleteHand5" prefHeight="85.0" prefWidth="85.0">
                             <children>
-                                <ImageView fx:id="image_hand_5" fitHeight="85.0" fitWidth="85.0" pickOnBounds="true"
-                                           preserveRatio="true">
+                                <ImageView fx:id="image_hand_5" fitHeight="85.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../card/image/spell/potion/Yoasobi.png"/>
+                                        <Image url="@../card/image/spell/potion/Yoasobi.png" />
                                     </image>
                                 </ImageView>
                             </children>
                         </HBox>
-                        <Label fx:id="mana_hand_5" alignment="TOP_CENTER" layoutY="118.0" prefHeight="18.0"
-                               prefWidth="104.0" text="MANA: 10" textFill="WHITE">
+                        <Label fx:id="mana_hand_5" alignment="TOP_CENTER" layoutY="118.0" prefHeight="18.0" prefWidth="104.0" text="MANA: 10" textFill="WHITE">
                             <font>
-                                <Font name="Segoe UI Bold" size="14.0"/>
+                                <Font name="Segoe UI Bold" size="14.0" />
                             </font>
                         </Label>
-                        <Label fx:id="description_hand_5" alignment="TOP_CENTER" layoutX="-1.0" layoutY="135.0"
-                               prefHeight="18.0" prefWidth="110.0" text="ATK +10/HP -10" textFill="WHITE">
+                        <Label fx:id="description_hand_5" alignment="TOP_CENTER" layoutX="-1.0" layoutY="135.0" prefHeight="18.0" prefWidth="110.0" text="ATK +10/HP -10" textFill="WHITE">
                             <font>
-                                <Font name="Segoe UI" size="12.0"/>
+                                <Font name="Segoe UI" size="12.0" />
                             </font>
                         </Label>
-                        <Label fx:id="delete_button_hand_5" layoutX="93.0" layoutY="4.0" prefHeight="12.0"
-                               prefWidth="11.0" text="X" textFill="WHITE" visible="false">
+                        <Label id="delete_button_hand_5" fx:id="delete_button_hand_5" layoutX="93.0" layoutY="4.0" prefHeight="12.0" prefWidth="11.0" text="X" textFill="WHITE" visible="false">
                             <font>
-                                <Font name="Gill Sans MT Bold" size="13.0"/>
+                                <Font name="Gill Sans MT Bold" size="13.0" />
                             </font>
                             <cursor>
-                                <Cursor fx:constant="HAND"/>
+                                <Cursor fx:constant="HAND" />
                             </cursor>
                         </Label>
                     </children>
                 </AnchorPane>
             </children>
             <cursor>
-                <Cursor fx:constant="HAND"/>
+                <Cursor fx:constant="HAND" />
             </cursor>
         </AnchorPane>
-        <AnchorPane id="hand_card4" fx:id="hand_card4" layoutX="368.0" layoutY="589.0" onMouseClicked="#onClickedHand"
-                    onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="158.0" prefWidth="109.0">
+        <AnchorPane id="hand_card4" fx:id="hand_card4" layoutX="368.0" layoutY="589.0" onMouseClicked="#onClickedHand" onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="158.0" prefWidth="109.0">
             <children>
-                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#c4c4c4" height="158.0" stroke="TRANSPARENT"
-                           strokeMiterLimit="0.0" strokeType="INSIDE" width="109.0"/>
+                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#c4c4c4" height="158.0" stroke="TRANSPARENT" strokeMiterLimit="0.0" strokeType="INSIDE" width="109.0" />
                 <AnchorPane prefHeight="158.0" prefWidth="109.0">
                     <children>
                         <HBox alignment="CENTER" layoutX="12.0" layoutY="25.0" prefHeight="85.0" prefWidth="85.0">
                             <children>
-                                <ImageView fx:id="image_hand_4" fitHeight="85.0" fitWidth="85.0" pickOnBounds="true"
-                                           preserveRatio="true">
+                                <ImageView fx:id="image_hand_4" fitHeight="85.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../card/image/spell/potion/Witch's%20Eye.png"/>
+                                        <Image url="@../card/image/spell/potion/Witch's%20Eye.png" />
                                     </image>
                                 </ImageView>
                             </children>
                         </HBox>
-                        <Label fx:id="mana_hand_4" alignment="TOP_CENTER" layoutY="118.0" prefHeight="18.0"
-                               prefWidth="104.0" text="MANA: 10" textFill="WHITE">
+                        <Label fx:id="mana_hand_4" alignment="TOP_CENTER" layoutY="118.0" prefHeight="18.0" prefWidth="104.0" text="MANA: 10" textFill="WHITE">
                             <font>
-                                <Font name="Segoe UI Bold" size="14.0"/>
+                                <Font name="Segoe UI Bold" size="14.0" />
                             </font>
                         </Label>
-                        <Label fx:id="description_hand_4" alignment="TOP_CENTER" layoutX="-1.0" layoutY="135.0"
-                               prefHeight="18.0" prefWidth="110.0" text="ATK +10/HP -10" textFill="WHITE">
+                        <Label fx:id="description_hand_4" alignment="TOP_CENTER" layoutX="-1.0" layoutY="135.0" prefHeight="18.0" prefWidth="110.0" text="ATK +10/HP -10" textFill="WHITE">
                             <font>
-                                <Font name="Segoe UI" size="12.0"/>
+                                <Font name="Segoe UI" size="12.0" />
                             </font>
                         </Label>
-                        <Label fx:id="delete_button_hand_4" layoutX="93.0" layoutY="4.0"
-                               onMouseClicked="#onClickedDeleteHand4" prefHeight="12.0" prefWidth="11.0" text="X"
-                               textFill="WHITE" visible="false">
+                        <Label id="delete_button_hand_4" fx:id="delete_button_hand_4" layoutX="93.0" layoutY="4.0" onMouseClicked="#onClickedDeleteHand4" prefHeight="12.0" prefWidth="11.0" text="X" textFill="WHITE" visible="false">
                             <font>
-                                <Font name="Gill Sans MT Bold" size="13.0"/>
+                                <Font name="Gill Sans MT Bold" size="13.0" />
                             </font>
                         </Label>
                     </children>
                 </AnchorPane>
             </children>
             <cursor>
-                <Cursor fx:constant="HAND"/>
+                <Cursor fx:constant="HAND" />
             </cursor>
         </AnchorPane>
-        <AnchorPane id="hand_card3" fx:id="hand_card3" layoutX="253.0" layoutY="589.0" onMouseClicked="#onClickedHand"
-                    onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="158.0" prefWidth="109.0">
+        <AnchorPane id="hand_card3" fx:id="hand_card3" layoutX="253.0" layoutY="589.0" onMouseClicked="#onClickedHand" onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="158.0" prefWidth="109.0">
             <children>
-                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#c4c4c4" height="158.0" stroke="TRANSPARENT"
-                           strokeMiterLimit="0.0" strokeType="INSIDE" width="109.0"/>
+                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#c4c4c4" height="158.0" stroke="TRANSPARENT" strokeMiterLimit="0.0" strokeType="INSIDE" width="109.0" />
                 <AnchorPane prefHeight="158.0" prefWidth="109.0">
                     <children>
                         <HBox alignment="CENTER" layoutX="12.0" layoutY="25.0" prefHeight="85.0" prefWidth="85.0">
                             <children>
-                                <ImageView fx:id="image_hand_3" fitHeight="85.0" fitWidth="85.0" pickOnBounds="true"
-                                           preserveRatio="true">
+                                <ImageView fx:id="image_hand_3" fitHeight="85.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../card/image/spell/potion/SNMPTN Rejection Letter.png"/>
+                                        <Image url="@../card/image/spell/potion/SNMPTN Rejection Letter.png" />
                                     </image>
                                 </ImageView>
                             </children>
                         </HBox>
-                        <Label fx:id="mana_hand_3" alignment="TOP_CENTER" layoutY="118.0" prefHeight="18.0"
-                               prefWidth="104.0" text="MANA: 10" textFill="WHITE">
+                        <Label fx:id="mana_hand_3" alignment="TOP_CENTER" layoutY="118.0" prefHeight="18.0" prefWidth="104.0" text="MANA: 10" textFill="WHITE">
                             <font>
-                                <Font name="Segoe UI Bold" size="14.0"/>
+                                <Font name="Segoe UI Bold" size="14.0" />
                             </font>
                         </Label>
-                        <Label fx:id="description_hand_3" alignment="TOP_CENTER" layoutX="-1.0" layoutY="135.0"
-                               prefHeight="18.0" prefWidth="110.0" text="ATK +10/HP -10" textFill="WHITE">
+                        <Label fx:id="description_hand_3" alignment="TOP_CENTER" layoutX="-1.0" layoutY="135.0" prefHeight="18.0" prefWidth="110.0" text="ATK +10/HP -10" textFill="WHITE">
                             <font>
-                                <Font name="Segoe UI" size="12.0"/>
+                                <Font name="Segoe UI" size="12.0" />
                             </font>
                         </Label>
-                        <AnchorPane layoutX="72.0" layoutY="5.0" prefHeight="16.0" prefWidth="15.0"/>
-                        <Label fx:id="delete_button_hand_3" layoutX="93.0" layoutY="4.0"
-                               onMouseClicked="#onClickedDeleteHand3" prefHeight="12.0" prefWidth="11.0" text="X"
-                               textFill="WHITE" visible="false">
+                        <AnchorPane layoutX="72.0" layoutY="5.0" prefHeight="16.0" prefWidth="15.0" />
+                        <Label id="delete_button_hand_3" fx:id="delete_button_hand_3" layoutX="93.0" layoutY="4.0" onMouseClicked="#onClickedDeleteHand3" prefHeight="12.0" prefWidth="11.0" text="X" textFill="WHITE" visible="false">
                             <font>
-                                <Font name="Gill Sans MT Bold" size="13.0"/>
+                                <Font name="Gill Sans MT Bold" size="13.0" />
                             </font>
                         </Label>
                     </children>
                 </AnchorPane>
             </children>
             <cursor>
-                <Cursor fx:constant="HAND"/>
+                <Cursor fx:constant="HAND" />
             </cursor>
         </AnchorPane>
-        <AnchorPane id="hand_card2" fx:id="hand_card2" layoutX="138.0" layoutY="589.0" onMouseClicked="#onClickedHand"
-                    onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="158.0" prefWidth="109.0">
+        <AnchorPane id="hand_card2" fx:id="hand_card2" layoutX="138.0" layoutY="589.0" onMouseClicked="#onClickedHand" onMouseEntered="#enteredCard" onMouseExited="#exitedCard" prefHeight="158.0" prefWidth="109.0">
             <children>
-                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#c4c4c4" height="158.0" stroke="TRANSPARENT"
-                           strokeMiterLimit="0.0" strokeType="INSIDE" width="109.0"/>
+                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#c4c4c4" height="158.0" stroke="TRANSPARENT" strokeMiterLimit="0.0" strokeType="INSIDE" width="109.0" />
                 <AnchorPane prefHeight="158.0" prefWidth="109.0">
                     <children>
                         <HBox alignment="CENTER" layoutX="12.0" layoutY="25.0" prefHeight="85.0" prefWidth="85.0">
                             <children>
-                                <ImageView fx:id="image_hand2" fitHeight="85.0" fitWidth="85.0" pickOnBounds="true"
-                                           preserveRatio="true">
+                                <ImageView fx:id="image_hand2" fitHeight="85.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../card/image/spell/potion/SNMPTN%20Acceptance%20Letter.png"/>
+                                        <Image url="@../card/image/spell/potion/SNMPTN%20Acceptance%20Letter.png" />
                                     </image>
                                 </ImageView>
                             </children>
                         </HBox>
-                        <Label fx:id="mana_hand_2" alignment="TOP_CENTER" layoutY="118.0" prefHeight="18.0"
-                               prefWidth="104.0" text="MANA: 10" textFill="WHITE">
+                        <Label fx:id="mana_hand_2" alignment="TOP_CENTER" layoutY="118.0" prefHeight="18.0" prefWidth="104.0" text="MANA: 10" textFill="WHITE">
                             <font>
-                                <Font name="Segoe UI Bold" size="14.0"/>
+                                <Font name="Segoe UI Bold" size="14.0" />
                             </font>
                         </Label>
-                        <Label fx:id="description_hand_2" alignment="TOP_CENTER" layoutX="-1.0" layoutY="135.0"
-                               prefHeight="18.0" prefWidth="110.0" text="ATK +10/HP -10" textFill="WHITE">
+                        <Label fx:id="description_hand_2" alignment="TOP_CENTER" layoutX="-1.0" layoutY="135.0" prefHeight="18.0" prefWidth="110.0" text="ATK +10/HP -10" textFill="WHITE">
                             <font>
-                                <Font name="Segoe UI" size="12.0"/>
+                                <Font name="Segoe UI" size="12.0" />
                             </font>
                         </Label>
-                        <AnchorPane layoutX="72.0" layoutY="5.0" prefHeight="16.0" prefWidth="15.0"/>
-                        <Label fx:id="delete_button_hand_2" layoutX="93.0" layoutY="4.0"
-                               onMouseClicked="#onClickedDeleteHand2" prefHeight="12.0" prefWidth="11.0" text="X"
-                               textFill="WHITE" visible="false">
+                        <AnchorPane layoutX="72.0" layoutY="5.0" prefHeight="16.0" prefWidth="15.0" />
+                        <Label id="delete_button_hand_2" fx:id="delete_button_hand_2" layoutX="93.0" layoutY="4.0" onMouseClicked="#onClickedDeleteHand2" prefHeight="12.0" prefWidth="11.0" text="X" textFill="WHITE" visible="false">
                             <font>
-                                <Font name="Gill Sans MT Bold" size="13.0"/>
+                                <Font name="Gill Sans MT Bold" size="13.0" />
                             </font>
                         </Label>
                     </children>
                 </AnchorPane>
             </children>
             <cursor>
-                <Cursor fx:constant="HAND"/>
+                <Cursor fx:constant="HAND" />
             </cursor>
         </AnchorPane>
-        <AnchorPane fx:id="deck_button" layoutX="308.0" layoutY="557.0" onMouseClicked="#onClickNextButton"
-                    prefHeight="26.0" prefWidth="85.0">
+        <AnchorPane fx:id="deck_button" layoutX="308.0" layoutY="557.0" onMouseClicked="#onClickNextButton" prefHeight="26.0" prefWidth="85.0">
             <children>
-                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#81b29a" height="26.0" stroke="TRANSPARENT"
-                           strokeType="INSIDE" width="93.0"/>
+                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#81b29a" height="26.0" stroke="TRANSPARENT" strokeType="INSIDE" width="93.0" />
                 <Label layoutX="11.0" layoutY="3.0" text="Open Deck" textFill="WHITE">
                     <font>
-                        <Font name="Segoe UI Bold" size="14.0"/>
+                        <Font name="Segoe UI Bold" size="14.0" />
                     </font>
                 </Label>
             </children>
             <cursor>
-                <Cursor fx:constant="HAND"/>
+                <Cursor fx:constant="HAND" />
             </cursor>
         </AnchorPane>
     </children>

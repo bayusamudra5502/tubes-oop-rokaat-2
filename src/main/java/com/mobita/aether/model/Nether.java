@@ -84,4 +84,10 @@ public class Nether extends Mobs {
 //    public int getHealth() {
 //        return this.baseHealth;
 //    }
+    @Override
+    public String[] cardInformation() {
+        String[] newString = super.cardInformation();
+        newString[5] = "NETHER";
+        return newString;
+    }
 }

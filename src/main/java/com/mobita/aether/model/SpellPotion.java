@@ -28,7 +28,48 @@ public class SpellPotion extends Spell {
 
     @Override
     public String getProductDesc() {
-        return null;
+        String res = "";
+        if(this.attack > 0){
+            res += "ATK +" + this.attack;
+        }
+        else{
+            res += "ATK -" + this.attack;
+        }
+        res += "/";
+        if(this.health > 0){
+            res += "HP +" + this.health;
+        }
+        else{
+            res += "HP " + this.health;
+        }
+        return res;
+    }
+
+    public String[] cardInformation() {
+        String[] strings = new String[6];
+        strings[0] = this.cardName;
+        String res = "";
+        if(this.attack > 0){
+            res += "ATK: +" + this.attack;
+        }
+        else{
+            res += "ATK: -" + this.attack;
+        }
+        strings[1] = res;
+        res  = "";
+        if(this.health > 0){
+            res += "HP: +" + this.health;
+        }
+        else{
+            res += "HP: " + this.health;
+        }
+        strings[2] = res;
+        strings[3] = "duration: " + this.duration;
+
+        for(int i=4; i<6; i++){
+            strings[i] = "";
+        }
+        return strings;
     }
 //    public int getAttack() {
 //        return this.attack;

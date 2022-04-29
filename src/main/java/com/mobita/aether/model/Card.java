@@ -67,4 +67,5 @@ public abstract class Card {
 
     abstract public Color getColorRectangle();
 
+    abstract public String[] cardInformation();
 }

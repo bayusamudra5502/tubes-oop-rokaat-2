@@ -17,4 +17,11 @@ public class Overworld extends Mobs {
     public Color getColorRectangle() {
         return Color.web("4C8066");
     }
+
+    @Override
+    public String[] cardInformation() {
+        String[] newString = super.cardInformation();
+        newString[5] = "OVERWORLD";
+        return newString;
+    }
 }

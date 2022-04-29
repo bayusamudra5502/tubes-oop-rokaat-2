@@ -15,11 +15,12 @@ public abstract class Spell extends Card {
     public abstract String toString();
 
     public Color getColorRectangle() {
-        return Color.web("#F2CC8F");
+        return Color.web("#E7A131");
     }
 
     abstract public String getProductDesc();
 
+    abstract public String[] cardInformation();
     //    public String getName() {
 //        return cardName;
 //    }

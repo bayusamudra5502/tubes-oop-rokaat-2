@@ -15,7 +15,6 @@ public class Deck implements ICardCollection{
     public Deck(List<Mobs> listOfMobs, List<SpellMorph> listOfSpellMorph, List<SpellPotion> listOfSpellPotion, List<SpellSwap> listOfSpellSwap){
         this.content = new ArrayList<>();
         this.maxCard = new Random().nextInt((MAX_CARD_DECK-MIN_CARD_DECK) + 1) + MIN_CARD_DECK;
-        int mobsCount = 16*maxCard/40;
         int potionCount = 10*maxCard/40;
         int swapCount = 8*maxCard/40;
         int levelCount = 4*maxCard/40;
@@ -33,7 +32,8 @@ public class Deck implements ICardCollection{
         }
 
         for(int i=0; i<levelCount; i++){
-            content.add(new SpellLevel("Level Potion", "Menambah level pemain"));
+            boolean id = new Random().nextBoolean();
+            content.add(new SpellLevel("Level Potion", "Menambah level pemain", id));
         }
         for(int i=0; i<morphCount; i++){
             int id = new Random().nextInt(listOfSpellMorph.size());

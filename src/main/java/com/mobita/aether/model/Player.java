@@ -14,12 +14,15 @@ public class Player {
     public Player() {
         this.deck = null;
         this.hand = new Hand();
+        this.mana = 1;
     }
 
     public void insertDeck(Deck deck) {
         this.deck = deck;
         this.hand.initHand(deck);
+        this.mana = 1;
     }
+
 
     public Integer getHealthPoints() {
         return healthPoints;

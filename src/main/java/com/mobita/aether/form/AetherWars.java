@@ -527,6 +527,7 @@ public class AetherWars implements Initializable {
             case Rest -> {
                 StateController.getGamestate().setGamePhase(Draw);
                 ObserverController.notifyEvent("open-draw", null);
+                deck_counter.setText("Deck: " + StateController.getCurrentPlayer().getDeck().getRemainingCard() + "/" + StateController.getCurrentPlayer().getDeck().getMaxCard());
             }
             case Draw -> {
                 StateController.getGamestate().setGamePhase(Plan);
@@ -576,7 +577,8 @@ public class AetherWars implements Initializable {
         render();
         ObserverController.notifyEvent("open-draw", null);
 
-
+        image_hovered_card.setImage(null);
+        deck_counter.setText("Deck: " + StateController.getCurrentPlayer().getDeck().getRemainingCard() + "/" + StateController.getCurrentPlayer().getDeck().getMaxCard());
         redrawGame();
 
     }

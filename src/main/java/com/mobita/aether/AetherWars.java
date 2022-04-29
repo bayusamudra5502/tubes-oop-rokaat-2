@@ -1,5 +1,7 @@
 package com.mobita.aether;
 
+import com.mobita.aether.collection.Deck;
+import com.mobita.aether.controller.StateController;
 import com.mobita.aether.enums.MobType;
 import com.mobita.aether.model.*;
 import com.mobita.aether.util.CSVReader;
@@ -120,6 +122,11 @@ public class AetherWars extends Application {
             );
             listOfCards.add(listOfSpellSwap.get(listOfSpellSwap.size()-1));
         }
+
+        Deck deck1 = new Deck(listOfMobs, listOfSpellMorph, listOfSpellPotion, listOfSpellSwap);
+        Deck deck2 = new Deck(listOfMobs, listOfSpellMorph, listOfSpellPotion, listOfSpellSwap);
+
+        StateController.insertDeck(deck1, deck2);
     }
 
     public void start(Stage stage) throws IOException {

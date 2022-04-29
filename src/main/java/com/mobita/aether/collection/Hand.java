@@ -12,9 +12,9 @@ public class Hand implements ICardCollection{
         this.inHand = new HashMap<>();
     }
 
-    public Board insert(String slot, Card item) {
+    public ICardCollection insert(String slot, Card item) {
         inHand.put(slot,item);
-        return null;
+        return this;
     }
 
     public Card get(String slot) {
@@ -24,6 +24,8 @@ public class Hand implements ICardCollection{
     public void insertAll(ICardCollection other){
 
     }
+
+
 
 //    public Card delete(String slot) {
 //        Card res = get(slot);

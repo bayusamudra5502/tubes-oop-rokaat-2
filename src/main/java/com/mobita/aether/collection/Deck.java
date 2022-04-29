@@ -1,30 +1,84 @@
 package com.mobita.aether.collection;
 
-import com.mobita.aether.model.Card;
+import com.mobita.aether.model.*;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Random;
+
 
 public class Deck implements ICardCollection{
-    int remainingCard;
-    int maxCard;
+    ArrayList<Card> content;
+    private final int MAX_CARD_DECK = 60;
+    private final int MIN_CARD_DECK = 40;
+    private int remainingCard;
+    private int maxCard;
 
-    public Board insert(String slot, Card item) {
-        return null;
+    public Deck(List<Mobs> listOfMobs, List<SpellMorph> listOfSpellMorph, List<SpellPotion> listOfSpellPotion, List<SpellSwap> listOfSpellSwap){
+        this.content = new ArrayList<>();
+        this.maxCard = new Random().nextInt((MAX_CARD_DECK-MIN_CARD_DECK) + 1) + MIN_CARD_DECK;
+        int mobsCount = 16*maxCard/40;
+        int potionCount = 10*maxCard/40;
+        int swapCount = 8*maxCard/40;
+        int levelCount = 4*maxCard/40;
+        int morphCount = 2*maxCard/40;
+
+        for(int i=0; i<mobsCount; i++){
+            int id = new Random().nextInt(listOfMobs.size());
+            content.add(listOfMobs.get(id));
+        }
+
+        for(int i=0; i<potionCount; i++){
+            int id = new Random().nextInt(listOfSpellPotion.size());
+            content.add(listOfSpellPotion.get(id));
+        }
+
+        for(int i=0; i<swapCount; i++){
+            int id = new Random().nextInt(listOfSpellSwap.size());
+            content.add(listOfSpellSwap.get(id));
+        }
+
+        for(int i=0; i<levelCount; i++){
+            content.add(new SpellLevel("Level Potion", "Menambah level pemain"));
+        }
+        for(int i=0; i<morphCount; i++){
+            int id = new Random().nextInt(listOfSpellMorph.size());
+            content.add(listOfSpellMorph.get(id));
+        }
+        this.remainingCard = this.maxCard;
+    }
+
+    public List<Integer> getTopId() {
+        List<Integer> res = new ArrayList<>();
+
+        int i = 0;
+        while (i < 3 && i < this.remainingCard){
+            int id = new Random().nextInt(this.remainingCard);
+            res.add(id);
+            i++;
+        }
+
+        return res;
+    }
+
+    public Card get(int id){
+        return this.content.get(id);
+    }
+
+    public Card delete(int id){
+        Card deleted = this.content.get(id);
+        this.content.remove(id);
+        this.remainingCard--;
+        return deleted;
+    }
+
+    public int getRemainingCard(){
+        return this.remainingCard;
     }
 
 
-    public Card get(String slot) {
-        return null;
+    public int getMaxCard() {
+        return this.maxCard;
     }
-
-
-    public void insertAll(ICardCollection other){
-
-    }
-//    public Board delete(String slot) {
-//        return null;
-//    }
-//
-//    public Board addEffect() {
-//        return null;
-//    }
-
 }

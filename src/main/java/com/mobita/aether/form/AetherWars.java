@@ -42,6 +42,7 @@ public class AetherWars implements Initializable {
     public Circle phase_4_circle;
     public Label turn_number;
     public Label phase_state;
+    public Label phase_description;
     public Label player_1_health;
     public Label player_2_health;
 
@@ -65,6 +66,7 @@ public class AetherWars implements Initializable {
                 phase_3_circle.setFill(javafx.scene.paint.Color.web("C4C4C4"));
                 phase_4_circle.setFill(javafx.scene.paint.Color.web("C4C4C4"));
                 phase_state.setText("Draw Phase");
+                phase_description.setText("Kamu bisa mengambil 3 kartu dari deck");
             }
             case Plan -> {
                 phase_1_circle.setFill(javafx.scene.paint.Color.web("7EAA9F"));
@@ -72,6 +74,7 @@ public class AetherWars implements Initializable {
                 phase_3_circle.setFill(javafx.scene.paint.Color.web("C4C4C4"));
                 phase_4_circle.setFill(javafx.scene.paint.Color.web("C4C4C4"));
                 phase_state.setText("Plan Phase");
+                phase_description.setText("Kamu bisa melakukan beberapa aksi atau tidak sama sekali");
             }
             case Attack -> {
                 phase_1_circle.setFill(javafx.scene.paint.Color.web("7EAA9F"));
@@ -79,6 +82,7 @@ public class AetherWars implements Initializable {
                 phase_3_circle.setFill(javafx.scene.paint.Color.web("F2CC8F"));
                 phase_4_circle.setFill(javafx.scene.paint.Color.web("C4C4C4"));
                 phase_state.setText("Attack Phase");
+                phase_description.setText("Kamu bisa menyerang karakter lawan");
             }
             case End -> {
                 phase_1_circle.setFill(javafx.scene.paint.Color.web("7EAA9F"));
@@ -86,6 +90,7 @@ public class AetherWars implements Initializable {
                 phase_3_circle.setFill(javafx.scene.paint.Color.web("7EAA9F"));
                 phase_4_circle.setFill(javafx.scene.paint.Color.web("F2CC8F"));
                 phase_state.setText("End Phase");
+                phase_description.setText("Giliranmu berakhir");
             }
         }
     }
@@ -177,5 +182,9 @@ public class AetherWars implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         render();
         ObserverController.notifyEvent("open-draw", null);
+    }
+
+    public void onClickedDeleteHand(MouseEvent mouseEvent) {
+
     }
 }

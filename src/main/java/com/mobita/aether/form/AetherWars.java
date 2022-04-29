@@ -20,7 +20,7 @@ import java.lang.reflect.Field;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static com.mobita.aether.enums.Phase.Plan;
+import static com.mobita.aether.enums.Phase.*;
 
 public class AetherWars implements Initializable {
     public AnchorPane player1_card1;
@@ -51,6 +51,32 @@ public class AetherWars implements Initializable {
     public void render() {
         turn_number.setText("Turn " + StateController.getGamestate().getTurn().toString());
         player_1_healthbar.setProgress(0);
+        switch (StateController.getGamestate().getGamePhase()) {
+            case Draw -> {
+                phase_1_circle.setFill(javafx.scene.paint.Color.web("F2CC8F"));
+                phase_2_circle.setFill(javafx.scene.paint.Color.web("C4C4C4"));
+                phase_3_circle.setFill(javafx.scene.paint.Color.web("C4C4C4"));
+                phase_4_circle.setFill(javafx.scene.paint.Color.web("C4C4C4"));
+            }
+            case Plan -> {
+                phase_1_circle.setFill(javafx.scene.paint.Color.web("7EAA9F"));
+                phase_2_circle.setFill(javafx.scene.paint.Color.web("F2CC8F"));
+                phase_3_circle.setFill(javafx.scene.paint.Color.web("C4C4C4"));
+                phase_4_circle.setFill(javafx.scene.paint.Color.web("C4C4C4"));
+            }
+            case Attack -> {
+                phase_1_circle.setFill(javafx.scene.paint.Color.web("7EAA9F"));
+                phase_2_circle.setFill(javafx.scene.paint.Color.web("7EAA9F"));
+                phase_3_circle.setFill(javafx.scene.paint.Color.web("F2CC8F"));
+                phase_4_circle.setFill(javafx.scene.paint.Color.web("C4C4C4"));
+            }
+            case End -> {
+                phase_1_circle.setFill(javafx.scene.paint.Color.web("7EAA9F"));
+                phase_2_circle.setFill(javafx.scene.paint.Color.web("7EAA9F"));
+                phase_3_circle.setFill(javafx.scene.paint.Color.web("7EAA9F"));
+                phase_4_circle.setFill(javafx.scene.paint.Color.web("F2CC8F"));
+            }
+        }
     }
 
     public void registerWatcher() {
@@ -107,34 +133,23 @@ public class AetherWars implements Initializable {
 
     @FXML
     void onClickNextButton(MouseEvent event) {
-        StateController.getGamestate().setGamePhase(Phase.Draw);
-        StateController.getGamestate().setTurn(20);
         switch (StateController.getGamestate().getGamePhase()) {
             case Draw -> {
-                phase_1_circle.setFill(javafx.scene.paint.Color.web("F2CC8F"));
-                phase_2_circle.setFill(javafx.scene.paint.Color.web("C4C4C4"));
-                phase_3_circle.setFill(javafx.scene.paint.Color.web("C4C4C4"));
-                phase_4_circle.setFill(javafx.scene.paint.Color.web("C4C4C4"));
+                StateController.getGamestate().setGamePhase(Plan);
             }
             case Plan -> {
-                phase_1_circle.setFill(javafx.scene.paint.Color.web("7EAA9F"));
-                phase_2_circle.setFill(javafx.scene.paint.Color.web("F2CC8F"));
-                phase_3_circle.setFill(javafx.scene.paint.Color.web("C4C4C4"));
-                phase_4_circle.setFill(javafx.scene.paint.Color.web("C4C4C4"));
+                StateController.getGamestate().setGamePhase(Attack);
             }
             case Attack -> {
-                phase_1_circle.setFill(javafx.scene.paint.Color.web("7EAA9F"));
-                phase_2_circle.setFill(javafx.scene.paint.Color.web("7EAA9F"));
-                phase_3_circle.setFill(javafx.scene.paint.Color.web("F2CC8F"));
-                phase_4_circle.setFill(javafx.scene.paint.Color.web("C4C4C4"));
+                StateController.getGamestate().setGamePhase(End);
             }
             case End -> {
-                phase_1_circle.setFill(javafx.scene.paint.Color.web("7EAA9F"));
-                phase_2_circle.setFill(javafx.scene.paint.Color.web("7EAA9F"));
-                phase_3_circle.setFill(javafx.scene.paint.Color.web("7EAA9F"));
-                phase_4_circle.setFill(javafx.scene.paint.Color.web("F2CC8F"));
+                StateController.getGamestate().setGamePhase(Draw);
+                StateController.getGamestate().setTurn(StateController.getGamestate().getTurn()+1);
+                ObserverController.notifyEvent("open-draw", null);
             }
         }
+        render();
     }
 
     @FXML

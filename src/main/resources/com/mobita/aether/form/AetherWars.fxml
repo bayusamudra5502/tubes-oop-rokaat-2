@@ -18,7 +18,7 @@
         <ProgressBar fx:id="player_1_healthbar" layoutX="38.0" layoutY="36.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="500.0" progress="0.59" style="-fx-accent: #E07A5F; -fx-background-radius: 0; -fx-background-insets: 0;" />
         <ProgressBar fx:id="player_2_healthbar" layoutX="742.0" layoutY="36.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" prefWidth="500.0" progress="0.59" style="-fx-accent: #E07A5F;" />
         <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#3d405b" height="78.0" layoutX="548.0" layoutY="17.0" stroke="BLACK" strokeType="INSIDE" width="184.0" />
-        <AnchorPane layoutX="1140.0" layoutY="205.0" onMouseClicked="#onClickedPlayer2" onMouseEntered="#inHoveredPlayer2" onMouseExited="#outHoveredPlayer2" prefHeight="115.0" prefWidth="115.0">
+        <AnchorPane layoutX="1140.0" layoutY="205.0" onMouseClicked="#onClickedPlayer" prefHeight="115.0" prefWidth="115.0">
             <children>
                 <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#f2cc8f" height="115.0" stroke="TRANSPARENT" strokeType="INSIDE" width="115.0" />
                 <ImageView fitHeight="115.0" fitWidth="115.0">
@@ -31,7 +31,7 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </AnchorPane>
-        <AnchorPane layoutX="25.0" layoutY="199.0" onMouseClicked="#onClickedPlayer1" onMouseEntered="#inHoveredPlayer1" onMouseExited="#outHoveredPlayer1" prefHeight="115.0" prefWidth="115.0">
+        <AnchorPane layoutX="25.0" layoutY="199.0" onMouseClicked="#onClickedPlayer" prefHeight="115.0" prefWidth="115.0">
             <children>
                 <ImageView id="player1" fx:id="player_1_head_img" fitHeight="115.0" fitWidth="115.0">
                     <image>

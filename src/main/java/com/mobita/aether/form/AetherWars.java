@@ -129,17 +129,6 @@ public class AetherWars implements Initializable {
     }
 
     @FXML
-    void inHoveredPlayer1(MouseEvent event) {
-        AnchorPane p = (AnchorPane) event.getSource();
-
-    }
-
-    @FXML
-    void inHoveredPlayer2(MouseEvent event) {
-
-    }
-
-    @FXML
     void onClickDeleteButton(MouseEvent event) {
 
     }
@@ -170,44 +159,10 @@ public class AetherWars implements Initializable {
     }
 
     @FXML
-    void onClickedDeleteHand2(MouseEvent event) {
+    void onClickedPlayer(MouseEvent event) {
 
     }
 
-    @FXML
-    void onClickedDeleteHand3(MouseEvent event) {
-
-    }
-
-    @FXML
-    void onClickedDeleteHand4(MouseEvent event) {
-
-    }
-
-    @FXML
-    void onClickedDeleteHand5(MouseEvent event) {
-
-    }
-
-    @FXML
-    void onClickedPlayer1(MouseEvent event) {
-
-    }
-
-    @FXML
-    void onClickedPlayer2(MouseEvent event) {
-
-    }
-
-    @FXML
-    void outHoveredPlayer1(MouseEvent event) {
-
-    }
-
-    @FXML
-    void outHoveredPlayer2(MouseEvent event) {
-
-    }
 
     public void onClickedBoard(MouseEvent mouseEvent) {
         AnchorPane p = (AnchorPane) mouseEvent.getSource();

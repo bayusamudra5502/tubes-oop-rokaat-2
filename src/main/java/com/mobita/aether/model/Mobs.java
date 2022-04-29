@@ -5,39 +5,36 @@ import com.mobita.aether.enums.MobType;
 
 public abstract class Mobs extends Card {
     protected MobType type;
-    protected int level;
-    protected String pathToImage;
-    protected int attack;
-    protected int health;
-    protected int mana;
-    protected int attackup;
-    protected int healthup;
+    protected int totalExp;
 
 
-    public Mobs(String name, String description, MobType type, int level, String pathToImage) {
-        super(name, description, CardType.MOBS, pathToImage);
+    public Mobs(String name, String description, String pathToImage, MobType type, int mana) {
+        super(CardType.MOBS, name, description, pathToImage, mana);
         this.type = type;
-        this.level = level;
-//        this.pathToImage = pathToImage;
+        this.totalExp = 0;
     }
 
-//    abstract void printInfo();
-//    abstract void levelUp();
-//    abstract void addExp(int level2, int health2);
-//    abstract void Attack(Type type2, int health2);
-    abstract int getAtkUp();
-    abstract int getHealthUp();
-    public MobType getType() {
-        return this.type;
+    public Mobs(String name, String description, String pathToImage, MobType type, int totalExp, int mana){
+        super(CardType.MOBS, name, description, pathToImage, mana);
+        this.type = type;
+        this.totalExp = totalExp;
     }
 
-//    abstract int getLevel();
-//    abstract int getExp();
-//    abstract int getAtk();
-//    abstract int getHealth();
 
-    @Override
-    public String toString() {
-        return "Level: " + this.level;
+    public int getLevel(){
+        return (int) Math.floor(Math.sqrt(this.totalExp)) + 1;
     }
+
+    public int getExp(){
+        int level = getLevel();
+        return totalExp - (level-1)*(level-1);
+    }
+
+    public abstract String toString();
+
+//
+//    @Override
+//    public String toString() {
+//        return "Level: " + this.level;
+//    }
 }

@@ -1,6 +1,8 @@
 package com.mobita.aether.form;
 
 import com.mobita.aether.controller.ObserverController;
+import com.mobita.aether.controller.StateController;
+import com.mobita.aether.enums.Phase;
 import com.mobita.aether.message.IMessage;
 import com.mobita.aether.message.IWatcher;
 import com.mobita.aether.message.type.IdMessage;
@@ -10,6 +12,7 @@ import javafx.scene.control.ProgressBar;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
 import java.lang.reflect.Field;
@@ -29,6 +32,7 @@ public class AetherWars {
     public ProgressBar player_2_healthbar;
     public ImageView player_1_head_img;
     public Label hovered_card_description;
+    public Circle phase_1_circle;
 
     public AetherWars() {
         registerWatcher();
@@ -73,7 +77,6 @@ public class AetherWars {
 
     @FXML
     void inHoveredPlayer1(MouseEvent event) {
-
     }
 
     @FXML
@@ -88,7 +91,8 @@ public class AetherWars {
 
     @FXML
     void onClickNextButton(MouseEvent event) {
-
+        StateController.getGamestate().setGamePhase(Phase.Draw);
+        StateController.getGamestate().setTurn(20);
     }
 
     @FXML

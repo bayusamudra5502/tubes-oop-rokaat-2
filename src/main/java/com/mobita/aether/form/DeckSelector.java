@@ -1,6 +1,5 @@
 package com.mobita.aether.form;
 
-import com.mobita.aether.model.Card;
 import com.mobita.aether.model.Character;
 import com.mobita.aether.model.Type;
 import javafx.fxml.FXML;
@@ -12,8 +11,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 
-import java.io.Console;
-import java.lang.annotation.ElementType;
 import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Map;
@@ -38,9 +35,9 @@ public class DeckSelector {
     public Text card3_attack;
     public ImageView card3_img;
 
-    private Map<String, Character> dataKartu;
+    private final Map<String, Character> dataKartu;
 
-    public DeckSelector(){
+    public DeckSelector() {
         super();
         dataKartu = new HashMap<>();
         dataKartu.put("card1", new Character("Zombi", "Ini adalah zombie", Type.OVERWORLD));
@@ -53,7 +50,7 @@ public class DeckSelector {
         Image img = new Image("/com/mobita/aether/card/image/character/Villager.png");
         AnchorPane src = (AnchorPane) mouseEvent.getSource();
 
-        Field f = getClass().getDeclaredField(src.getId()+"_img");
+        Field f = getClass().getDeclaredField(src.getId() + "_img");
         ImageView iv = (ImageView) f.get(this);
         iv.setImage(img);
 
@@ -64,7 +61,7 @@ public class DeckSelector {
     public void onCardHoverIn(MouseEvent mouseEvent) throws NoSuchFieldException, IllegalAccessException {
         AnchorPane ap = (AnchorPane) mouseEvent.getSource();
 
-        Field f = getClass().getDeclaredField(ap.getId()+"_rectangle");
+        Field f = getClass().getDeclaredField(ap.getId() + "_rectangle");
         Rectangle r = (Rectangle) f.get(this);
 
         r.setFill(Color.web("#60648F"));
@@ -73,7 +70,7 @@ public class DeckSelector {
     public void onCardHoverOut(MouseEvent mouseEvent) throws NoSuchFieldException, IllegalAccessException {
         AnchorPane ap = (AnchorPane) mouseEvent.getSource();
 
-        Field f = getClass().getDeclaredField(ap.getId()+"_rectangle");
+        Field f = getClass().getDeclaredField(ap.getId() + "_rectangle");
         Rectangle r = (Rectangle) f.get(this);
 
         r.setFill(Color.web("#3D405B"));

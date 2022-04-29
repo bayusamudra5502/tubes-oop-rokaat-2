@@ -20,6 +20,8 @@ import java.lang.reflect.Field;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import static com.mobita.aether.enums.Phase.*;
+
 public class AetherWars implements Initializable {
     public AnchorPane player1_card1;
     public AnchorPane player1_card2;
@@ -36,6 +38,9 @@ public class AetherWars implements Initializable {
     public ImageView player_1_head_img;
     public Label hovered_card_description;
     public Circle phase_1_circle;
+    public Circle phase_2_circle;
+    public Circle phase_3_circle;
+    public Circle phase_4_circle;
     public Label turn_number;
     public Label phase_state;
 
@@ -48,7 +53,25 @@ public class AetherWars implements Initializable {
         turn_number.setText("Turn " + StateController.getGamestate().getTurn().toString());
         switch (StateController.getGamestate().getGamePhase()) {
             case Draw -> {
-
+                StateController.getGamestate().setGamePhase(Plan);
+                phase_1_circle.setFill(javafx.scene.paint.Color.web("7EAA9F"));
+                phase_2_circle.setFill(javafx.scene.paint.Color.web("7EAA9F"));
+                phase_3_circle.setFill(javafx.scene.paint.Color.web("C4C4C4"));
+                phase_4_circle.setFill(javafx.scene.paint.Color.web("C4C4C4"));
+            }
+            case Plan -> {
+                StateController.getGamestate().setGamePhase(Attack);
+                phase_1_circle.setFill(javafx.scene.paint.Color.web("7EAA9F"));
+                phase_2_circle.setFill(javafx.scene.paint.Color.web("7EAA9F"));
+                phase_3_circle.setFill(javafx.scene.paint.Color.web("7EAA9F"));
+                phase_4_circle.setFill(javafx.scene.paint.Color.web("C4C4C4"));
+            }
+            case Attack -> {
+                StateController.getGamestate().setGamePhase(End);
+                phase_1_circle.setFill(javafx.scene.paint.Color.web("7EAA9F"));
+                phase_2_circle.setFill(javafx.scene.paint.Color.web("7EAA9F"));
+                phase_3_circle.setFill(javafx.scene.paint.Color.web("7EAA9F"));
+                phase_4_circle.setFill(javafx.scene.paint.Color.web("7EAA9F"));
             }
         }
     }
@@ -82,6 +105,7 @@ public class AetherWars implements Initializable {
     void enteredCard(MouseEvent event) {
         AnchorPane p = (AnchorPane) event.getSource();
         ((Rectangle) p.getChildren().get(0)).setFill(javafx.scene.paint.Color.RED);
+        render();
     }
 
     @FXML
@@ -108,6 +132,7 @@ public class AetherWars implements Initializable {
     void onClickNextButton(MouseEvent event) {
         StateController.getGamestate().setGamePhase(Phase.Draw);
         StateController.getGamestate().setTurn(20);
+        render();
     }
 
     @FXML

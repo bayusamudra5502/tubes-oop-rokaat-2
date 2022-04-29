@@ -30,16 +30,10 @@ public class Hand implements ICardCollection{
         return inHand.get(slot);
     }
 
-    public void insertAll(ICardCollection other){
 
+    public Hand delete(String slot) {
+        this.inHand.remove(slot);
+        return this;
     }
-
-
-
-//    public Card delete(String slot) {
-//        Card res = get(slot);
-//        res.setEmpty();
-//        return res;
-//    }
 
 }

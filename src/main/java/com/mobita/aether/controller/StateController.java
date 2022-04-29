@@ -1,16 +1,14 @@
 package com.mobita.aether.controller;
 
 import com.mobita.aether.collection.Deck;
-import com.mobita.aether.model.*;
+import com.mobita.aether.model.Player;
 import com.mobita.aether.state.GameState;
-
-import java.util.List;
 
 public class StateController {
     private static final Player player1;
     private static final Player player2;
     private static final GameState gamestate;
-    private static final Player currentPlayer;
+    private static Player currentPlayer;
 
 
     static {
@@ -20,13 +18,17 @@ public class StateController {
         currentPlayer = player1;
     }
 
-    public static void insertDeck(Deck deck1, Deck deck2){
+    public static void insertDeck(Deck deck1, Deck deck2) {
         player1.insertDeck(deck1);
         player2.insertDeck(deck2);
     }
 
     public static Player getCurrentPlayer() {
         return currentPlayer;
+    }
+
+    public static void setCurrentPlayer(Player p) {
+        currentPlayer = p;
     }
 
     public static Player getPlayer1() {

@@ -1,5 +1,6 @@
 package com.mobita.aether.form;
 
+import com.mobita.aether.controller.DeckController;
 import com.mobita.aether.controller.ObserverController;
 import com.mobita.aether.controller.StateController;
 import com.mobita.aether.message.IMessage;
@@ -118,6 +119,14 @@ public class AetherWars implements Initializable {
                 hovered_card_description.setText("[HAND] Id Kartu " + message.getMessage() + " terkena tekanan");
             }
         });
+
+        ObserverController.registerWatcher("open-draw", new IWatcher<Object>() {
+            @Override
+            public void notify(IMessage<Object> message) {
+                ObserverController.notifyEvent("reload-selector", null);
+                DeckController.showDeck();
+            }
+        });
     }
 
     private AnchorPane getAnchorPaneById(String id) throws IllegalAccessException {
@@ -175,6 +184,7 @@ public class AetherWars implements Initializable {
         switch (StateController.getGamestate().getGamePhase()) {
             case Rest -> {
                 StateController.getGamestate().setGamePhase(Draw);
+                ObserverController.notifyEvent("open-draw", null);
             }
             case Draw -> {
                 StateController.getGamestate().setGamePhase(Plan);
@@ -188,7 +198,12 @@ public class AetherWars implements Initializable {
             case End -> {
                 StateController.getGamestate().setGamePhase(Rest);
                 StateController.getGamestate().setTurn(StateController.getGamestate().getTurn() + 1);
-                ObserverController.notifyEvent("open-draw", null);
+
+                if (StateController.getGamestate().getTurn() % 2 == 0) {
+                    StateController.setCurrentPlayer(StateController.getPlayer2());
+                } else {
+                    StateController.setCurrentPlayer(StateController.getPlayer1());
+                }
             }
         }
         render();
@@ -217,7 +232,6 @@ public class AetherWars implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         render();
-        ObserverController.notifyEvent("open-draw", null);
     }
 
     public void onClickedDeleteHand(MouseEvent mouseEvent) {

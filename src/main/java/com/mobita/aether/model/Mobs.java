@@ -45,4 +45,8 @@ public abstract class Mobs extends Card {
     public Integer getMaxExpInLevel() {
         return this.getLevel() * 2 - 1;
     }
+
+    public MobType getMobType() {
+        return this.type;
+    }
 }

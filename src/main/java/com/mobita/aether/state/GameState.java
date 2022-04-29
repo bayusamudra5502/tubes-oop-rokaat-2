@@ -3,7 +3,7 @@ package com.mobita.aether.state;
 import com.mobita.aether.enums.Phase;
 
 public class GameState {
-    private Phase gamePhase = Phase.Draw;
+    private Phase gamePhase = Phase.Rest;
     private Integer turn = 1;
 
     public Integer getTurn() {

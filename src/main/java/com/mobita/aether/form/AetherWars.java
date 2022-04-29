@@ -63,24 +63,28 @@ public class AetherWars implements Initializable {
                 phase_2_circle.setFill(javafx.scene.paint.Color.web("C4C4C4"));
                 phase_3_circle.setFill(javafx.scene.paint.Color.web("C4C4C4"));
                 phase_4_circle.setFill(javafx.scene.paint.Color.web("C4C4C4"));
+                phase_state.setText("Draw Phase");
             }
             case Plan -> {
                 phase_1_circle.setFill(javafx.scene.paint.Color.web("7EAA9F"));
                 phase_2_circle.setFill(javafx.scene.paint.Color.web("F2CC8F"));
                 phase_3_circle.setFill(javafx.scene.paint.Color.web("C4C4C4"));
                 phase_4_circle.setFill(javafx.scene.paint.Color.web("C4C4C4"));
+                phase_state.setText("Plan Phase");
             }
             case Attack -> {
                 phase_1_circle.setFill(javafx.scene.paint.Color.web("7EAA9F"));
                 phase_2_circle.setFill(javafx.scene.paint.Color.web("7EAA9F"));
                 phase_3_circle.setFill(javafx.scene.paint.Color.web("F2CC8F"));
                 phase_4_circle.setFill(javafx.scene.paint.Color.web("C4C4C4"));
+                phase_state.setText("Attack Phase");
             }
             case End -> {
                 phase_1_circle.setFill(javafx.scene.paint.Color.web("7EAA9F"));
                 phase_2_circle.setFill(javafx.scene.paint.Color.web("7EAA9F"));
                 phase_3_circle.setFill(javafx.scene.paint.Color.web("7EAA9F"));
                 phase_4_circle.setFill(javafx.scene.paint.Color.web("F2CC8F"));
+                phase_state.setText("End Phase");
             }
         }
     }
@@ -146,17 +150,6 @@ public class AetherWars implements Initializable {
 
     @FXML
     void onClickTradeButton(MouseEvent event) {
-
-    }
-
-    @FXML
-    void onClickedCard(MouseEvent event) {
-
-    }
-
-    @FXML
-    void onClickedDeleteHand1(MouseEvent event) {
-
     }
 
     @FXML
@@ -209,13 +202,9 @@ public class AetherWars implements Initializable {
         ObserverController.notifyEvent("hand-click", new IdMessage(p.getId()));
     }
 
-
-    public void inHoveredNextButton(MouseEvent mouseEvent) {
-
-    }
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         render();
+        ObserverController.notifyEvent("open-draw", null);
     }
 }

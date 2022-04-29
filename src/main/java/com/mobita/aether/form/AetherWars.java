@@ -2,7 +2,6 @@ package com.mobita.aether.form;
 
 import com.mobita.aether.controller.ObserverController;
 import com.mobita.aether.controller.StateController;
-import com.mobita.aether.enums.Phase;
 import com.mobita.aether.message.IMessage;
 import com.mobita.aether.message.IWatcher;
 import com.mobita.aether.message.type.IdMessage;
@@ -19,6 +18,8 @@ import javafx.scene.shape.Rectangle;
 import java.lang.reflect.Field;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import static com.mobita.aether.enums.Phase.*;
 
 public class AetherWars implements Initializable {
     public AnchorPane player1_card1;
@@ -129,6 +130,8 @@ public class AetherWars implements Initializable {
 
     @FXML
     void inHoveredPlayer1(MouseEvent event) {
+        AnchorPane p = (AnchorPane) event.getSource();
+
     }
 
     @FXML
@@ -143,8 +146,22 @@ public class AetherWars implements Initializable {
 
     @FXML
     void onClickNextButton(MouseEvent event) {
-        StateController.getGamestate().setGamePhase(Phase.Draw);
-        StateController.getGamestate().setTurn(20);
+        switch (StateController.getGamestate().getGamePhase()) {
+            case Draw -> {
+                StateController.getGamestate().setGamePhase(Plan);
+            }
+            case Plan -> {
+                StateController.getGamestate().setGamePhase(Attack);
+            }
+            case Attack -> {
+                StateController.getGamestate().setGamePhase(End);
+            }
+            case End -> {
+                StateController.getGamestate().setGamePhase(Draw);
+                StateController.getGamestate().setTurn(StateController.getGamestate().getTurn() + 1);
+                ObserverController.notifyEvent("open-draw", null);
+            }
+        }
         render();
     }
 

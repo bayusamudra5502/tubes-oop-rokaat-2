@@ -849,5 +849,18 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </AnchorPane>
+      <AnchorPane fx:id="deck_button" layoutX="308.0" layoutY="557.0" onMouseClicked="#onClickNextButton" prefHeight="26.0" prefWidth="85.0">
+         <children>
+            <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#81b29a" height="26.0" stroke="TRANSPARENT" strokeType="INSIDE" width="93.0" />
+            <Label layoutX="11.0" layoutY="3.0" text="Open Deck" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </AnchorPane>
    </children>
 </Pane>
